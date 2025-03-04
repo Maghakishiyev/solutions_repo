@@ -48,6 +48,20 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#key-variables">Key Variables</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#horizontal-motion">Horizontal Motion</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#vertical-motion">Vertical Motion</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#time-of-flight">Time of Flight</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#range-r">Range (\( R \))</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#maximum-height-h_textmax">Maximum Height (\( h\_{\text{max}} \))</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#trajectory-equation">Trajectory Equation</a>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
@@ -172,7 +186,87 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-1">Problem 1</h1>
-<p>lorem ipsum dolor sit</p>
+<p>Projectile motion involves the motion of an object launched into the air under
+the influence of gravity, following a parabolic trajectory. It is analyzed in
+two components: horizontal and vertical motion, which are independent of each
+other. Here’s a detailed breakdown with formulas:</p>
+<hr/>
+<h3 id="key-variables"><strong>Key Variables</strong></h3>
+<ul>
+<li><span class="arithmatex">\( u \)</span>: Initial velocity</li>
+<li><span class="arithmatex">\( \theta \)</span>: Angle of projection</li>
+<li><span class="arithmatex">\( g \)</span>: Acceleration due to gravity (<span class="arithmatex">\( 9.8 \, \text{m/s}^2 \)</span>)</li>
+<li><span class="arithmatex">\( t \)</span>: Time of flight</li>
+<li><span class="arithmatex">\( R \)</span>: Range (horizontal distance covered)</li>
+<li><span class="arithmatex">\( h\_{\text{max}} \)</span>: Maximum height</li>
+<li><span class="arithmatex">\( x \)</span>: Horizontal displacement</li>
+<li><span class="arithmatex">\( y \)</span>: Vertical displacement</li>
+</ul>
+<hr/>
+<h3 id="horizontal-motion"><strong>Horizontal Motion</strong></h3>
+<p>The horizontal motion is uniform because there is no horizontal acceleration
+(ignoring air resistance).</p>
+<ul>
+<li>
+<p><strong>Horizontal velocity:</strong></p>
+<div class="arithmatex">\[
+u_x = u \cos theta
+\]</div>
+</li>
+<li>
+<p><strong>Horizontal displacement:</strong>
+    $$
+    x = u_x t = u \cos \theta \cdot
+    \
+    $$</p>
+</li>
+</ul>
+<hr/>
+<h3 id="vertical-motion"><strong>Vertical Motion</strong></h3>
+<p>The vertical motion is uniformly accelerated due to gravity.</p>
+<ul>
+<li><strong>Vertical velocity:</strong>
+    $$
+    u_y = u \sin \theta
+    $$
+    At any time <span class="arithmatex">\( t \)</span>, the vertical velocity is:
+    $$
+    v_y = u_y - g t = u \sin \theta - g t
+    $$</li>
+<li><strong>Vertical displacement:</strong>
+    $$
+    y = u_y t - \frac{1}{2} g t^2 = u \sin \theta \cdot t - \frac{1}{2} g t^2
+    $$</li>
+</ul>
+<hr/>
+<h3 id="time-of-flight"><strong>Time of Flight</strong></h3>
+<p>The total time the projectile stays in the air:</p>
+<div class="arithmatex">\[
+t_{\text{flight}} = \frac{2 u \sin \theta}{g}
+\]</div>
+<hr/>
+<h3 id="range-r"><strong>Range (<span class="arithmatex">\( R \)</span>)</strong></h3>
+<p>The horizontal distance covered during the flight:</p>
+<div class="arithmatex">\[
+R = \frac{u^2 \sin 2\theta}{g}
+\]</div>
+<hr/>
+<h3 id="maximum-height-h_textmax"><strong>Maximum Height (<span class="arithmatex">\( h\_{\text{max}} \)</span>)</strong></h3>
+<p>The highest point reached by the projectile:</p>
+<div class="arithmatex">\[
+h_{\text{max}} = \frac{u^2 \sin^2 \theta}{2g}
+\]</div>
+<hr/>
+<h3 id="trajectory-equation"><strong>Trajectory Equation</strong></h3>
+<p>Combining <span class="arithmatex">\( x \)</span> and <span class="arithmatex">\( y \)</span>:</p>
+<div class="arithmatex">\[
+y = x \tan \theta - \frac{g x^2}{2 u^2 \cos^2 \theta}
+\]</div>
+<p>This equation represents the parabolic path of the projectile.</p>
+<hr/>
+<p>By applying these formulas, you can analyze and predict various aspects of
+projectile motion based on initial conditions like velocity and angle of
+projection.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
