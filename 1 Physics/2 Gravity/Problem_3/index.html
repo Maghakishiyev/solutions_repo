@@ -60,6 +60,24 @@
 </li>
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 3</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#1-theoretical-foundation">1. Theoretical Foundation</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#types-of-possible-trajectories">Types of Possible Trajectories</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-mathematical-analysis">2. Mathematical Analysis</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#equations-of-motion">Equations of Motion</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-computational-model">3. Computational Model</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-practical-applications">4. Practical Applications</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#5-conclusion">5. Conclusion</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -172,6 +190,105 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="problem-3">Problem 3</h1>
+<p>Trajectories of a Freely Released Payload Near Earth</p>
+<h2 id="1-theoretical-foundation">1. Theoretical Foundation</h2>
+<h3 id="types-of-possible-trajectories">Types of Possible Trajectories</h3>
+<p>The trajectory of a payload released near Earth depends on its initial velocity
+<span class="arithmatex">\( v \)</span> relative to Earth's gravitational pull. The possible trajectories are:</p>
+<ol>
+<li><strong>Suborbital (Parabolic Trajectory)</strong>: If the payload does not reach orbital
+   velocity, it follows a ballistic path back to Earth.</li>
+<li><strong>Orbital (Elliptical Trajectory)</strong>: If the velocity is between the first
+   cosmic velocity <span class="arithmatex">\( v_1 \)</span> (orbital velocity) and escape velocity <span class="arithmatex">\( v_2 \)</span>,
+   the payload enters an elliptical orbit.</li>
+<li><strong>Escape (Hyperbolic Trajectory)</strong>: If the velocity exceeds escape velocity
+   <span class="arithmatex">\( v_2 \)</span>, the payload follows a hyperbolic trajectory and escapes Earth's
+   gravity.</li>
+</ol>
+<p>These scenarios are governed by Newton's Law of Gravitation:</p>
+<div class="arithmatex">\[
+F = \frac{GMm}{r^2}
+\]</div>
+<p>and Kepler’s Laws of Motion.</p>
+<hr/>
+<h2 id="2-mathematical-analysis">2. Mathematical Analysis</h2>
+<h3 id="equations-of-motion">Equations of Motion</h3>
+<p>The motion of the payload is governed by Newton’s Second Law:</p>
+<div class="arithmatex">\[
+\frac{d^2\mathbf{r}}{dt^2} = -\frac{GM}{r^3} \mathbf{r}
+\]</div>
+<p>where:</p>
+<ul>
+<li><span class="arithmatex">\( \mathbf{r} \)</span> is the position vector,</li>
+<li><span class="arithmatex">\( G \)</span> is the gravitational constant,</li>
+<li><span class="arithmatex">\( M \)</span> is Earth’s mass.</li>
+</ul>
+<p>Numerical integration (e.g., Runge-Kutta method) is used to solve these
+equations.</p>
+<hr/>
+<h2 id="3-computational-model">3. Computational Model</h2>
+<p>The following Python script simulates and visualizes the trajectory of a payload
+released near Earth.</p>
+<pre><code class="language-python">import numpy as np
+import matplotlib.pyplot as plt
+from scipy.integrate import solve_ivp
+
+# Constants
+G = 6.67430e-11  # Gravitational constant (m^3/kg/s^2)
+M = 5.972e24     # Earth mass (kg)
+R = 6.371e6      # Earth radius (m)
+
+# Equations of motion
+def equations(t, y):
+    x, vx, y, vy = y
+    r = np.sqrt(x**2 + y**2)
+    ax = -G * M * x / r**3
+    ay = -G * M * y / r**3
+    return [vx, ax, vy, ay]
+
+# Initial conditions (position in km, velocity in km/s)
+x0, y0 = R + 500000, 0  # Initial altitude: 500 km
+vx0, vy0 = 7.8e3, 0  # Initial velocity (near orbital velocity)
+y_init = [x0, vx0, y0, vy0]
+
+# Time span
+t_span = (0, 10000)
+t_eval = np.linspace(0, 10000, 1000)
+
+# Solve ODE
+sol = solve_ivp(equations, t_span, y_init, t_eval=t_eval, method='RK45')
+
+# Plot trajectory
+plt.figure(figsize=(6,6))
+plt.plot(sol.y[0], sol.y[2], label='Payload Trajectory')
+plt.scatter(0, 0, color='blue', label='Earth')
+plt.xlabel('X Position (m)')
+plt.ylabel('Y Position (m)')
+plt.title('Trajectory of a Freely Released Payload')
+plt.legend()
+plt.grid()
+plt.show()
+</code></pre>
+<p>This script:</p>
+<ul>
+<li>Defines gravitational equations of motion.</li>
+<li>Uses numerical integration to compute the trajectory.</li>
+<li>Plots the resulting trajectory.</li>
+</ul>
+<p><img alt="Trajectory of a Freely Released Payload" src="png/problem3.png"/></p>
+<hr/>
+<h2 id="4-practical-applications">4. Practical Applications</h2>
+<ul>
+<li><strong>Satellite Deployment</strong>: Ensuring correct initial conditions for stable
+    orbits.</li>
+<li><strong>Reentry Scenarios</strong>: Calculating reentry angles and speeds.</li>
+<li><strong>Escape Missions</strong>: Planning interplanetary transfers.</li>
+</ul>
+<hr/>
+<h2 id="5-conclusion">5. Conclusion</h2>
+<p>Understanding the possible trajectories of a released payload is crucial for
+space missions. By analyzing the velocity and gravitational influence, we can
+determine whether an object will reenter, orbit, or escape Earth.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
