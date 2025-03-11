@@ -103,7 +103,7 @@ This script:
 -   Calculates orbital and escape velocities for different celestial bodies.
 -   Plots a comparison of these velocities.
 
-![First and Second Cosmic Velocities](png/problem2.png)
+![First and Second Cosmic Velocities](./pics/problem2.png)
 
 ---
 

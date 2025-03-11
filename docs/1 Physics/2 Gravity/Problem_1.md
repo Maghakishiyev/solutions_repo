@@ -106,7 +106,7 @@ This script:
 -   Computes orbital periods for different radii.
 -   Plots \( T^2 \) vs. \( R^3 \) to confirm a linear relationship.
 
-![Verification of Kepler’s Third Law](png/problem1.png)
+![Verification of Kepler’s Third Law](./pics/problem1.png)
 
 ---
 

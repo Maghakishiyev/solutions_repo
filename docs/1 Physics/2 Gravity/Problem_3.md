@@ -102,7 +102,7 @@ This script:
 -   Uses numerical integration to compute the trajectory.
 -   Plots the resulting trajectory.
 
-![Trajectory of a Freely Released Payload](png/problem3.png)
+![Trajectory of a Freely Released Payload](./pics/problem3.png)
 
 ---
 
