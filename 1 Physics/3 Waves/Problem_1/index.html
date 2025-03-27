@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 1 - Physics and Mathematics</title>
+<title>Interference Patterns on a Water Surface - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 1";
+        var mkdocs_page_name = "Interference Patterns on a Water Surface";
         var mkdocs_page_input_path = "1 Physics/3 Waves/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -64,27 +64,35 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">3 Waves</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Interference Patterns on a Water Surface</a>
 <ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="#1-theoretical-background">1. Theoretical Background</a>
+<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#theoretical-background">Theoretical Background</a>
 <ul>
-<li class="toctree-l4"><a class="reference internal" href="#wave-interference">Wave Interference</a>
+<li class="toctree-l4"><a class="reference internal" href="#principle-of-superposition">Principle of Superposition</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#constructive-and-destructive-interference">Constructive and Destructive Interference</a>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#2-problem-setup">2. Problem Setup</a>
-<ul>
-<li class="toctree-l4"><a class="reference internal" href="#1-choosing-a-regular-polygon">1. Choosing a Regular Polygon</a>
+<li class="toctree-l3"><a class="reference internal" href="#analysis-of-interference-patterns-for-regular-polygons">Analysis of Interference Patterns for Regular Polygons</a>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#2-computing-the-superposition">2. Computing the Superposition</a>
+<li class="toctree-l3"><a class="reference internal" href="#computational-model-and-visualization">Computational Model and Visualization</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#triangle-3-vertices">Triangle (3 Vertices)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#square-4-vertices">Square (4 Vertices)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#pentagon-5-vertices">Pentagon (5 Vertices)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#hexagon-6-vertices">Hexagon (6 Vertices)</a>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#3-computational-model">3. Computational Model</a>
+<li class="toctree-l3"><a class="reference internal" href="#observations-and-conclusions">Observations and Conclusions</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#4-observations-and-analysis">4. Observations and Analysis</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#5-conclusion">5. Conclusion</a>
+<li class="toctree-l3"><a class="reference internal" href="#applications">Applications</a>
 </li>
 </ul>
 </li>
@@ -98,7 +106,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal">5 Circuits</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../5%20Circuits/Problem_1/">Problem 1</a>
+<li class="toctree-l2"><a class="reference internal" href="../../5%20Circuits/Problem_1/">Equivalent Resistance Using Graph Theory</a>
 </li>
 </ul>
 </li>
@@ -183,7 +191,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">3 Waves</li>
-<li class="breadcrumb-item active">Problem 1</li>
+<li class="breadcrumb-item active">Interference Patterns on a Water Surface</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -191,96 +199,253 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
-<p>Interference Patterns on a Water Surface</p>
-<h2 id="1-theoretical-background">1. Theoretical Background</h2>
-<h3 id="wave-interference">Wave Interference</h3>
-<p>Interference occurs when two or more waves overlap, leading to constructive
-(amplification) and destructive (cancellation) effects. On a water surface,
-waves emanating from multiple sources interact to form intricate interference
-patterns.</p>
-<p>The displacement <span class="arithmatex">\( \eta(x, y, t) \)</span> of a circular wave originating from a point
-source <span class="arithmatex">\( (x_0, y_0) \)</span> is given by:</p>
-<div class="arithmatex">\[ \eta(x, y, t) = \frac{A}{\sqrt{r}} \cdot \cos\left(kr - \omega t +
-\phi\right) \]</div>
+<h1 id="interference-patterns-on-a-water-surface">Interference Patterns on a Water Surface</h1>
+<h2 id="motivation">Motivation</h2>
+<p>Interference occurs when waves from different sources overlap, creating new
+patterns. On a water surface, this can be easily observed when ripples from
+different points meet, forming distinctive interference patterns. These patterns
+can show us how waves combine in different ways, either reinforcing each other
+or canceling out.</p>
+<p>Studying these patterns helps us understand wave behavior in a simple, visual
+way. It also allows us to explore important concepts, like the relationship
+between wave phase and the effects of multiple sources. This task offers a
+hands-on approach to learning about wave interactions and their real-world
+applications, making it an interesting and engaging way to dive into wave
+physics.</p>
+<h2 id="theoretical-background">Theoretical Background</h2>
+<p>A circular wave on the water surface, emanating from a point source located at
+<span class="arithmatex">\((x_0, y_0)\)</span>, can be described by the Single Disturbance equation:</p>
+<div class="arithmatex">\[\eta(x, y, t) = \frac{A}{\sqrt{r}} \cdot \cos(kr - \omega t + \phi)\]</div>
 <p>where:</p>
 <ul>
-<li><span class="arithmatex">\( A \)</span> is the wave amplitude,</li>
-<li><span class="arithmatex">\( k = \frac{2\pi}{\lambda} \)</span> is the wave number,</li>
-<li><span class="arithmatex">\( \omega = 2\pi f \)</span> is the angular frequency,</li>
-<li><span class="arithmatex">\( r = \sqrt{(x - x_0)^2 + (y - y_0)^2} \)</span> is the radial distance from the
-    source,</li>
-<li><span class="arithmatex">\( \phi \)</span> is the initial phase.</li>
+<li><span class="arithmatex">\(\eta(x, y, t)\)</span> is the displacement of the water surface at point <span class="arithmatex">\((x, y)\)</span>
+    and time <span class="arithmatex">\(t\)</span>,</li>
+<li><span class="arithmatex">\(A\)</span> is the amplitude of the wave,</li>
+<li><span class="arithmatex">\(k = \frac{2\pi}{\lambda}\)</span> is the wave number, related to the wavelength
+    <span class="arithmatex">\(\lambda\)</span>,</li>
+<li><span class="arithmatex">\(\omega = 2\pi f\)</span> is the angular frequency, related to the frequency <span class="arithmatex">\(f\)</span>,</li>
+<li><span class="arithmatex">\(r = \sqrt{(x - x_0)^2 + (y - y_0)^2}\)</span> is the distance from the source to
+    the point <span class="arithmatex">\((x, y)\)</span>,</li>
+<li><span class="arithmatex">\(\phi\)</span> is the initial phase.</li>
 </ul>
-<p>When multiple sources are present, the net displacement is given by:</p>
-<div class="arithmatex">\[ \eta*{\text{sum}}(x, y, t) = \sum*{i=1}^{N} \eta_i(x, y, t) \]</div>
-<p>where <span class="arithmatex">\( N \)</span> is the number of sources.</p>
-<hr/>
-<h2 id="2-problem-setup">2. Problem Setup</h2>
-<h3 id="1-choosing-a-regular-polygon">1. Choosing a Regular Polygon</h3>
-<p>We select a regular polygon (e.g., equilateral triangle, square, pentagon) and
-place wave sources at its vertices.</p>
-<h3 id="2-computing-the-superposition">2. Computing the Superposition</h3>
-<p>Each vertex of the polygon acts as a wave source, and their combined effect
-determines the final interference pattern.</p>
-<hr/>
-<h2 id="3-computational-model">3. Computational Model</h2>
-<p>The following Python script simulates and visualizes the interference pattern.</p>
+<h3 id="principle-of-superposition">Principle of Superposition</h3>
+<p>When multiple waves overlap at a point, the resulting displacement is the sum of
+the individual displacements. For <span class="arithmatex">\(N\)</span> sources, the total displacement is given
+by:</p>
+<div class="arithmatex">\[\eta_{sum}(x, y, t) = \sum_{i=1}^{N} \eta_i(x, y, t)\]</div>
+<p>where <span class="arithmatex">\(N\)</span> is the number of sources (vertices of the polygon).</p>
+<h3 id="constructive-and-destructive-interference">Constructive and Destructive Interference</h3>
+<ul>
+<li><strong>Constructive interference</strong> occurs when waves combine to create a larger
+    amplitude. This happens when the waves are in phase.</li>
+<li><strong>Destructive interference</strong> occurs when waves combine to create a smaller
+    amplitude or cancel out completely. This happens when the waves are out of
+    phase.</li>
+</ul>
+<h2 id="analysis-of-interference-patterns-for-regular-polygons">Analysis of Interference Patterns for Regular Polygons</h2>
+<p>In this study, we analyze the interference patterns formed by waves emitted from
+sources placed at the vertices of regular polygons. We consider four different
+configurations: triangle, square, pentagon, and hexagon.</p>
+<h2 id="computational-model-and-visualization">Computational Model and Visualization</h2>
+<details>
+<summary>Click to expand Python code</summary>
 <pre><code class="language-python">import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.animation import FuncAnimation
+import os
+from mpl_toolkits.mplot3d import Axes3D
+from matplotlib import cm
 
-# Define wave parameters
-A = 1  # Amplitude
-lambda_ = 10  # Wavelength
-k = 2 * np.pi / lambda_  # Wave number
-omega = 2 * np.pi  # Angular frequency (arbitrary unit)
-t = 0  # Time snapshot
+# Create directory for pics if it doesn't exist
+image_dir = os.path.join('docs', '1 Physics', '3 Waves', 'pics')
+os.makedirs(image_dir, exist_ok=True)
 
-# Define polygon vertices (square as an example)
-N = 4  # Number of sources (square)
-radius = 20  # Distance from center
-angles = np.linspace(0, 2 * np.pi, N, endpoint=False)
-sources = [(radius * np.cos(a), radius * np.sin(a)) for a in angles]
+# Constants and parameters
+A = 1.0  # Amplitude
+lamb = 0.5  # Wavelength (lambda)
+f = 1.0  # Frequency
+k = 2 * np.pi / lamb  # Wave number
+omega = 2 * np.pi * f  # Angular frequency
+phi = 0  # Initial phase
 
-# Define grid for visualization
-x = np.linspace(-30, 30, 300)
-y = np.linspace(-30, 30, 300)
-X, Y = np.meshgrid(x, y)
+# Function to calculate the displacement at a point due to a single source
+def calculate_displacement(x, y, t, source_pos):
+    """
+    Calculate the displacement of the water surface at point (x, y) and time t
+    due to a wave from a source at source_pos.
 
-# Compute wave interference pattern
-eta_sum = np.zeros_like(X)
-for x0, y0 in sources:
-    R = np.sqrt((X - x0)**2 + (Y - y0)**2)
-    eta_sum += A / np.sqrt(R + 1e-6) * np.cos(k * R - omega * t)  # Avoid division by zero
+    Args:
+        x, y: Coordinates of the point
+        t: Time
+        source_pos: Position of the source (x0, y0)
 
-# Plot the interference pattern
-plt.figure(figsize=(8, 6))
-plt.imshow(eta_sum, extent=[-30, 30, -30, 30], cmap='coolwarm', origin='lower')
-plt.colorbar(label='Wave Amplitude')
-plt.scatter(*zip(*sources), color='black', label='Wave Sources')
-plt.legend()
-plt.title('Interference Pattern for a Square Wave Source')
-plt.xlabel('X Position')
-plt.ylabel('Y Position')
-plt.show()
+    Returns:
+        Displacement at point (x, y) and time t
+    """
+    x0, y0 = source_pos
+    r = np.sqrt((x - x0)**2 + (y - y0)**2)
+    # Avoid division by zero at the source
+    if r &lt; 1e-10:
+        return 0
+    return A / np.sqrt(r) * np.cos(k * r - omega * t + phi)
+
+# Function to calculate the total displacement due to multiple sources
+def calculate_total_displacement(x, y, t, sources):
+    """
+    Calculate the total displacement at point (x, y) and time t due to all sources.
+
+    Args:
+        x, y: Coordinates of the point
+        t: Time
+        sources: List of source positions [(x1, y1), (x2, y2), ...]
+
+    Returns:
+        Total displacement at point (x, y) and time t
+    """
+    total = 0
+    for source_pos in sources:
+        total += calculate_displacement(x, y, t, source_pos)
+    return total
+
+# Function to generate the vertices of a regular polygon
+def generate_polygon_vertices(n, radius=1.0, center=(0, 0)):
+    """
+    Generate the vertices of a regular polygon.
+
+    Args:
+        n: Number of sides (vertices)
+        radius: Distance from center to vertices
+        center: Center position (x, y)
+
+    Returns:
+        List of vertex positions [(x1, y1), (x2, y2), ...]
+    """
+    vertices = []
+    for i in range(n):
+        angle = 2 * np.pi * i / n
+        x = center[0] + radius * np.cos(angle)
+        y = center[1] + radius * np.sin(angle)
+        vertices.append((x, y))
+    return vertices
+
+# Main function
+if __name__ == "__main__":
+    # Analyze interference patterns for different polygons
+    analyze_polygon_interference()
+
+    print("All simulations and visualizations completed.")
+    print(f"pics saved to {image_dir}")
 </code></pre>
-<p><img alt="Interference Pattern for a Square Wave Source" src="../pics/problem1.png"/></p>
-<hr/>
-<h2 id="4-observations-and-analysis">4. Observations and Analysis</h2>
+</details>
+<p>The computational model simulates the interference patterns formed by waves
+emitted from sources placed at the vertices of regular polygons. It calculates
+the displacement at each point on the water surface by summing the contributions
+from all sources, following the principle of superposition. The model visualizes
+the interference patterns using 2D color maps, 3D surface plots, and animations
+to show the time evolution of the patterns.</p>
+<p>By varying the number of vertices in the polygon, we can observe how the
+complexity and symmetry of the interference pattern change. This provides
+insights into how waves combine and interact in different geometric
+configurations, demonstrating fundamental principles of wave physics.</p>
+<h3 id="triangle-3-vertices">Triangle (3 Vertices)</h3>
+<p>For a triangle, three wave sources are placed at the vertices of an equilateral
+triangle. The interference pattern shows:</p>
+<ul>
+<li>A central region of constructive interference where waves from all three
+    sources arrive approximately in phase.</li>
+<li>Three primary axes of constructive interference extending outward from the
+    center along the angle bisectors of the triangle.</li>
+<li>Regions of destructive interference between these axes.</li>
+</ul>
+<p><img alt="Triangle Interference Pattern" src="../pics/triangle_interference_2d.png"/></p>
+<p><img alt="Triangle 3D Interference Pattern" src="../pics/triangle_interference_3d.png"/></p>
+<h3 id="square-4-vertices">Square (4 Vertices)</h3>
+<p>For a square, four wave sources are placed at the vertices. The interference
+pattern shows:</p>
+<ul>
+<li>A central region of constructive interference.</li>
+<li>Four primary axes of constructive interference along the diagonals of the
+    square.</li>
+<li>A more complex pattern of secondary maxima compared to the triangle case.</li>
+<li>More pronounced regions of destructive interference due to the increased
+    number of sources.</li>
+</ul>
+<p><img alt="Square Interference Pattern" src="../pics/square_interference_2d.png"/></p>
+<p><img alt="Square 3D Interference Pattern" src="../pics/square_interference_3d.png"/></p>
+<h3 id="pentagon-5-vertices">Pentagon (5 Vertices)</h3>
+<p>For a pentagon, five wave sources are placed at the vertices. The interference
+pattern shows:</p>
+<ul>
+<li>A central region of constructive interference.</li>
+<li>Five primary axes of constructive interference.</li>
+<li>A more complex and symmetric pattern compared to the triangle and square
+    cases.</li>
+<li>More regions of destructive interference creating a more intricate pattern.</li>
+</ul>
+<p><img alt="Pentagon Interference Pattern" src="../pics/pentagon_interference_2d.png"/></p>
+<p><img alt="Pentagon 3D Interference Pattern" src="../pics/pentagon_interference_3d.png"/></p>
+<h3 id="hexagon-6-vertices">Hexagon (6 Vertices)</h3>
+<p>For a hexagon, six wave sources are placed at the vertices. The interference
+pattern shows:</p>
+<ul>
+<li>A central region of constructive interference.</li>
+<li>Six primary axes of constructive interference.</li>
+<li>A highly symmetric pattern with six-fold rotational symmetry.</li>
+<li>Multiple rings of constructive and destructive interference.</li>
+</ul>
+<p><img alt="Hexagon Interference Pattern" src="../pics/hexagon_interference_2d.png"/></p>
+<p><img alt="Hexagon 3D Interference Pattern" src="../pics/hexagon_interference_3d.png"/></p>
+<h2 id="observations-and-conclusions">Observations and Conclusions</h2>
 <ol>
-<li><strong>Constructive Interference</strong>: Bright regions indicate where wave crests
-   reinforce each other.</li>
-<li><strong>Destructive Interference</strong>: Dark regions indicate cancellation due to phase
-   differences.</li>
-<li><strong>Polygonal Symmetry</strong>: The interference pattern reflects the symmetry of the
-   chosen polygon.</li>
+<li>
+<p><strong>Symmetry</strong>: The interference pattern reflects the symmetry of the polygon.
+   A regular polygon with <span class="arithmatex">\(n\)</span> sides produces an interference pattern with
+   <span class="arithmatex">\(n\)</span>-fold rotational symmetry.</p>
+</li>
+<li>
+<p><strong>Central Constructive Interference</strong>: All configurations show a region of
+   constructive interference at the center of the polygon, where waves from all
+   sources can arrive approximately in phase.</p>
+</li>
+<li>
+<p><strong>Radial Pattern</strong>: The interference patterns exhibit radial structures with
+   alternating bands of constructive and destructive interference.</p>
+</li>
+<li>
+<p><strong>Complexity with Increasing Vertices</strong>: As the number of vertices increases,
+   the interference pattern becomes more complex and intricate, with more
+   regions of constructive and destructive interference.</p>
+</li>
+<li>
+<p><strong>Distance Effect</strong>: The amplitude of the waves decreases with distance from
+   the sources (as <span class="arithmatex">\(1/\sqrt{r}\)</span>), leading to less pronounced interference
+   effects far from the sources.</p>
+</li>
 </ol>
-<hr/>
-<h2 id="5-conclusion">5. Conclusion</h2>
-<p>This simulation demonstrates how waves from multiple sources interact to form
-interference patterns. By varying the polygon shape and wave parameters, we can
-analyze different wave behaviors useful in acoustics, optics, and fluid
-dynamics.</p>
+<h2 id="applications">Applications</h2>
+<p>Understanding interference patterns has numerous applications:</p>
+<ol>
+<li>
+<p><strong>Acoustic Design</strong>: Designing concert halls and auditoriums to optimize
+   sound distribution.</p>
+</li>
+<li>
+<p><strong>Antenna Arrays</strong>: Designing antenna arrays to focus electromagnetic waves
+   in specific directions.</p>
+</li>
+<li>
+<p><strong>Optical Instruments</strong>: Understanding and utilizing interference in
+   microscopes, telescopes, and other optical instruments.</p>
+</li>
+<li>
+<p><strong>Water Wave Energy Harvesting</strong>: Optimizing the placement of wave energy
+   converters to maximize energy extraction.</p>
+</li>
+<li>
+<p><strong>Educational Demonstrations</strong>: Providing visual demonstrations of wave
+   principles for educational purposes.</p>
+</li>
+</ol>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
