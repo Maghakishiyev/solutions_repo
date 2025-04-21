@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 1 - Physics and Mathematics</title>
+<title>Problem 1: Exploring the Central Limit Theorem through Simulations - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 1";
+        var mkdocs_page_name = "Problem 1: Exploring the Central Limit Theorem through Simulations";
         var mkdocs_page_input_path = "1 Physics/6 Statistics/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -82,8 +82,20 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">6 Statistics</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1: Exploring the Central Limit Theorem through Simulations</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#1-simulating-sampling-distributions">1. Simulating Sampling Distributions</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-sampling-and-visualization">2. Sampling and Visualization</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-parameter-exploration-and-discussion">3. Parameter Exploration and Discussion</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-practical-applications">4. Practical Applications</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#conclusion">Conclusion</a>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2</a>
@@ -163,7 +175,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">6 Statistics</li>
-<li class="breadcrumb-item active">Problem 1</li>
+<li class="breadcrumb-item active">Problem 1: Exploring the Central Limit Theorem through Simulations</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -171,7 +183,48 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
+<h1 id="problem-1-exploring-the-central-limit-theorem-through-simulations">Problem 1: Exploring the Central Limit Theorem through Simulations</h1>
+<h2 id="motivation">Motivation</h2>
+<p>The Central Limit Theorem (CLT) is a fundamental concept in statistics. It states that the distribution of sample means approximates a normal distribution as the sample size gets larger, regardless of the shape of the population distribution. This simulation aims to visually demonstrate the CLT using various population distributions.</p>
+<h2 id="1-simulating-sampling-distributions">1. Simulating Sampling Distributions</h2>
+<p>We simulated data from three different population distributions:</p>
+<ol>
+<li><strong>Uniform Distribution:</strong> Data points are equally likely within a given range (e.g., U(0, 10)).</li>
+<li><strong>Exponential Distribution:</strong> A continuous distribution often used to model waiting times (e.g., Exp(scale=2)). This distribution is highly skewed.</li>
+<li><strong>Binomial Distribution:</strong> A discrete distribution representing the number of successes in a fixed number of trials (e.g., B(n=10, p=0.3)).</li>
+</ol>
+<p>Large populations (size = 100,000) were generated for each using NumPy.</p>
+<h2 id="2-sampling-and-visualization">2. Sampling and Visualization</h2>
+<p>From each population, we repeatedly drew samples (10,000 times) for different sample sizes (<code>n</code> = 5, 10, 30, 50, 100). The mean of each sample was calculated, creating a <em>sampling distribution of the sample mean</em>.</p>
+<p>Histograms of these sampling distributions were plotted for each population type and sample size. A theoretical normal distribution curve, predicted by the CLT (with mean equal to the population mean and standard deviation equal to the population standard deviation divided by <code>sqrt(n)</code>), was overlaid for comparison.</p>
+<p><strong>(Insert the generated plots here after running the Python script)</strong></p>
+<ul>
+<li><strong>Uniform Distribution Plot:</strong>
+<code>![Sampling Distribution for Uniform](clt_simulation_Uniform.png)</code></li>
+<li><strong>Exponential Distribution Plot:</strong>
+<code>![Sampling Distribution for Exponential](clt_simulation_Exponential.png)</code></li>
+<li><strong>Binomial Distribution Plot:</strong>
+<code>![Sampling Distribution for Binomial](clt_simulation_Binomial.png)</code></li>
+</ul>
+<h2 id="3-parameter-exploration-and-discussion">3. Parameter Exploration and Discussion</h2>
+<p><strong>Observations:</strong></p>
+<ul>
+<li><strong>Convergence to Normality:</strong> As the sample size (<code>n</code>) increases, the histograms of the sample means for <em>all three</em> population distributions become increasingly bell-shaped, closely resembling the overlaid theoretical normal distribution curve. This visually confirms the Central Limit Theorem.</li>
+<li><strong>Effect of Original Distribution Shape:</strong> The convergence is faster for distributions that are already somewhat symmetric (like the Uniform distribution). For highly skewed distributions (like the Exponential distribution), a larger sample size (<code>n</code>) is required for the sampling distribution to become approximately normal. The Binomial distribution, being discrete, also converges well, especially as <code>n</code> increases.</li>
+<li><strong>Effect of Sample Size (<code>n</code>):</strong> Larger sample sizes lead to sampling distributions that are more tightly clustered around the population mean and more closely approximate a normal distribution. The common rule of thumb often suggests <code>n &gt;= 30</code> is sufficient, but this depends on the skewness of the original population.</li>
+<li><strong>Impact of Population Variance:</strong> The spread (variance or standard deviation) of the sampling distribution decreases as the sample size <code>n</code> increases. The standard deviation of the sampling distribution, known as the <em>standard error</em>, is given by <code>σ / sqrt(n)</code>, where <code>σ</code> is the population standard deviation. This relationship is evident in the plots, where the histograms become narrower for larger <code>n</code>.</li>
+</ul>
+<p><strong>Theoretical Connection:</strong></p>
+<p>The simulations align with the theoretical predictions of the CLT. The mean of the sampling distribution is consistently centered around the true population mean (<code>μ</code>), and the standard deviation of the sampling distribution (standard error) shrinks proportionally to <code>1 / sqrt(n)</code>.</p>
+<h2 id="4-practical-applications">4. Practical Applications</h2>
+<p>The Central Limit Theorem is crucial in many real-world applications because it allows us to make inferences about a population using sample data, even if we don't know the population's distribution.</p>
+<ul>
+<li><strong>Estimating Population Parameters:</strong> The CLT underpins confidence intervals and hypothesis testing for population means. We can estimate the population mean (<code>μ</code>) and quantify the uncertainty using the sample mean (<code>x̄</code>) and the standard error (<code>s / sqrt(n)</code>), assuming <code>n</code> is large enough.</li>
+<li><strong>Quality Control:</strong> In manufacturing, the properties of products (e.g., weight, length) might follow some unknown distribution. By taking samples and calculating sample means, manufacturers can use the CLT to monitor if the process average is within acceptable limits, assuming the sample means are normally distributed.</li>
+<li><strong>Financial Modeling:</strong> While financial returns are often non-normally distributed (e.g., heavy tails), the CLT can be applied to the means of samples of returns over time, aiding in risk management and portfolio analysis, although caution is needed due to potential violations of CLT assumptions in finance.</li>
+</ul>
+<h2 id="conclusion">Conclusion</h2>
+<p>These simulations provide a clear, empirical demonstration of the Central Limit Theorem. By observing the convergence of sampling distributions to normality across different underlying population shapes and sample sizes, we gain a deeper appreciation for why the CLT is such a powerful and widely applicable tool in statistics and data analysis.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
