@@ -1,61 +1,103 @@
-# Problem 1: Exploring the Central Limit Theorem through Simulations
+# Statistics
 
-## Motivation
+## Problem 1: Exploring the Central Limit Theorem through Simulations
 
-The Central Limit Theorem (CLT) is a fundamental concept in statistics. It states that the distribution of sample means approximates a normal distribution as the sample size gets larger, regardless of the shape of the population distribution. This simulation aims to visually demonstrate the CLT using various population distributions.
+### Motivation
 
-## 1. Simulating Sampling Distributions
+The Central Limit Theorem (CLT) is a cornerstone of probability and statistics, stating that the sampling distribution of the sample mean approaches a normal distribution as the sample size increases, regardless of the population's original distribution. Simulations provide an intuitive and hands-on way to observe this phenomenon in action.
 
-We simulated data from three different population distributions:
+### Task
 
-1.  **Uniform Distribution:** Data points are equally likely within a given range (e.g., U(0, 10)).
-2.  **Exponential Distribution:** A continuous distribution often used to model waiting times (e.g., Exp(scale=2)). This distribution is highly skewed.
-3.  **Binomial Distribution:** A discrete distribution representing the number of successes in a fixed number of trials (e.g., B(n=10, p=0.3)).
+1. **Simulating Sampling Distributions:**
+   - Select several types of population distributions, such as:
+     - Uniform distribution
+     - Exponential distribution
+     - Binomial distribution
+   - For each distribution, generate a large dataset representing the population.
 
-Large populations (size = 100,000) were generated for each using NumPy.
+2. **Sampling and Visualization:**
+   - Randomly sample data from the population and calculate the sample mean for different sample sizes (e.g., 5, 10, 30, 50).
+   - Repeat the process multiple times to create a sampling distribution of the sample mean.
+   - Plot histograms of the sample means for each sample size and observe the convergence to a normal distribution.
 
-## 2. Sampling and Visualization
+3. **Parameter Exploration:**
+   - Investigate how the shape of the original distribution and the sample size influence the rate of convergence to normality.
+   - Highlight the impact of the population's variance on the spread of the sampling distribution.
 
-From each population, we repeatedly drew samples (10,000 times) for different sample sizes (`n` = 5, 10, 30, 50, 100). The mean of each sample was calculated, creating a *sampling distribution of the sample mean*.
+4. **Practical Applications:**
+   - Reflect on the importance of the CLT in real-world scenarios, such as:
+     - Estimating population parameters
+     - Quality control in manufacturing
+     - Predicting outcomes in financial models
 
-Histograms of these sampling distributions were plotted for each population type and sample size. A theoretical normal distribution curve, predicted by the CLT (with mean equal to the population mean and standard deviation equal to the population standard deviation divided by `sqrt(n)`), was overlaid for comparison.
+### Results and Analysis
 
-**(Insert the generated plots here after running the Python script)**
+#### Uniform Distribution
 
-*   **Uniform Distribution Plot:**
-    ```
-    ![Sampling Distribution for Uniform](clt_simulation_Uniform.png)
-    ```
-*   **Exponential Distribution Plot:**
-    ```
-    ![Sampling Distribution for Exponential](clt_simulation_Exponential.png)
-    ```
-*   **Binomial Distribution Plot:**
-    ```
-    ![Sampling Distribution for Binomial](clt_simulation_Binomial.png)
-    ```
+The uniform distribution is a continuous probability distribution where all values within a range are equally likely. Our simulation shows how the sampling distribution of means from a uniform distribution approaches normality:
 
-## 3. Parameter Exploration and Discussion
+![Uniform Distribution CLT](./pics/uniform_clt.png)
 
-**Observations:**
+As the sample size increases from 5 to 50, we observe:
+- The sampling distribution becomes increasingly bell-shaped
+- The variance of the sampling distribution decreases
+- By n=30, the distribution closely resembles a normal distribution
 
-*   **Convergence to Normality:** As the sample size (`n`) increases, the histograms of the sample means for *all three* population distributions become increasingly bell-shaped, closely resembling the overlaid theoretical normal distribution curve. This visually confirms the Central Limit Theorem.
-*   **Effect of Original Distribution Shape:** The convergence is faster for distributions that are already somewhat symmetric (like the Uniform distribution). For highly skewed distributions (like the Exponential distribution), a larger sample size (`n`) is required for the sampling distribution to become approximately normal. The Binomial distribution, being discrete, also converges well, especially as `n` increases.
-*   **Effect of Sample Size (`n`):** Larger sample sizes lead to sampling distributions that are more tightly clustered around the population mean and more closely approximate a normal distribution. The common rule of thumb often suggests `n >= 30` is sufficient, but this depends on the skewness of the original population.
-*   **Impact of Population Variance:** The spread (variance or standard deviation) of the sampling distribution decreases as the sample size `n` increases. The standard deviation of the sampling distribution, known as the *standard error*, is given by `σ / sqrt(n)`, where `σ` is the population standard deviation. This relationship is evident in the plots, where the histograms become narrower for larger `n`.
+#### Exponential Distribution
 
-**Theoretical Connection:**
+The exponential distribution is strongly right-skewed. Despite this asymmetry in the original population:
 
-The simulations align with the theoretical predictions of the CLT. The mean of the sampling distribution is consistently centered around the true population mean (`μ`), and the standard deviation of the sampling distribution (standard error) shrinks proportionally to `1 / sqrt(n)`.
+![Exponential Distribution CLT](./pics/exponential_clt.png)
 
-## 4. Practical Applications
+We observe:
+- Even with sample size n=5, the sampling distribution is less skewed than the original population
+- By n=30, the distribution appears nearly normal
+- The convergence to normality is somewhat slower than with the uniform distribution
 
-The Central Limit Theorem is crucial in many real-world applications because it allows us to make inferences about a population using sample data, even if we don't know the population's distribution.
+#### Binomial Distribution
 
-*   **Estimating Population Parameters:** The CLT underpins confidence intervals and hypothesis testing for population means. We can estimate the population mean (`μ`) and quantify the uncertainty using the sample mean (`x̄`) and the standard error (`s / sqrt(n)`), assuming `n` is large enough.
-*   **Quality Control:** In manufacturing, the properties of products (e.g., weight, length) might follow some unknown distribution. By taking samples and calculating sample means, manufacturers can use the CLT to monitor if the process average is within acceptable limits, assuming the sample means are normally distributed.
-*   **Financial Modeling:** While financial returns are often non-normally distributed (e.g., heavy tails), the CLT can be applied to the means of samples of returns over time, aiding in risk management and portfolio analysis, although caution is needed due to potential violations of CLT assumptions in finance.
+The binomial distribution is a discrete probability distribution representing the number of successes in a fixed number of independent trials:
 
-## Conclusion
+![Binomial Distribution CLT](./pics/binomial_clt.png)
 
-These simulations provide a clear, empirical demonstration of the Central Limit Theorem. By observing the convergence of sampling distributions to normality across different underlying population shapes and sample sizes, we gain a deeper appreciation for why the CLT is such a powerful and widely applicable tool in statistics and data analysis.
+Our observations include:
+- The discrete nature of the original distribution is apparent with small sample sizes
+- As sample size increases, the sampling distribution becomes more continuous
+- The normal approximation is excellent by n=30
+
+### Impact of Population Variance
+
+Our simulations demonstrate that while the shape of the sampling distribution approaches normality regardless of the original distribution, the variance of the sampling distribution depends on:
+1. The variance of the original population
+2. The sample size (n)
+
+The relationship follows the standard error formula: σ_x̄ = σ/√n, where σ is the population standard deviation and n is the sample size.
+
+### Applications of the Central Limit Theorem
+
+The CLT has numerous practical applications:
+
+1. **Statistical Inference**: The CLT enables us to make inferences about population parameters using sample statistics, which is fundamental in hypothesis testing and confidence interval estimation.
+
+2. **Quality Control**: In manufacturing, the CLT allows quality engineers to model measurement variations and establish control limits.
+
+3. **Financial Risk Assessment**: Financial analysts use the CLT to model portfolio returns and assess investment risks.
+
+4. **Public Health**: Researchers apply the CLT when analyzing health data from sample populations to draw conclusions about broader populations.
+
+5. **Physics**: In statistical mechanics and thermodynamics, the CLT explains why many physical phenomena follow normal distributions.
+
+### Conclusion
+
+Our simulations confirm the remarkable universality of the Central Limit Theorem across different probability distributions. As sample size increases, the sampling distribution of the mean:
+- Approaches a normal distribution regardless of the shape of the original population
+- Has a mean equal to the population mean
+- Has a variance that decreases in proportion to the sample size
+
+This powerful theorem provides the theoretical foundation for many statistical methods and has wide-ranging applications across multiple fields of science, engineering, and social sciences.
+
+### Deliverables
+
+1. A Markdown document (`docs/1 Physics/6 Statistics/Problem_1.md`) detailing our approach, presenting the generated plots, and discussing observations.
+2. Python code (`src/clt_simulation.py`) used to perform the simulations and generate the plots.
+3. Generated plot images in the `docs/1 Physics/6 Statistics/pics/` directory.
