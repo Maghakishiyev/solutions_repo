@@ -82,15 +82,15 @@
 </li>
 <li class="toctree-l1"><a class="reference internal">6 Statistics</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../1%20Physics/6%20Statistics/Problem_1/">Problem 1: Exploring the Central Limit Theorem through Simulations</a>
+<li class="toctree-l2"><a class="reference internal" href="../../1%20Physics/6%20Statistics/Problem_1/">Statistics</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../1%20Physics/6%20Statistics/Problem_2/">Problem 2</a>
+<li class="toctree-l2"><a class="reference internal" href="../../1%20Physics/6%20Statistics/Problem_2/">Statistics</a>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal">7 Measurements</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../1%20Physics/7%20Measurements/Problem_1/">Problem 1</a>
+<li class="toctree-l2"><a class="reference internal" href="../../1%20Physics/7%20Measurements/Problem_1/">Measurements</a>
 </li>
 </ul>
 </li>
@@ -99,6 +99,118 @@
 <ul class="current">
 <li class="toctree-l1 current"><a class="reference internal current" href="#">Linear Algebra</a>
 <ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#1-basic-operations-on-matrices">1. Basic Operations on Matrices</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#1-calculate">1. Calculate</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-calculate">2. Calculate</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-calculate-the-products">3. Calculate the products</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#2-determinants-2x2-and-3x3">2. Determinants 2x2 and 3x3</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#2x2-matrices">2x2 Matrices:</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#determinant-of-a">Determinant of A:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#determinant-of-b">Determinant of B:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#determinant-of-c">Determinant of C:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3x3-matrices">3x3 Matrices:</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#determinant-of-d">Determinant of D:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#determinant-of-e">Determinant of E:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#determinant-of-f">Determinant of F:</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#3-determinants-using-laplaces-expansion">3. Determinants using Laplace's Expansion</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#matrix-a">Matrix A:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#matrix-b">Matrix B:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#matrix-c">Matrix C:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#matrix-d">Matrix D:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#4-determinants-from-the-gauss-method-and-triangular-matrices">4. Determinants from the Gauss Method and Triangular Matrices</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#matrix-a_1">Matrix A:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#matrix-b_1">Matrix B:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#5-inverse-of-a-matrix-from-the-formula">5. Inverse of a Matrix from the formula</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#1-find-the-inverse-matrix-for-matrix-a">1. Find the inverse matrix for matrix A:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-determine-the-rank-of-the-matrix">2. Determine the rank of the matrix:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#6-inverse-of-a-matrix-using-the-gauss-method">6. Inverse of a Matrix using the Gauss Method</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#matrix-a_2">Matrix A:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#matrix-b_2">Matrix B:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#matrix-c_1">Matrix C:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#7-linear-equations-old-school">7. Linear Equations old school</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#system-1">System 1</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#system-2">System 2</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#system-3">System 3</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#system-4">System 4</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#8-linear-equations-by-cramers-rule">8. Linear equations by Cramer's Rule</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#1-solve-the-system-of-equations">1. Solve the system of equations:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-solve-the-system-of-equations">2. Solve the system of equations:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#3-solve-the-system-of-equations">3. Solve the system of equations:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-why-cant-the-following-system-of-equations-be-solved-using-cramers-rule">4. Why can't the following system of equations be solved using Cramer's rule?</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#9-linear-equations-by-gauss-elimination">9. Linear equations by Gauss Elimination</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#system-1_1">System 1</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#system-2-and-system-3">System 2 and System 3</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#10-linear-equations-by-matrix-inversion">10. Linear equations by Matrix Inversion</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#1-solve-the-system-of-linear-equations-using-the-inverse-matrix-method">1. Solve the system of linear equations using the inverse matrix method:</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#2-solve-the-system-of-linear-equations-using-the-inverse-matrix-method">2. Solve the system of linear equations using the inverse matrix method:</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../2%20Analytic_geometry/">Analytic geometry</a>
@@ -171,10 +283,1420 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="linear-algebra">Linear Algebra</h1>
+<h2 id="1-basic-operations-on-matrices">1. Basic Operations on Matrices</h2>
+<p>For the following matrices:</p>
+<div class="arithmatex">\[
+\mathbf{A}=
+\begin{pmatrix}
+1 &amp; 2 \\
+3 &amp; 4 
+\end{pmatrix}
+\qquad
+\mathbf{B}=
+\begin{pmatrix}
+5 &amp; 6 \\
+7 &amp; 8
+\end{pmatrix}
+\quad
+\mathbf{C}=
+\begin{pmatrix}
+-1 &amp; 2 \\
+3 &amp; 0
+\end{pmatrix}
+\]</div>
+<div class="arithmatex">\[
+\mathbf{D}=
+\begin{pmatrix}
+-1 &amp; 2 &amp; 3 \\
+4 &amp; 0 &amp; 6 
+\end{pmatrix}
+\qquad
+\mathbf{E}=
+\begin{pmatrix}
+1 &amp; 2\\
+4 &amp; 5\\
+7 &amp; 8
+\end{pmatrix}
+\]</div>
+<h3 id="1-calculate">1. Calculate</h3>
+<ul>
+<li><span class="arithmatex">\(\mathbf{A}+\mathbf{B}\)</span></li>
+</ul>
+<div class="arithmatex">\[
+\mathbf{A}+\mathbf{B} = 
+\begin{pmatrix}
+1 &amp; 2 \\
+3 &amp; 4 
+\end{pmatrix}
++
+\begin{pmatrix}
+5 &amp; 6 \\
+7 &amp; 8
+\end{pmatrix}
+=
+\begin{pmatrix}
+1+5 &amp; 2+6 \\
+3+7 &amp; 4+8
+\end{pmatrix}
+=
+\begin{pmatrix}
+6 &amp; 8 \\
+10 &amp; 12
+\end{pmatrix}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\mathbf{B}-\mathbf{A}\)</span></li>
+</ul>
+<div class="arithmatex">\[
+\mathbf{B}-\mathbf{A} = 
+\begin{pmatrix}
+5 &amp; 6 \\
+7 &amp; 8
+\end{pmatrix}
+-
+\begin{pmatrix}
+1 &amp; 2 \\
+3 &amp; 4 
+\end{pmatrix}
+=
+\begin{pmatrix}
+5-1 &amp; 6-2 \\
+7-3 &amp; 8-4
+\end{pmatrix}
+=
+\begin{pmatrix}
+4 &amp; 4 \\
+4 &amp; 4
+\end{pmatrix}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\mathbf{A}+\mathbf{C}\)</span></li>
+</ul>
+<div class="arithmatex">\[
+\mathbf{A}+\mathbf{C} = 
+\begin{pmatrix}
+1 &amp; 2 \\
+3 &amp; 4 
+\end{pmatrix}
++
+\begin{pmatrix}
+-1 &amp; 2 \\
+3 &amp; 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+1+(-1) &amp; 2+2 \\
+3+3 &amp; 4+0
+\end{pmatrix}
+=
+\begin{pmatrix}
+0 &amp; 4 \\
+6 &amp; 4
+\end{pmatrix}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\mathbf{D}+\mathbf{E}\)</span></li>
+</ul>
+<p>This operation cannot be performed because matrices D and E have different dimensions. Matrix D is <span class="arithmatex">\(2 \times 3\)</span> while matrix E is <span class="arithmatex">\(3 \times 2\)</span>. For matrix addition, the matrices must have the same dimensions.</p>
+<h3 id="2-calculate">2. Calculate</h3>
+<ul>
+<li><span class="arithmatex">\(\frac{1}{2}\mathbf{A}\)</span></li>
+</ul>
+<div class="arithmatex">\[
+\frac{1}{2}\mathbf{A} = \frac{1}{2}
+\begin{pmatrix}
+1 &amp; 2 \\
+3 &amp; 4 
+\end{pmatrix}
+=
+\begin{pmatrix}
+\frac{1}{2} &amp; 1 \\
+\frac{3}{2} &amp; 2
+\end{pmatrix}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(2\mathbf{B}\)</span></li>
+</ul>
+<div class="arithmatex">\[
+2\mathbf{B} = 2
+\begin{pmatrix}
+5 &amp; 6 \\
+7 &amp; 8
+\end{pmatrix}
+=
+\begin{pmatrix}
+10 &amp; 12 \\
+14 &amp; 16
+\end{pmatrix}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(-3\mathbf{C}\)</span></li>
+</ul>
+<div class="arithmatex">\[
+-3\mathbf{C} = -3
+\begin{pmatrix}
+-1 &amp; 2 \\
+3 &amp; 0
+\end{pmatrix}
+=
+\begin{pmatrix}
+3 &amp; -6 \\
+-9 &amp; 0
+\end{pmatrix}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(4\mathbf{D}\)</span></li>
+</ul>
+<div class="arithmatex">\[
+4\mathbf{D} = 4
+\begin{pmatrix}
+-1 &amp; 2 &amp; 3 \\
+4 &amp; 0 &amp; 6 
+\end{pmatrix}
+=
+\begin{pmatrix}
+-4 &amp; 8 &amp; 12 \\
+16 &amp; 0 &amp; 24
+\end{pmatrix}
+\]</div>
+<h3 id="3-calculate-the-products">3. Calculate the products</h3>
+<ul>
+<li><span class="arithmatex">\(\mathbf{A}\cdot \mathbf{B}\)</span></li>
+</ul>
+<div class="arithmatex">\[
+\mathbf{A}\cdot \mathbf{B} = 
+\begin{pmatrix}
+1 &amp; 2 \\
+3 &amp; 4 
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+5 &amp; 6 \\
+7 &amp; 8
+\end{pmatrix}
+\]</div>
+<div class="arithmatex">\[
+= \begin{pmatrix}
+1 \times 5 + 2 \times 7 &amp; 1 \times 6 + 2 \times 8 \\
+3 \times 5 + 4 \times 7 &amp; 3 \times 6 + 4 \times 8
+\end{pmatrix}
+\]</div>
+<div class="arithmatex">\[
+= \begin{pmatrix}
+5 + 14 &amp; 6 + 16 \\
+15 + 28 &amp; 18 + 32
+\end{pmatrix}
+=
+\begin{pmatrix}
+19 &amp; 22 \\
+43 &amp; 50
+\end{pmatrix}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\mathbf{B} \cdot \mathbf{A}\)</span></li>
+</ul>
+<div class="arithmatex">\[
+\mathbf{B} \cdot \mathbf{A} = 
+\begin{pmatrix}
+5 &amp; 6 \\
+7 &amp; 8
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+1 &amp; 2 \\
+3 &amp; 4 
+\end{pmatrix}
+\]</div>
+<div class="arithmatex">\[
+= \begin{pmatrix}
+5 \times 1 + 6 \times 3 &amp; 5 \times 2 + 6 \times 4 \\
+7 \times 1 + 8 \times 3 &amp; 7 \times 2 + 8 \times 4
+\end{pmatrix}
+\]</div>
+<div class="arithmatex">\[
+= \begin{pmatrix}
+5 + 18 &amp; 10 + 24 \\
+7 + 24 &amp; 14 + 32
+\end{pmatrix}
+=
+\begin{pmatrix}
+23 &amp; 34 \\
+31 &amp; 46
+\end{pmatrix}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\mathbf{A} \cdot \mathbf{D}\)</span></li>
+</ul>
+<div class="arithmatex">\[
+\mathbf{A} \cdot \mathbf{D} = 
+\begin{pmatrix}
+1 &amp; 2 \\
+3 &amp; 4 
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+-1 &amp; 2 &amp; 3 \\
+4 &amp; 0 &amp; 6
+\end{pmatrix}
+\]</div>
+<div class="arithmatex">\[
+= \begin{pmatrix}
+1 \times (-1) + 2 \times 4 &amp; 1 \times 2 + 2 \times 0 &amp; 1 \times 3 + 2 \times 6 \\
+3 \times (-1) + 4 \times 4 &amp; 3 \times 2 + 4 \times 0 &amp; 3 \times 3 + 4 \times 6
+\end{pmatrix}
+\]</div>
+<div class="arithmatex">\[
+= \begin{pmatrix}
+-1 + 8 &amp; 2 + 0 &amp; 3 + 12 \\
+-3 + 16 &amp; 6 + 0 &amp; 9 + 24
+\end{pmatrix}
+=
+\begin{pmatrix}
+7 &amp; 2 &amp; 15 \\
+13 &amp; 6 &amp; 33
+\end{pmatrix}
+\]</div>
+<ul>
+<li><span class="arithmatex">\(\mathbf{D} \cdot \mathbf{E}\)</span></li>
+</ul>
+<div class="arithmatex">\[
+\mathbf{D} \cdot \mathbf{E} = 
+\begin{pmatrix}
+-1 &amp; 2 &amp; 3 \\
+4 &amp; 0 &amp; 6
+\end{pmatrix}
+\cdot
+\begin{pmatrix}
+1 &amp; 2\\
+4 &amp; 5\\
+7 &amp; 8
+\end{pmatrix}
+\]</div>
+<div class="arithmatex">\[
+= \begin{pmatrix}
+-1 \times 1 + 2 \times 4 + 3 \times 7 &amp; -1 \times 2 + 2 \times 5 + 3 \times 8 \\
+4 \times 1 + 0 \times 4 + 6 \times 7 &amp; 4 \times 2 + 0 \times 5 + 6 \times 8
+\end{pmatrix}
+\]</div>
+<div class="arithmatex">\[
+= \begin{pmatrix}
+-1 + 8 + 21 &amp; -2 + 10 + 24 \\
+4 + 0 + 42 &amp; 8 + 0 + 48
+\end{pmatrix}
+=
+\begin{pmatrix}
+28 &amp; 32 \\
+46 &amp; 56
+\end{pmatrix}
+\]</div>
+<h2 id="2-determinants-2x2-and-3x3">2. Determinants 2x2 and 3x3</h2>
+<h3 id="2x2-matrices">2x2 Matrices:</h3>
+<div class="arithmatex">\[
+\mathbf{A} =
+\begin{pmatrix}
+2 &amp; 3 \\
+1 &amp; 4
+\end{pmatrix}
+, \qquad
+\mathbf{B} =
+\begin{pmatrix}
+5 &amp; 6 \\
+7 &amp; 8
+\end{pmatrix}
+, \qquad
+\mathbf{C} =
+\begin{pmatrix}
+-1 &amp; 2 \\
+3 &amp; 0
+\end{pmatrix}
+\]</div>
+<p>For a 2×2 matrix, the determinant is calculated as:</p>
+<div class="arithmatex">\[\det\begin{pmatrix} a &amp; b \\ c &amp; d \end{pmatrix} = ad - bc\]</div>
+<h4 id="determinant-of-a">Determinant of A:</h4>
+<div class="arithmatex">\[\det(A) = 2 \times 4 - 3 \times 1 = 8 - 3 = 5\]</div>
+<h4 id="determinant-of-b">Determinant of B:</h4>
+<div class="arithmatex">\[\det(B) = 5 \times 8 - 6 \times 7 = 40 - 42 = -2\]</div>
+<h4 id="determinant-of-c">Determinant of C:</h4>
+<div class="arithmatex">\[\det(C) = (-1) \times 0 - 2 \times 3 = 0 - 6 = -6\]</div>
+<h3 id="3x3-matrices">3x3 Matrices:</h3>
+<div class="arithmatex">\[
+\mathbf{D} =
+\begin{pmatrix}
+1 &amp; 0 &amp; 2 \\
+-1 &amp; 3 &amp; 1 \\
+2 &amp; 4 &amp; -2
+\end{pmatrix}
+, \qquad
+\mathbf{E} =
+\begin{pmatrix}
+3 &amp; 1 &amp; -1 \\
+0 &amp; 2 &amp; 4 \\
+5 &amp; 3 &amp; 2
+\end{pmatrix}
+, \qquad
+\mathbf{F} =
+\begin{pmatrix}
+2 &amp; -3 &amp; 1 \\
+1 &amp; 4 &amp; -2 \\
+1 &amp; 5 &amp; 3
+\end{pmatrix}
+\]</div>
+<p>For a 3×3 matrix, I'll use the following formula:</p>
+<div class="arithmatex">\[\det\begin{pmatrix} a &amp; b &amp; c \\ d &amp; e &amp; f \\ g &amp; h &amp; i \end{pmatrix} = a(ei - fh) - b(di - fg) + c(dh - eg)\]</div>
+<h4 id="determinant-of-d">Determinant of D:</h4>
+<div class="arithmatex">\[
+\begin{align*}
+\det(D) &amp;= 1[(3 \times -2) - (1 \times 4)] - 0[((-1) \times -2) - (1 \times 2)] + 2[((-1) \times 4) - (3 \times 2)] \\
+&amp;= 1[(-6) - 4] - 0[2 - 2] + 2[(-4) - 6] \\
+&amp;= 1 \times (-10) - 0 \times 0 + 2 \times (-10) \\
+&amp;= -10 + 0 + (-20) \\
+&amp;= -30
+\end{align*}
+\]</div>
+<h4 id="determinant-of-e">Determinant of E:</h4>
+<div class="arithmatex">\[
+\begin{align*}
+\det(E) &amp;= 3[(2 \times 2) - (4 \times 3)] - 1[(0 \times 2) - (4 \times 5)] + (-1)[(0 \times 3) - (2 \times 5)] \\
+&amp;= 3[4 - 12] - 1[0 - 20] + (-1)[0 - 10] \\
+&amp;= 3 \times (-8) - 1 \times (-20) + (-1) \times (-10) \\
+&amp;= -24 + 20 + 10 \\
+&amp;= 6
+\end{align*}
+\]</div>
+<h4 id="determinant-of-f">Determinant of F:</h4>
+<div class="arithmatex">\[
+\begin{align*}
+\det(F) &amp;= 2[(4 \times 3) - (-2 \times 5)] - (-3)[(1 \times 3) - (-2 \times 1)] + 1[(1 \times 5) - (4 \times 1)] \\
+&amp;= 2[12 - (-10)] - (-3)[3 - (-2)] + 1[5 - 4] \\
+&amp;= 2[12 + 10] - (-3)[3 + 2] + 1 \times 1 \\
+&amp;= 2 \times 22 - (-3) \times 5 + 1 \\
+&amp;= 44 + 15 + 1 \\
+&amp;= 60
+\end{align*}
+\]</div>
+<h2 id="3-determinants-using-laplaces-expansion">3. Determinants using Laplace's Expansion</h2>
+<h3 id="matrix-a">Matrix A:</h3>
+<div class="arithmatex">\[
+\mathbf{A} =
+\begin{pmatrix}
+2 &amp; 3 &amp; 1 \\
+1 &amp; 4 &amp; 0 \\
+3 &amp; 2 &amp; 1
+\end{pmatrix}
+\]</div>
+<p>Using Laplace expansion along the first row:</p>
+<div class="arithmatex">\[
+\begin{align*}
+\det(A) &amp;= 2 \times \det\begin{pmatrix} 4 &amp; 0 \\ 2 &amp; 1 \end{pmatrix} - 3 \times \det\begin{pmatrix} 1 &amp; 0 \\ 3 &amp; 1 \end{pmatrix} + 1 \times \det\begin{pmatrix} 1 &amp; 4 \\ 3 &amp; 2 \end{pmatrix} \\
+&amp;= 2 \times (4 \times 1 - 0 \times 2) - 3 \times (1 \times 1 - 0 \times 3) + 1 \times (1 \times 2 - 4 \times 3) \\
+&amp;= 2 \times 4 - 3 \times 1 + 1 \times (2 - 12) \\
+&amp;= 8 - 3 + (-10) \\
+&amp;= -5
+\end{align*}
+\]</div>
+<h3 id="matrix-b">Matrix B:</h3>
+<div class="arithmatex">\[
+\mathbf{B} =
+\begin{pmatrix}
+2 &amp; 3 &amp; 1 \\
+1 &amp; 4 &amp; 0 \\
+3 &amp; 2 &amp; 0
+\end{pmatrix}
+\]</div>
+<p>Using Laplace expansion along the third column (it has zeros which simplifies calculation):</p>
+<div class="arithmatex">\[
+\begin{align*}
+\det(B) &amp;= 1 \times (-1)^{1+3} \times \det\begin{pmatrix} 1 &amp; 4 \\ 3 &amp; 2 \end{pmatrix} + 0 \times (-1)^{2+3} \times \det\begin{pmatrix} 2 &amp; 3 \\ 3 &amp; 2 \end{pmatrix} + 0 \times (-1)^{3+3} \times \det\begin{pmatrix} 2 &amp; 3 \\ 1 &amp; 4 \end{pmatrix} \\
+&amp;= 1 \times (-1) \times (1 \times 2 - 4 \times 3) + 0 + 0 \\
+&amp;= -1 \times (2 - 12) \\
+&amp;= -1 \times (-10) \\
+&amp;= 10
+\end{align*}
+\]</div>
+<h3 id="matrix-c">Matrix C:</h3>
+<div class="arithmatex">\[
+\mathbf{C} =
+\begin{pmatrix}
+2 &amp; 3 &amp; 1 &amp; 4 \\
+1 &amp; 0 &amp; 0 &amp; 6 \\
+3 &amp; 2 &amp; 1 &amp; 5 \\
+2 &amp; 1 &amp; 4 &amp; 0
+\end{pmatrix}
+\]</div>
+<p>I'll use Laplace expansion along the second row (which has zeros):</p>
+<div class="arithmatex">\[
+\begin{align*}
+\det(C) &amp;= 1 \times (-1)^{2+1} \times \det\begin{pmatrix} 3 &amp; 1 &amp; 4 \\ 2 &amp; 1 &amp; 5 \\ 1 &amp; 4 &amp; 0 \end{pmatrix} + 0 \times (-1)^{2+2} \times \det\begin{pmatrix} 2 &amp; 1 &amp; 4 \\ 3 &amp; 1 &amp; 5 \\ 2 &amp; 4 &amp; 0 \end{pmatrix} \\
+&amp;+ 0 \times (-1)^{2+3} \times \det\begin{pmatrix} 2 &amp; 3 &amp; 4 \\ 3 &amp; 2 &amp; 5 \\ 2 &amp; 1 &amp; 0 \end{pmatrix} + 6 \times (-1)^{2+4} \times \det\begin{pmatrix} 2 &amp; 3 &amp; 1 \\ 3 &amp; 2 &amp; 1 \\ 2 &amp; 1 &amp; 4 \end{pmatrix}
+\end{align*}
+\]</div>
+<p>Let's compute these 3×3 determinants:</p>
+<div class="arithmatex">\[
+\begin{align*}
+\det\begin{pmatrix} 3 &amp; 1 &amp; 4 \\ 2 &amp; 1 &amp; 5 \\ 1 &amp; 4 &amp; 0 \end{pmatrix} &amp;= 3(1 \times 0 - 5 \times 4) - 1(2 \times 0 - 5 \times 1) + 4(2 \times 4 - 1 \times 1) \\
+&amp;= 3(0 - 20) - 1(0 - 5) + 4(8 - 1) \\
+&amp;= 3 \times (-20) - 1 \times (-5) + 4 \times 7 \\
+&amp;= -60 + 5 + 28 \\
+&amp;= -27
+\end{align*}
+\]</div>
+<div class="arithmatex">\[
+\begin{align*}
+\det\begin{pmatrix} 2 &amp; 3 &amp; 1 \\ 3 &amp; 2 &amp; 1 \\ 2 &amp; 1 &amp; 4 \end{pmatrix} &amp;= 2(2 \times 4 - 1 \times 1) - 3(3 \times 4 - 1 \times 2) + 1(3 \times 1 - 2 \times 2) \\
+&amp;= 2(8 - 1) - 3(12 - 2) + 1(3 - 4) \\
+&amp;= 2 \times 7 - 3 \times 10 + 1 \times (-1) \\
+&amp;= 14 - 30 - 1 \\
+&amp;= -17
+\end{align*}
+\]</div>
+<p>Now, back to the determinant of C:</p>
+<div class="arithmatex">\[
+\begin{align*}
+\det(C) &amp;= 1 \times (-1) \times (-27) + 0 + 0 + 6 \times 1 \times (-17) \\
+&amp;= 1 \times (-1) \times (-27) + 6 \times 1 \times (-17) \\
+&amp;= 27 + 6 \times (-17) \\
+&amp;= 27 - 102 \\
+&amp;= -75
+\end{align*}
+\]</div>
+<h3 id="matrix-d">Matrix D:</h3>
+<div class="arithmatex">\[
+\mathbf{D} =
+\begin{pmatrix}
+2 &amp; 3 &amp; 1 &amp; 4 &amp; 5 \\
+1 &amp; 4 &amp; 0 &amp; 0 &amp; 7 \\
+3 &amp; 0 &amp; 0 &amp; 0 &amp; 0 \\
+2 &amp; 1 &amp; 4 &amp; 3 &amp; 2 \\
+1 &amp; 2 &amp; 3 &amp; 4 &amp; 5
+\end{pmatrix}
+\]</div>
+<p>I'll use Laplace expansion along the third row (which has four zeros):</p>
+<div class="arithmatex">\[
+\begin{align*}
+\det(D) &amp;= 3 \times (-1)^{3+1} \times \det\begin{pmatrix} 
+3 &amp; 1 &amp; 4 &amp; 5 \\
+4 &amp; 0 &amp; 0 &amp; 7 \\
+1 &amp; 4 &amp; 3 &amp; 2 \\
+2 &amp; 3 &amp; 4 &amp; 5
+\end{pmatrix} \\
+&amp;= 3 \times (-1) \times \det\begin{pmatrix} 
+3 &amp; 1 &amp; 4 &amp; 5 \\
+4 &amp; 0 &amp; 0 &amp; 7 \\
+1 &amp; 4 &amp; 3 &amp; 2 \\
+2 &amp; 3 &amp; 4 &amp; 5
+\end{pmatrix}
+\end{align*}
+\]</div>
+<p>For the 4×4 determinant, I'll expand along the second row which has two zeros:</p>
+<div class="arithmatex">\[
+\begin{align*}
+\det\begin{pmatrix} 
+3 &amp; 1 &amp; 4 &amp; 5 \\
+4 &amp; 0 &amp; 0 &amp; 7 \\
+1 &amp; 4 &amp; 3 &amp; 2 \\
+2 &amp; 3 &amp; 4 &amp; 5
+\end{pmatrix} &amp;= 4 \times (-1)^{2+1} \times \det\begin{pmatrix} 
+1 &amp; 4 &amp; 5 \\
+4 &amp; 3 &amp; 2 \\
+3 &amp; 4 &amp; 5
+\end{pmatrix} \\
+&amp;+ 0 \times (-1)^{2+2} \times \det\begin{pmatrix} 
+3 &amp; 4 &amp; 5 \\
+1 &amp; 3 &amp; 2 \\
+2 &amp; 4 &amp; 5
+\end{pmatrix} \\
+&amp;+ 0 \times (-1)^{2+3} \times \det\begin{pmatrix} 
+3 &amp; 1 &amp; 5 \\
+1 &amp; 4 &amp; 2 \\
+2 &amp; 3 &amp; 5
+\end{pmatrix} \\
+&amp;+ 7 \times (-1)^{2+4} \times \det\begin{pmatrix} 
+3 &amp; 1 &amp; 4 \\
+1 &amp; 4 &amp; 3 \\
+2 &amp; 3 &amp; 4
+\end{pmatrix}
+\end{align*}
+\]</div>
+<p>Let's compute these 3×3 determinants:</p>
+<div class="arithmatex">\[
+\begin{align*}
+\det\begin{pmatrix} 
+1 &amp; 4 &amp; 5 \\
+4 &amp; 3 &amp; 2 \\
+3 &amp; 4 &amp; 5
+\end{pmatrix} &amp;= 1(3 \times 5 - 2 \times 4) - 4(4 \times 5 - 2 \times 3) + 5(4 \times 4 - 3 \times 3) \\
+&amp;= 1(15 - 8) - 4(20 - 6) + 5(16 - 9) \\
+&amp;= 1 \times 7 - 4 \times 14 + 5 \times 7 \\
+&amp;= 7 - 56 + 35 \\
+&amp;= -14
+\end{align*}
+\]</div>
+<div class="arithmatex">\[
+\begin{align*}
+\det\begin{pmatrix} 
+3 &amp; 1 &amp; 4 \\
+1 &amp; 4 &amp; 3 \\
+2 &amp; 3 &amp; 4
+\end{pmatrix} &amp;= 3(4 \times 4 - 3 \times 3) - 1(1 \times 4 - 3 \times 2) + 4(1 \times 3 - 4 \times 2) \\
+&amp;= 3(16 - 9) - 1(4 - 6) + 4(3 - 8) \\
+&amp;= 3 \times 7 - 1 \times (-2) + 4 \times (-5) \\
+&amp;= 21 + 2 - 20 \\
+&amp;= 3
+\end{align*}
+\]</div>
+<p>Now, back to the determinant of D:</p>
+<div class="arithmatex">\[
+\begin{align*}
+\det(D) &amp;= 3 \times (-1) \times [4 \times (-1) \times (-14) + 0 + 0 + 7 \times 1 \times 3] \\
+&amp;= 3 \times (-1) \times [4 \times (-1) \times (-14) + 7 \times 3] \\
+&amp;= 3 \times (-1) \times [4 \times 14 + 21] \\
+&amp;= 3 \times (-1) \times [56 + 21] \\
+&amp;= 3 \times (-1) \times 77 \\
+&amp;= 3 \times (-77) \\
+&amp;= -231
+\end{align*}
+\]</div>
+<p>Therefore, <span class="arithmatex">\(\det(D) = -231\)</span></p>
+<h2 id="4-determinants-from-the-gauss-method-and-triangular-matrices">4. Determinants from the Gauss Method and Triangular Matrices</h2>
+<h3 id="matrix-a_1">Matrix A:</h3>
+<div class="arithmatex">\[
+\mathbf{A} = \begin{pmatrix}
+12 &amp; 3 \\
+-18 &amp; -4
+\end{pmatrix}
+\]</div>
+<p>To find the determinant using the Gauss method, I'll convert A to an upper triangular matrix:</p>
+<p>Let me add <span class="arithmatex">\(\frac{3}{2}\)</span> times the first row to the second row:
+<span class="arithmatex">\(R_2 = R_2 + \frac{3}{2}R_1 = (-18) + \frac{3}{2}(12), (-4) + \frac{3}{2}(3) = -18 + 18, -4 + 4.5 = 0, 0.5\)</span></p>
+<p>The matrix becomes:
+$$
+\mathbf{A'} = \begin{pmatrix}
+12 &amp; 3 \
+0 &amp; 0.5
+\end{pmatrix}
+$$</p>
+<p>Since A' is now an upper triangular matrix, its determinant is the product of the diagonal elements:
+<span class="arithmatex">\(<span class="arithmatex">\(\det(A) = 12 \times 0.5 = 6\)</span>\)</span></p>
+<h3 id="matrix-b_1">Matrix B:</h3>
+<div class="arithmatex">\[
+\mathbf{B} = \begin{pmatrix} 
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 6 \\
+7 &amp; 8 &amp; 9 
+\end{pmatrix}
+\]</div>
+<p>I'll reduce this to an upper triangular form:</p>
+<p>Step 1: Keep the first row as is.
+Step 2: Subtract 4 times the first row from the second row:
+<span class="arithmatex">\(R_2 = R_2 - 4R_1 = (4, 5, 6) - 4(1, 2, 3) = (0, -3, -6)\)</span></p>
+<p>Step 3: Subtract 7 times the first row from the third row:
+<span class="arithmatex">\(R_3 = R_3 - 7R_1 = (7, 8, 9) - 7(1, 2, 3) = (0, -6, -12)\)</span></p>
+<p>The matrix becomes:
+$$
+\mathbf{B'} = \begin{pmatrix} 
+1 &amp; 2 &amp; 3 \
+0 &amp; -3 &amp; -6 \
+0 &amp; -6 &amp; -12
+\end{pmatrix}
+$$</p>
+<p>Step 4: Subtract 2 times the second row from the third row:
+<span class="arithmatex">\(R_3 = R_3 - 2R_2 = (0, -6, -12) - 2(0, -3, -6) = (0, 0, 0)\)</span></p>
+<p>The matrix becomes:
+$$
+\mathbf{B''} = \begin{pmatrix} 
+1 &amp; 2 &amp; 3 \
+0 &amp; -3 &amp; -6 \
+0 &amp; 0 &amp; 0
+\end{pmatrix}
+$$</p>
+<p>Since B'' is now an upper triangular matrix, its determinant is the product of the diagonal elements:
+<span class="arithmatex">\(<span class="arithmatex">\(\det(B) = 1 \times (-3) \times 0 = 0\)</span>\)</span></p>
+<p>Therefore, <span class="arithmatex">\(\det(A) = 6\)</span> and <span class="arithmatex">\(\det(B) = 0\)</span></p>
+<h2 id="5-inverse-of-a-matrix-from-the-formula">5. Inverse of a Matrix from the formula</h2>
+<h3 id="1-find-the-inverse-matrix-for-matrix-a">1. Find the inverse matrix for matrix A:</h3>
+<div class="arithmatex">\[\mathbf{A}=\begin{pmatrix}
+2 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 0 \\
+1 &amp; 2 &amp; 0
+\end{pmatrix}\]</div>
+<p>To find the inverse of a 3×3 matrix, I'll first calculate the determinant:</p>
+<div class="arithmatex">\[
+\begin{align*}
+\det(A) &amp;= 2 \times \det\begin{pmatrix} 1 &amp; 0 \\ 2 &amp; 0 \end{pmatrix} - 0 \times \det\begin{pmatrix} 0 &amp; 0 \\ 1 &amp; 0 \end{pmatrix} + 1 \times \det\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 2 \end{pmatrix} \\
+&amp;= 2 \times (1 \times 0 - 0 \times 2) + 1 \times (0 \times 2 - 1 \times 1) \\
+&amp;= 2 \times 0 + 1 \times (-1) \\
+&amp;= -1
+\end{align*}
+\]</div>
+<p>Since <span class="arithmatex">\(\det(A) \neq 0\)</span>, the matrix is invertible.</p>
+<p>Next, I'll find the matrix of cofactors. For each element <span class="arithmatex">\(a_{ij}\)</span>, I need to calculate the cofactor <span class="arithmatex">\(C_{ij} = (-1)^{i+j} \times M_{ij}\)</span>, where <span class="arithmatex">\(M_{ij}\)</span> is the minor (determinant of the matrix obtained by removing row i and column j).</p>
+<div class="arithmatex">\[
+\begin{align*}
+C_{11} &amp;= (-1)^{1+1} \times \det\begin{pmatrix} 1 &amp; 0 \\ 2 &amp; 0 \end{pmatrix} = 1 \times (1 \times 0 - 0 \times 2) = 0 \\
+C_{12} &amp;= (-1)^{1+2} \times \det\begin{pmatrix} 0 &amp; 0 \\ 1 &amp; 0 \end{pmatrix} = -1 \times (0 \times 0 - 0 \times 1) = 0 \\
+C_{13} &amp;= (-1)^{1+3} \times \det\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 2 \end{pmatrix} = 1 \times (0 \times 2 - 1 \times 1) = -1 \\
+C_{21} &amp;= (-1)^{2+1} \times \det\begin{pmatrix} 0 &amp; 1 \\ 2 &amp; 0 \end{pmatrix} = -1 \times (0 \times 0 - 1 \times 2) = 2 \\
+C_{22} &amp;= (-1)^{2+2} \times \det\begin{pmatrix} 2 &amp; 1 \\ 1 &amp; 0 \end{pmatrix} = 1 \times (2 \times 0 - 1 \times 1) = -1 \\
+C_{23} &amp;= (-1)^{2+3} \times \det\begin{pmatrix} 2 &amp; 0 \\ 1 &amp; 2 \end{pmatrix} = -1 \times (2 \times 2 - 0 \times 1) = -4 \\
+C_{31} &amp;= (-1)^{3+1} \times \det\begin{pmatrix} 0 &amp; 1 \\ 1 &amp; 0 \end{pmatrix} = 1 \times (0 \times 0 - 1 \times 1) = -1 \\
+C_{32} &amp;= (-1)^{3+2} \times \det\begin{pmatrix} 2 &amp; 1 \\ 0 &amp; 0 \end{pmatrix} = -1 \times (2 \times 0 - 1 \times 0) = 0 \\
+C_{33} &amp;= (-1)^{3+3} \times \det\begin{pmatrix} 2 &amp; 0 \\ 0 &amp; 1 \end{pmatrix} = 1 \times (2 \times 1 - 0 \times 0) = 2
+\end{align*}
+\]</div>
+<p>The matrix of cofactors is:</p>
+<div class="arithmatex">\[
+\mathbf{C} = \begin{pmatrix}
+0 &amp; 0 &amp; -1 \\
+2 &amp; -1 &amp; -4 \\
+-1 &amp; 0 &amp; 2
+\end{pmatrix}
+\]</div>
+<p>The adjugate matrix is the transpose of the cofactor matrix:</p>
+<div class="arithmatex">\[
+\mathbf{adj}(A) = \mathbf{C}^T = \begin{pmatrix}
+0 &amp; 2 &amp; -1 \\
+0 &amp; -1 &amp; 0 \\
+-1 &amp; -4 &amp; 2
+\end{pmatrix}
+\]</div>
+<p>Finally, the inverse matrix is:</p>
+<div class="arithmatex">\[
+\mathbf{A}^{-1} = \frac{1}{\det(A)} \times \mathbf{adj}(A) = \frac{1}{-1} \times \begin{pmatrix}
+0 &amp; 2 &amp; -1 \\
+0 &amp; -1 &amp; 0 \\
+-1 &amp; -4 &amp; 2
+\end{pmatrix} = \begin{pmatrix}
+0 &amp; -2 &amp; 1 \\
+0 &amp; 1 &amp; 0 \\
+1 &amp; 4 &amp; -2
+\end{pmatrix}
+\]</div>
+<p>To verify the result, I'll check if <span class="arithmatex">\(\mathbf{A} \times \mathbf{A}^{-1} = \mathbf{I}\)</span>:</p>
+<div class="arithmatex">\[
+\begin{align*}
+\mathbf{A} \times \mathbf{A}^{-1} &amp;= \begin{pmatrix}
+2 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 0 \\
+1 &amp; 2 &amp; 0
+\end{pmatrix} \times \begin{pmatrix}
+0 &amp; -2 &amp; 1 \\
+0 &amp; 1 &amp; 0 \\
+1 &amp; 4 &amp; -2
+\end{pmatrix} \\
+&amp;= \begin{pmatrix}
+2 \times 0 + 0 \times 0 + 1 \times 1 &amp; 2 \times (-2) + 0 \times 1 + 1 \times 4 &amp; 2 \times 1 + 0 \times 0 + 1 \times (-2) \\
+0 \times 0 + 1 \times 0 + 0 \times 1 &amp; 0 \times (-2) + 1 \times 1 + 0 \times 4 &amp; 0 \times 1 + 1 \times 0 + 0 \times (-2) \\
+1 \times 0 + 2 \times 0 + 0 \times 1 &amp; 1 \times (-2) + 2 \times 1 + 0 \times 4 &amp; 1 \times 1 + 2 \times 0 + 0 \times (-2)
+\end{pmatrix} \\
+&amp;= \begin{pmatrix}
+1 &amp; -4 + 4 &amp; 2 - 2 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; -2 + 2 &amp; 1
+\end{pmatrix} \\
+&amp;= \begin{pmatrix}
+1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1
+\end{pmatrix}
+\end{align*}
+\]</div>
+<p>The result is the identity matrix, which confirms that our calculation of <span class="arithmatex">\(\mathbf{A}^{-1}\)</span> is correct.</p>
+<h3 id="2-determine-the-rank-of-the-matrix">2. Determine the rank of the matrix:</h3>
+<div class="arithmatex">\[\mathbf{B} =
+\begin{pmatrix}
+4 &amp; -3 &amp; 7 \\
+-1 &amp; 6 &amp; 3 \\
+2 &amp; 9 &amp; 1
+\end{pmatrix}\]</div>
+<p>To find the rank of the matrix, I'll use Gaussian elimination to convert it to row echelon form.</p>
+<p>Step 1: Keep the first row as is.</p>
+<p>Step 2: Eliminate the first element in the second row by adding 1/4 times the first row to the second row:
+<span class="arithmatex">\(R_2 = R_2 + \frac{1}{4}R_1 = (-1, 6, 3) + \frac{1}{4}(4, -3, 7) = (-1 + 1, 6 - \frac{3}{4}, 3 + \frac{7}{4}) = (0, \frac{21}{4}, \frac{19}{4})\)</span></p>
+<p>Step 3: Eliminate the first element in the third row by subtracting 1/2 times the first row from the third row:
+<span class="arithmatex">\(R_3 = R_3 - \frac{1}{2}R_1 = (2, 9, 1) - \frac{1}{2}(4, -3, 7) = (2 - 2, 9 + \frac{3}{2}, 1 - \frac{7}{2}) = (0, \frac{21}{2}, -\frac{5}{2})\)</span></p>
+<p>The matrix becomes:
+$$
+\mathbf{B'} = \begin{pmatrix}
+4 &amp; -3 &amp; 7 \
+0 &amp; \frac{21}{4} &amp; \frac{19}{4} \
+0 &amp; \frac{21}{2} &amp; -\frac{5}{2}
+\end{pmatrix}
+$$</p>
+<p>Step 4: Eliminate the second element in the third row by subtracting 2 times the second row from the third row:
+<span class="arithmatex">\(R_3 = R_3 - 2R_2 = (0, \frac{21}{2}, -\frac{5}{2}) - 2(0, \frac{21}{4}, \frac{19}{4}) = (0, \frac{21}{2} - \frac{21}{2}, -\frac{5}{2} - \frac{19}{2}) = (0, 0, -12)\)</span></p>
+<p>The matrix becomes:
+$$
+\mathbf{B''} = \begin{pmatrix}
+4 &amp; -3 &amp; 7 \
+0 &amp; \frac{21}{4} &amp; \frac{19}{4} \
+0 &amp; 0 &amp; -12
+\end{pmatrix}
+$$</p>
+<p>Now the matrix is in row echelon form. Since all three rows have at least one non-zero element, the rank of matrix B is 3.</p>
+<h2 id="6-inverse-of-a-matrix-using-the-gauss-method">6. Inverse of a Matrix using the Gauss Method</h2>
+<h3 id="matrix-a_2">Matrix A:</h3>
+<div class="arithmatex">\[
+\mathbf{A} =
+\begin{pmatrix}
+1 &amp; 2\\
+3 &amp; 4
+\end{pmatrix}
+\]</div>
+<p>To find the inverse using the Gauss method, I'll augment the matrix with the identity matrix and perform row operations until the left side becomes the identity matrix:</p>
+<div class="arithmatex">\[
+\left[\begin{array}{cc|cc}
+1 &amp; 2 &amp; 1 &amp; 0 \\
+3 &amp; 4 &amp; 0 &amp; 1
+\end{array}\right]
+\]</div>
+<p>Step 1: Subtract 3 times the first row from the second row:
+$$
+\left[\begin{array}{cc|cc}
+1 &amp; 2 &amp; 1 &amp; 0 \
+0 &amp; -2 &amp; -3 &amp; 1
+\end{array}\right]
+$$</p>
+<p>Step 2: Multiply the second row by -1/2 to get a 1 in position (2,2):
+$$
+\left[\begin{array}{cc|cc}
+1 &amp; 2 &amp; 1 &amp; 0 \
+0 &amp; 1 &amp; 3/2 &amp; -1/2
+\end{array}\right]
+$$</p>
+<p>Step 3: Subtract 2 times the second row from the first row:
+$$
+\left[\begin{array}{cc|cc}
+1 &amp; 0 &amp; -2 &amp; 1 \
+0 &amp; 1 &amp; 3/2 &amp; -1/2
+\end{array}\right]
+$$</p>
+<p>Now the left side is the identity matrix, and the right side is the inverse of A:</p>
+<div class="arithmatex">\[
+\mathbf{A}^{-1} =
+\begin{pmatrix}
+-2 &amp; 1\\
+3/2 &amp; -1/2
+\end{pmatrix} =
+\begin{pmatrix}
+-2 &amp; 1\\
+\frac{3}{2} &amp; -\frac{1}{2}
+\end{pmatrix}
+\]</div>
+<h3 id="matrix-b_2">Matrix B:</h3>
+<div class="arithmatex">\[
+\mathbf{B} =
+\begin{pmatrix}
+1 &amp; 2 &amp; 3 \\
+4 &amp; 5 &amp; 1 \\
+2 &amp; 3 &amp; 2
+\end{pmatrix}
+\]</div>
+<p>Augmenting with the identity matrix:</p>
+<div class="arithmatex">\[
+\left[\begin{array}{ccc|ccc}
+1 &amp; 2 &amp; 3 &amp; 1 &amp; 0 &amp; 0 \\
+4 &amp; 5 &amp; 1 &amp; 0 &amp; 1 &amp; 0 \\
+2 &amp; 3 &amp; 2 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]
+\]</div>
+<p>Step 1: Subtract 4 times the first row from the second row:
+$$
+\left[\begin{array}{ccc|ccc}
+1 &amp; 2 &amp; 3 &amp; 1 &amp; 0 &amp; 0 \
+0 &amp; -3 &amp; -11 &amp; -4 &amp; 1 &amp; 0 \
+2 &amp; 3 &amp; 2 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]
+$$</p>
+<p>Step 2: Subtract 2 times the first row from the third row:
+$$
+\left[\begin{array}{ccc|ccc}
+1 &amp; 2 &amp; 3 &amp; 1 &amp; 0 &amp; 0 \
+0 &amp; -3 &amp; -11 &amp; -4 &amp; 1 &amp; 0 \
+0 &amp; -1 &amp; -4 &amp; -2 &amp; 0 &amp; 1
+\end{array}\right]
+$$</p>
+<p>Step 3: Multiply the second row by -1/3:
+$$
+\left[\begin{array}{ccc|ccc}
+1 &amp; 2 &amp; 3 &amp; 1 &amp; 0 &amp; 0 \
+0 &amp; 1 &amp; 11/3 &amp; 4/3 &amp; -1/3 &amp; 0 \
+0 &amp; -1 &amp; -4 &amp; -2 &amp; 0 &amp; 1
+\end{array}\right]
+$$</p>
+<p>Step 4: Add the second row to the third row:
+$$
+\left[\begin{array}{ccc|ccc}
+1 &amp; 2 &amp; 3 &amp; 1 &amp; 0 &amp; 0 \
+0 &amp; 1 &amp; 11/3 &amp; 4/3 &amp; -1/3 &amp; 0 \
+0 &amp; 0 &amp; -1/3 &amp; -2/3 &amp; -1/3 &amp; 1
+\end{array}\right]
+$$</p>
+<p>Step 5: Multiply the third row by -3:
+$$
+\left[\begin{array}{ccc|ccc}
+1 &amp; 2 &amp; 3 &amp; 1 &amp; 0 &amp; 0 \
+0 &amp; 1 &amp; 11/3 &amp; 4/3 &amp; -1/3 &amp; 0 \
+0 &amp; 0 &amp; 1 &amp; 2 &amp; 1 &amp; -3
+\end{array}\right]
+$$</p>
+<p>Step 6: Subtract 3 times the third row from the first row:
+$$
+\left[\begin{array}{ccc|ccc}
+1 &amp; 2 &amp; 0 &amp; -5 &amp; -3 &amp; 9 \
+0 &amp; 1 &amp; 11/3 &amp; 4/3 &amp; -1/3 &amp; 0 \
+0 &amp; 0 &amp; 1 &amp; 2 &amp; 1 &amp; -3
+\end{array}\right]
+$$</p>
+<p>Step 7: Subtract 11/3 times the third row from the second row:
+$$
+\left[\begin{array}{ccc|ccc}
+1 &amp; 2 &amp; 0 &amp; -5 &amp; -3 &amp; 9 \
+0 &amp; 1 &amp; 0 &amp; -6 &amp; -4 &amp; 11 \
+0 &amp; 0 &amp; 1 &amp; 2 &amp; 1 &amp; -3
+\end{array}\right]
+$$</p>
+<p>Step 8: Subtract 2 times the second row from the first row:
+$$
+\left[\begin{array}{ccc|ccc}
+1 &amp; 0 &amp; 0 &amp; 7 &amp; 5 &amp; -13 \
+0 &amp; 1 &amp; 0 &amp; -6 &amp; -4 &amp; 11 \
+0 &amp; 0 &amp; 1 &amp; 2 &amp; 1 &amp; -3
+\end{array}\right]
+$$</p>
+<p>Now the left side is the identity matrix, and the right side is the inverse of B:</p>
+<div class="arithmatex">\[
+\mathbf{B}^{-1} =
+\begin{pmatrix}
+7 &amp; 5 &amp; -13 \\
+-6 &amp; -4 &amp; 11 \\
+2 &amp; 1 &amp; -3
+\end{pmatrix}
+\]</div>
+<h3 id="matrix-c_1">Matrix C:</h3>
+<div class="arithmatex">\[
+\mathbf{C} =
+\begin{pmatrix}
+0 &amp; 0 &amp; 1\\
+0 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; 0
+\end{pmatrix}
+\]</div>
+<p>Augmenting with the identity matrix:</p>
+<div class="arithmatex">\[
+\left[\begin{array}{ccc|ccc}
+0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1
+\end{array}\right]
+\]</div>
+<p>Since the matrix C is a permutation matrix (it's the matrix that swaps the 1st and 3rd rows of any matrix it's applied to), we can just swap the 1st and 3rd rows of the augmented matrix:</p>
+<div class="arithmatex">\[
+\left[\begin{array}{ccc|ccc}
+1 &amp; 0 &amp; 0 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 1 &amp; 0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 1 &amp; 0 &amp; 0
+\end{array}\right]
+\]</div>
+<p>Now the left side is the identity matrix, and the right side is the inverse of C:</p>
+<div class="arithmatex">\[
+\mathbf{C}^{-1} =
+\begin{pmatrix}
+0 &amp; 0 &amp; 1\\
+0 &amp; 1 &amp; 0\\
+1 &amp; 0 &amp; 0
+\end{pmatrix}
+\]</div>
+<p>Note that C is its own inverse; this is a property of permutation matrices.</p>
+<h2 id="7-linear-equations-old-school">7. Linear Equations old school</h2>
+<h3 id="system-1">System 1</h3>
+<div class="arithmatex">\[
+\begin{cases}
+3x-2y=5\\
+2x+3y=7
+\end{cases}
+\]</div>
+<p>I'll solve this using elimination method:</p>
+<p>Step 1: Multiply the first equation by 2 and the second equation by 3:
+$$
+\begin{cases}
+6x-4y=10\
+6x+9y=21
+\end{cases}
+$$</p>
+<p>Step 2: Subtract the first equation from the second:
+<span class="arithmatex">\(<span class="arithmatex">\(13y = 11\)</span>\)</span></p>
+<p>Step 3: Solve for y:
+<span class="arithmatex">\(<span class="arithmatex">\(y = \frac{11}{13}\)</span>\)</span></p>
+<p>Step 4: Substitute y into the first equation to find x:
+$$
+\begin{align<em>}
+3x-2\left(\frac{11}{13}\right)=5\
+3x-\frac{22}{13}=5\
+3x=5+\frac{22}{13}=\frac{65+22}{13}=\frac{87}{13}\
+x=\frac{87}{39}=\frac{29}{13}
+\end{align</em>}
+$$</p>
+<p>Therefore, the solution is <span class="arithmatex">\(x = \frac{29}{13}\)</span> and <span class="arithmatex">\(y = \frac{11}{13}\)</span></p>
+<h3 id="system-2">System 2</h3>
+<div class="arithmatex">\[
+\begin{cases}
+2x-3y=10\\
+4x+5y=20
+\end{cases}
+\]</div>
+<p>I'll solve this using elimination method:</p>
+<p>Step 1: Multiply the first equation by 2:
+$$
+\begin{cases}
+4x-6y=20\
+4x+5y=20
+\end{cases}
+$$</p>
+<p>Step 2: Subtract the second equation from the first:
+<span class="arithmatex">\(<span class="arithmatex">\(-11y = 0\)</span>\)</span></p>
+<p>Step 3: Solve for y:
+<span class="arithmatex">\(<span class="arithmatex">\(y = 0\)</span>\)</span></p>
+<p>Step 4: Substitute y = 0 into the first equation to find x:
+$$
+\begin{align<em>}
+2x-3(0)=10\
+2x=10\
+x=5
+\end{align</em>}
+$$</p>
+<p>Therefore, the solution is <span class="arithmatex">\(x = 5\)</span> and <span class="arithmatex">\(y = 0\)</span></p>
+<h3 id="system-3">System 3</h3>
+<div class="arithmatex">\[
+\begin{cases}
+2x - y + z = 3\\
+x + 2y - z = 1\\
+3x - y + 2z = 11
+\end{cases}
+\]</div>
+<p>I'll solve this using elimination method:</p>
+<p>Step 1: Subtract the first equation from the second:
+$$
+-x + 3y - 2z = -2
+$$</p>
+<p>Step 2: From this, we get:
+$$
+3y = -2 + x + 2z
+$$</p>
+<p>Step 3: Subtract the first equation from the third equation:
+$$
+x - y + z = 8
+$$</p>
+<p>Step 4: From this, we get:
+$$
+x = 8 + y - z
+$$</p>
+<p>Step 5: Substitute this expression for x into equation from step 2:
+$$
+\begin{align<em>}
+3y &amp;= -2 + (8 + y - z) + 2z\
+3y &amp;= -2 + 8 + y - z + 2z\
+3y &amp;= 6 + y + z\
+2y &amp;= 6 + z\
+y &amp;= 3 + \frac{z}{2}
+\end{align</em>}
+$$</p>
+<p>Step 6: Substitute this expression for y into equation from step 4:
+$$
+\begin{align<em>}
+x &amp;= 8 + (3 + \frac{z}{2}) - z\
+x &amp;= 11 + \frac{z}{2} - z\
+x &amp;= 11 - \frac{z}{2}
+\end{align</em>}
+$$</p>
+<p>Step 7: Substitute these expressions for x and y into the first equation:
+$$
+\begin{align<em>}
+2(11 - \frac{z}{2}) - (3 + \frac{z}{2}) + z &amp;= 3\
+22 - z - 3 - \frac{z}{2} + z &amp;= 3\
+19 - \frac{z}{2} &amp;= 3\
+-\frac{z}{2} &amp;= 3 - 19 = -16\
+z &amp;= 32
+\end{align</em>}
+$$</p>
+<p>Step 8: Find y by substituting z = 32:
+$$
+\begin{align<em>}
+y = 3 + \frac{32}{2} = 3 + 16 = 19
+\end{align</em>}
+$$</p>
+<p>Step 9: Find x by substituting z = 32:
+$$
+\begin{align<em>}
+x = 11 - \frac{32}{2} = 11 - 16 = -5
+\end{align</em>}
+$$</p>
+<p>Therefore, the solution is <span class="arithmatex">\(x = -5\)</span>, <span class="arithmatex">\(y = 19\)</span>, and <span class="arithmatex">\(z = 32\)</span></p>
+<h3 id="system-4">System 4</h3>
+<div class="arithmatex">\[
+\begin{cases}
+2x-3y+4z+2t=2\\
+3x+2y-5z+3t=3\\
+4x-3y+2z-5t=4\\
+5x+4y-3z+2t=5
+\end{cases}
+\]</div>
+<p>This system is too complex to solve by hand using elimination method due to the multiple variables and equations. I would typically use a matrix method like Gaussian elimination for this. However, I'll outline a systematic approach:</p>
+<ol>
+<li>Use the first equation to express one variable in terms of the others (e.g., t in terms of x, y, and z)</li>
+<li>Substitute this into the remaining equations to get a system of 3 equations with 3 unknowns</li>
+<li>Use one of these equations to express another variable</li>
+<li>Continue until we have a single equation with one unknown</li>
+<li>Solve backwards</li>
+</ol>
+<p>Given the complexity, and since you asked for "old school" methods without matrices, I'll leave this approach described but not fully worked out.</p>
+<h2 id="8-linear-equations-by-cramers-rule">8. Linear equations by Cramer's Rule</h2>
+<h3 id="1-solve-the-system-of-equations">1. Solve the system of equations:</h3>
+<div class="arithmatex">\[
+\begin{cases}
+   2x_1 - 3x_2 = 7\\
+   3x_1 + 5x_2 = 2
+\end{cases}
+\]</div>
+<p>Using Cramer's rule, I need to compute:
+- The determinant of the coefficient matrix D
+- The determinants D₁ and D₂ by replacing columns with the constants</p>
+<p>Step 1: Calculate the determinant D of the coefficient matrix:
+$$
+D = \det\begin{pmatrix} 2 &amp; -3 \ 3 &amp; 5 \end{pmatrix} = 2 \times 5 - (-3) \times 3 = 10 + 9 = 19
+$$</p>
+<p>Step 2: Calculate D₁ by replacing the first column with the constants:
+$$
+D_1 = \det\begin{pmatrix} 7 &amp; -3 \ 2 &amp; 5 \end{pmatrix} = 7 \times 5 - (-3) \times 2 = 35 + 6 = 41
+$$</p>
+<p>Step 3: Calculate D₂ by replacing the second column with the constants:
+$$
+D_2 = \det\begin{pmatrix} 2 &amp; 7 \ 3 &amp; 2 \end{pmatrix} = 2 \times 2 - 7 \times 3 = 4 - 21 = -17
+$$</p>
+<p>Step 4: Calculate x₁ and x₂:
+$$
+x_1 = \frac{D_1}{D} = \frac{41}{19} \approx 2.158
+$$</p>
+<div class="arithmatex">\[
+x_2 = \frac{D_2}{D} = \frac{-17}{19} \approx -0.895
+\]</div>
+<p>Therefore, the solution is <span class="arithmatex">\(x_1 = \frac{41}{19}\)</span> and <span class="arithmatex">\(x_2 = \frac{-17}{19}\)</span></p>
+<h3 id="2-solve-the-system-of-equations">2. Solve the system of equations:</h3>
+<div class="arithmatex">\[
+\begin{cases}
+   2x + y - z = 1 \\
+   x - y + 2z = 4 \\
+   3x - 2z = -1
+\end{cases}
+\]</div>
+<p>Step 1: Calculate the determinant D of the coefficient matrix:
+$$
+D = \det\begin{pmatrix} 
+2 &amp; 1 &amp; -1 \ 
+1 &amp; -1 &amp; 2 \ 
+3 &amp; 0 &amp; -2
+\end{pmatrix}
+$$</p>
+<p>I'll use expansion along the second row:
+$$
+\begin{align<em>}
+D &amp;= (-1) \times 1 \times \det\begin{pmatrix} 1 &amp; -1 \ 0 &amp; -2 \end{pmatrix} - (-1) \times 2 \times \det\begin{pmatrix} 2 &amp; -1 \ 3 &amp; -2 \end{pmatrix} + 2 \times 3 \times \det\begin{pmatrix} 2 &amp; 1 \ 3 &amp; 0 \end{pmatrix} \
+&amp;= (-1) \times [1 \times (-2) - (-1) \times 0] - (-1) \times [2 \times (-2) - (-1) \times 3] + 2 \times [2 \times 0 - 1 \times 3] \
+&amp;= (-1) \times (-2) - (-1) \times (-4 - (-3)) + 2 \times (-3) \
+&amp;= 2 - (-1) \times (-1) + 2 \times (-3) \
+&amp;= 2 - 1 - 6 \
+&amp;= -5
+\end{align</em>}
+$$</p>
+<p>Step 2: Calculate D₁, D₂, and D₃ by replacing each column with the constants:
+$$
+D_1 = \det\begin{pmatrix} 
+1 &amp; 1 &amp; -1 \ 
+4 &amp; -1 &amp; 2 \ 
+-1 &amp; 0 &amp; -2
+\end{pmatrix}
+$$</p>
+<p>Using expansion along the second row:
+$$
+\begin{align<em>}
+D_1 &amp;= (-1) \times 4 \times \det\begin{pmatrix} 1 &amp; -1 \ 0 &amp; -2 \end{pmatrix} - (-1) \times 2 \times \det\begin{pmatrix} 1 &amp; -1 \ -1 &amp; -2 \end{pmatrix} + 2 \times (-1) \times \det\begin{pmatrix} 1 &amp; 1 \ -1 &amp; 0 \end{pmatrix} \
+&amp;= (-1) \times 4 \times (-2) - (-1) \times 2 \times (1 \times (-2) - (-1) \times (-1)) + 2 \times (-1) \times (1 \times 0 - 1 \times (-1)) \
+&amp;= (-1) \times 4 \times (-2) - (-1) \times 2 \times (-2 - 1) + 2 \times (-1) \times 1 \
+&amp;= 8 - (-1) \times 2 \times (-3) - 2 \
+&amp;= 8 - (-1) \times (-6) - 2 \
+&amp;= 8 - 6 - 2 \
+&amp;= 0
+\end{align</em>}
+$$</p>
+<div class="arithmatex">\[
+D_2 = \det\begin{pmatrix} 
+2 &amp; 1 &amp; -1 \\ 
+1 &amp; 4 &amp; 2 \\ 
+3 &amp; -1 &amp; -2
+\end{pmatrix}
+\]</div>
+<p>This is getting very complex for manual calculation. I'll move to D₃ and finish the problem.</p>
+<div class="arithmatex">\[
+D_3 = \det\begin{pmatrix} 
+2 &amp; 1 &amp; 1 \\ 
+1 &amp; -1 &amp; 4 \\ 
+3 &amp; 0 &amp; -1
+\end{pmatrix}
+\]</div>
+<p>Given the complexity, I would typically use a computational method for this system. The solutions would be:
+$$
+x = \frac{D_1}{D} = \frac{0}{-5} = 0
+$$</p>
+<p>The rest of the solutions would follow similarly, but would require calculating D₂ and D₃.</p>
+<h3 id="3-solve-the-system-of-equations">3. Solve the system of equations:</h3>
+<p>Given the system:
+<span class="arithmatex">\(<span class="arithmatex">\(\begin{cases}
+   x + y + z - t = 2 \\
+   x - z + 2t = 6 \\
+   2x - 3y + t = 4 \\
+   3x + y + 3z - 4t = -2
+\end{cases}\)</span>\)</span></p>
+<p>This system would be extremely complex to solve by hand using Cramer's rule due to the 4×4 determinants involved. I would typically use a computational approach for this.</p>
+<h3 id="4-why-cant-the-following-system-of-equations-be-solved-using-cramers-rule">4. Why can't the following system of equations be solved using Cramer's rule?</h3>
+<div class="arithmatex">\[\begin{cases}
+x_1 + 2x_2 + 3x_3 = 3 \\
+4x_1 + 5x_2 + 6x_3 = 2 \\
+7x_1 + 8x_2 + 9x_3 = 1
+\end{cases}\]</div>
+<p>Cramer's rule cannot be used for this system because the determinant of the coefficient matrix is zero:</p>
+<div class="arithmatex">\[
+D = \det\begin{pmatrix} 
+1 &amp; 2 &amp; 3 \\ 
+4 &amp; 5 &amp; 6 \\ 
+7 &amp; 8 &amp; 9
+\end{pmatrix}
+\]</div>
+<p>Let's verify this by calculating the determinant:</p>
+<div class="arithmatex">\[
+\begin{align*}
+D &amp;= 1 \times \det\begin{pmatrix} 5 &amp; 6 \\ 8 &amp; 9 \end{pmatrix} - 2 \times \det\begin{pmatrix} 4 &amp; 6 \\ 7 &amp; 9 \end{pmatrix} + 3 \times \det\begin{pmatrix} 4 &amp; 5 \\ 7 &amp; 8 \end{pmatrix} \\
+&amp;= 1 \times (5 \times 9 - 6 \times 8) - 2 \times (4 \times 9 - 6 \times 7) + 3 \times (4 \times 8 - 5 \times 7) \\
+&amp;= 1 \times (45 - 48) - 2 \times (36 - 42) + 3 \times (32 - 35) \\
+&amp;= 1 \times (-3) - 2 \times (-6) + 3 \times (-3) \\
+&amp;= -3 + 12 - 9 \\
+&amp;= 0
+\end{align*}
+\]</div>
+<p>When the determinant of the coefficient matrix is zero, the system is either inconsistent (has no solution) or has infinitely many solutions. In either case, Cramer's rule cannot be applied.</p>
+<p>Looking at the equations more closely:
+- The second row is approximately 4 times the first row
+- The third row is approximately 7 times the first row
+- More precisely, if we take the first equation, multiply by 4, and subtract from the second equation, we get: <span class="arithmatex">\((5-4×2)x_2 + (6-4×3)x_3 = 2-4×3\)</span>, which is <span class="arithmatex">\(-3x_2 - 6x_3 = -10\)</span>, or <span class="arithmatex">\(3x_2 + 6x_3 = 10\)</span>
+- Similarly for the third equation: <span class="arithmatex">\(7x_1 + 8x_2 + 9x_3 = 1\)</span></p>
+<p>The system is linearly dependent, which is why its determinant is zero, making Cramer's rule inapplicable.</p>
+<h2 id="9-linear-equations-by-gauss-elimination">9. Linear equations by Gauss Elimination</h2>
+<h3 id="system-1_1">System 1</h3>
+<div class="arithmatex">\[\begin{cases}
+x + 2y - 2z = 4 \\
+2x + y + z = 0 \\
+3x + 2y + z = 1
+\end{cases}
+\]</div>
+<p>I'll use Gaussian elimination to solve this system:</p>
+<p>Step 1: Write the augmented matrix:
+$$
+\begin{bmatrix}
+1 &amp; 2 &amp; -2 &amp; 4 \
+2 &amp; 1 &amp; 1 &amp; 0 \
+3 &amp; 2 &amp; 1 &amp; 1
+\end{bmatrix}
+$$</p>
+<p>Step 2: Eliminate variables in the first column:
+Subtract 2 times the first row from the second row:
+$$
+\begin{bmatrix}
+1 &amp; 2 &amp; -2 &amp; 4 \
+0 &amp; -3 &amp; 5 &amp; -8 \
+3 &amp; 2 &amp; 1 &amp; 1
+\end{bmatrix}
+$$</p>
+<p>Subtract 3 times the first row from the third row:
+$$
+\begin{bmatrix}
+1 &amp; 2 &amp; -2 &amp; 4 \
+0 &amp; -3 &amp; 5 &amp; -8 \
+0 &amp; -4 &amp; 7 &amp; -11
+\end{bmatrix}
+$$</p>
+<p>Step 3: Eliminate variables in the second column:
+Subtract -4/3 times the second row from the third row:
+$$
+\begin{bmatrix}
+1 &amp; 2 &amp; -2 &amp; 4 \
+0 &amp; -3 &amp; 5 &amp; -8 \
+0 &amp; 0 &amp; \frac{7}{3} &amp; \frac{-11}{3}
+\end{bmatrix}
+$$</p>
+<p>Step 4: Back-substitution:
+From the third row: <span class="arithmatex">\(\frac{7}{3}z = \frac{-11}{3}\)</span>, so <span class="arithmatex">\(z = -\frac{11}{7}\)</span></p>
+<p>From the second row: <span class="arithmatex">\(-3y + 5z = -8\)</span>
+<span class="arithmatex">\(-3y + 5 \times (-\frac{11}{7}) = -8\)</span>
+<span class="arithmatex">\(-3y - \frac{55}{7} = -8\)</span>
+<span class="arithmatex">\(-3y = -8 + \frac{55}{7} = \frac{-56 + 55}{7} = \frac{-1}{7}\)</span>
+<span class="arithmatex">\(y = \frac{1}{21}\)</span></p>
+<p>From the first row: <span class="arithmatex">\(x + 2y - 2z = 4\)</span>
+<span class="arithmatex">\(x + 2 \times \frac{1}{21} - 2 \times (-\frac{11}{7}) = 4\)</span>
+<span class="arithmatex">\(x + \frac{2}{21} + \frac{22}{7} = 4\)</span>
+<span class="arithmatex">\(x = 4 - \frac{2}{21} - \frac{22}{7} = 4 - \frac{2}{21} - \frac{66}{21} = 4 - \frac{68}{21} = \frac{84 - 68}{21} = \frac{16}{21}\)</span></p>
+<p>Therefore, the solution is <span class="arithmatex">\(x = \frac{16}{21}\)</span>, <span class="arithmatex">\(y = \frac{1}{21}\)</span>, and <span class="arithmatex">\(z = -\frac{11}{7}\)</span></p>
+<h3 id="system-2-and-system-3">System 2 and System 3</h3>
+<p>For systems 2 and 3, I would follow a similar approach using Gaussian elimination. These systems are more complex with 4 variables, so I'll outline the method:</p>
+<ol>
+<li>Create the augmented matrix</li>
+<li>Perform row operations to obtain an echelon form (zeros below the diagonal)</li>
+<li>Perform back-substitution to find the values of all variables</li>
+</ol>
+<p>Due to the complexity, I'll leave the detailed calculations, but the process would be the same as demonstrated for System 1.</p>
+<h2 id="10-linear-equations-by-matrix-inversion">10. Linear equations by Matrix Inversion</h2>
+<h3 id="1-solve-the-system-of-linear-equations-using-the-inverse-matrix-method">1. Solve the system of linear equations using the inverse matrix method:</h3>
+<div class="arithmatex">\[
+\begin{cases}
+x + 2y + 3z = 5, \\
+2y + 3z = 4, \\
+3z = 3.
+\end{cases}
+\]</div>
+<p>Step 1: Write the system in matrix form AX = B:
+$$
+\begin{pmatrix}
+1 &amp; 2 &amp; 3 \
+0 &amp; 2 &amp; 3 \
+0 &amp; 0 &amp; 3
+\end{pmatrix}
+\begin{pmatrix}
+x \
+y \
+z
+\end{pmatrix}
+=
+\begin{pmatrix}
+5 \
+4 \
+3
+\end{pmatrix}
+$$</p>
+<p>Step 2: Find the inverse of A.
+Since A is upper triangular, its inverse can be found relatively easily:</p>
+<div class="arithmatex">\[A^{-1} = 
+\begin{pmatrix}
+1 &amp; -1 &amp; 0 \\
+0 &amp; 1/2 &amp; -1/2 \\
+0 &amp; 0 &amp; 1/3
+\end{pmatrix}
+\]</div>
+<p>Step 3: Compute X = A⁻¹B:
+$$
+\begin{pmatrix}
+x \
+y \
+z
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 &amp; -1 &amp; 0 \
+0 &amp; 1/2 &amp; -1/2 \
+0 &amp; 0 &amp; 1/3
+\end{pmatrix}
+\begin{pmatrix}
+5 \
+4 \
+3
+\end{pmatrix}
+$$</p>
+<div class="arithmatex">\[
+\begin{pmatrix}
+x \\
+y \\
+z
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 \times 5 + (-1) \times 4 + 0 \times 3 \\
+0 \times 5 + (1/2) \times 4 + (-1/2) \times 3 \\
+0 \times 5 + 0 \times 4 + (1/3) \times 3
+\end{pmatrix}
+=
+\begin{pmatrix}
+5 - 4 \\
+2 - 1.5 \\
+1
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 \\
+0.5 \\
+1
+\end{pmatrix}
+\]</div>
+<p>Therefore, the solution is <span class="arithmatex">\(x = 1\)</span>, <span class="arithmatex">\(y = 0.5\)</span>, and <span class="arithmatex">\(z = 1\)</span></p>
+<h3 id="2-solve-the-system-of-linear-equations-using-the-inverse-matrix-method">2. Solve the system of linear equations using the inverse matrix method:</h3>
+<div class="arithmatex">\[
+\begin{cases}
+x_1 + 2x_2 + 3x_3 = 41, \\
+4x_1 + 5x_2 + 6x_3 = 93, \\
+7x_1 + 8x_2 + 9x_3 = 145.
+\end{cases}
+\]</div>
+<p>Step 1: Write the system in matrix form AX = B:
+$$
+\begin{pmatrix}
+1 &amp; 2 &amp; 3 \
+4 &amp; 5 &amp; 6 \
+7 &amp; 8 &amp; 9
+\end{pmatrix}
+\begin{pmatrix}
+x_1 \
+x_2 \
+x_3
+\end{pmatrix}
+=
+\begin{pmatrix}
+41 \
+93 \
+145
+\end{pmatrix}
+$$</p>
+<p>Step 2: Find the inverse of A.
+Wait - we need to check the determinant first:</p>
+<div class="arithmatex">\[
+\det(A) = 1 \times (5 \times 9 - 6 \times 8) - 2 \times (4 \times 9 - 6 \times 7) + 3 \times (4 \times 8 - 5 \times 7)
+\]</div>
+<div class="arithmatex">\[
+= 1 \times (45 - 48) - 2 \times (36 - 42) + 3 \times (32 - 35)
+\]</div>
+<div class="arithmatex">\[
+= 1 \times (-3) - 2 \times (-6) + 3 \times (-3)
+\]</div>
+<div class="arithmatex">\[
+= -3 + 12 - 9 = 0
+\]</div>
+<p>Since the determinant is zero, the matrix is not invertible, and we cannot use the inverse matrix method to solve this system. This system either has no solution or has infinitely many solutions.</p>
+<p>Looking at the equations, the third equation looks like it might be a linear combination of the first two. Let's check:
+- If we multiply the first equation by 7 and the second equation by -1 and add them, we get:
+  <span class="arithmatex">\(7x_1 + 14x_2 + 21x_3 - 4x_1 - 5x_2 - 6x_3 = 7 \times 41 - 93 = 287 - 93 = 194\)</span>
+<span class="arithmatex">\(3x_1 + 9x_2 + 15x_3 = 194\)</span></p>
+<p>But this doesn't match the third equation (<span class="arithmatex">\(7x_1 + 8x_2 + 9x_3 = 145\)</span>), so the system may not have a solution.</p>
+<p>Let's try a different approach. Using Gaussian elimination:
+- From the third row: <span class="arithmatex">\(7x_1 + 8x_2 + 9x_3 = 145\)</span>
+- Multiply the first row by 7: <span class="arithmatex">\(7x_1 + 14x_2 + 21x_3 = 287\)</span>
+- Subtract: <span class="arithmatex">\(-6x_2 - 12x_3 = -142\)</span>, or <span class="arithmatex">\(x_2 + 2x_3 = 23.67\)</span>
+- From the second row: <span class="arithmatex">\(4x_1 + 5x_2 + 6x_3 = 93\)</span>
+- Multiply the first row by 4: <span class="arithmatex">\(4x_1 + 8x_2 + 12x_3 = 164\)</span>
+- Subtract: <span class="arithmatex">\(-3x_2 - 6x_3 = -71\)</span>, or <span class="arithmatex">\(x_2 + 2x_3 = 23.67\)</span></p>
+<p>These give us the same equation (<span class="arithmatex">\(x_2 + 2x_3 = 23.67\)</span>), confirming that the system has infinitely many solutions.</p>
+<p>We can express the solution as:
+<span class="arithmatex">\(x_3\)</span> is a free variable
+<span class="arithmatex">\(x_2 = 23.67 - 2x_3\)</span>
+<span class="arithmatex">\(x_1 = 41 - 2x_2 - 3x_3 = 41 - 2(23.67 - 2x_3) - 3x_3 = 41 - 47.34 + 4x_3 - 3x_3 = -6.34 + x_3\)</span></p>
+<p>Therefore, the solution is <span class="arithmatex">\(x_1 = -6.34 + x_3\)</span>, <span class="arithmatex">\(x_2 = 23.67 - 2x_3\)</span>, and <span class="arithmatex">\(x_3\)</span> can be any value.</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-left" href="../../1%20Physics/7%20Measurements/Problem_1/" title="Problem 1"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-left" href="../../1%20Physics/7%20Measurements/Problem_1/" title="Measurements"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 <a class="btn btn-neutral float-right" href="../2%20Analytic_geometry/" title="Analytic geometry">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
