@@ -1,5 +1,3 @@
-# Statistics
-
 ## Problem 1: Exploring the Central Limit Theorem through Simulations
 
 ### Motivation

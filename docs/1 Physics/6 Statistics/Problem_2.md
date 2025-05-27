@@ -1,5 +1,3 @@
-# Statistics
-
 ## Problem 2: Estimating Pi using Monte Carlo Methods
 
 ### Motivation
