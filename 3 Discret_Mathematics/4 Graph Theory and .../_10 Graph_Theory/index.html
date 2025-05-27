@@ -82,9 +82,9 @@
 </li>
 <li class="toctree-l1"><a class="reference internal">6 Statistics</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../1%20Physics/6%20Statistics/Problem_1/">Statistics</a>
+<li class="toctree-l2"><a class="reference internal" href="../../../1%20Physics/6%20Statistics/Problem_1/">Problem 1</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../1%20Physics/6%20Statistics/Problem_2/">Statistics</a>
+<li class="toctree-l2"><a class="reference internal" href="../../../1%20Physics/6%20Statistics/Problem_2/">Problem 2</a>
 </li>
 </ul>
 </li>
@@ -99,7 +99,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../2%20Mathematics/1%20Linear_algebra/">Linear Algebra</a>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../2%20Mathematics/2%20Analytic_geometry/">Analytic geometry</a>
+<li class="toctree-l1"><a class="reference internal" href="../../../2%20Mathematics/2%20Analytic_geometry/">Analytic Geometry</a>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../2%20Mathematics/3%20Calculus/">Calculus</a>
 </li>
@@ -118,7 +118,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal">2 Number Theory and ...</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../2%20Number%20Theory%20and%20.../_05%20Combinatorics/">Combinatorics</a>
+<li class="toctree-l2"><a class="reference internal" href="../../2%20Number%20Theory%20and%20.../_07%20Induction/">Induction</a>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../2%20Number%20Theory%20and%20.../_08%20Number_Theory/">Number Theory</a>
 </li>
@@ -126,9 +126,9 @@
 </li>
 <li class="toctree-l1"><a class="reference internal">3 Recurrence and ...</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../3%20Recurrence%20and%20.../_06%20Sequences_and_Series/">Sequences and Series</a>
+<li class="toctree-l2"><a class="reference internal" href="../../3%20Recurrence%20and%20.../_05%20Combinatorics/">Combinatorics</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../3%20Recurrence%20and%20.../_07%20Induction/">Induction</a>
+<li class="toctree-l2"><a class="reference internal" href="../../3%20Recurrence%20and%20.../_06%20Sequences_and_Series/">Sequences and Series</a>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../3%20Recurrence%20and%20.../_09%20Recurrence/">Recurrence</a>
 </li>
@@ -138,6 +138,30 @@
 <ul class="current">
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Graph Theory</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#task-1-graph-representation">Task 1 - Graph Representation</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#graph-1-undirected">Graph 1 (Undirected)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#graph-2-undirected">Graph 2 (Undirected)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#graph-3-undirected">Graph 3 (Undirected)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#graph-4-directed">Graph 4 (Directed)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#graph-5-directed">Graph 5 (Directed)</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#graph-6-directed">Graph 6 (Directed)</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-2">Task 2</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#answers">Answers:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-3">Task 3</a>
+</li>
 </ul>
 </li>
 </ul>
@@ -172,6 +196,226 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="graph-theory">Graph Theory</h1>
+<h2 id="task-1-graph-representation">Task 1 - Graph Representation</h2>
+<p>For each graph listed below, complete the other two methods of graph representation.</p>
+<h3 id="graph-1-undirected">Graph 1 (Undirected)</h3>
+<p><strong>Given Edge List:</strong> [(1, 3), (1, 4), (1, 5), (2, 6), (3, 6), (4, 5)]</p>
+<p><strong>Vertex Set:</strong> {1, 2, 3, 4, 5, 6}</p>
+<p><strong>Adjacency Matrix:</strong></p>
+<pre><code>    1  2  3  4  5  6
+1 [ 0  0  1  1  1  0 ]
+2 [ 0  0  0  0  0  1 ]
+3 [ 1  0  0  0  0  1 ]
+4 [ 1  0  0  0  1  0 ]
+5 [ 1  0  0  1  0  0 ]
+6 [ 0  1  1  0  0  0 ]
+</code></pre>
+<p><strong>Adjacency List:</strong></p>
+<pre><code>{1: [3, 4, 5],
+ 2: [6],
+ 3: [1, 6],
+ 4: [1, 5],
+ 5: [1, 4],
+ 6: [2, 3]}
+</code></pre>
+<h3 id="graph-2-undirected">Graph 2 (Undirected)</h3>
+<p><strong>Given Adjacency Matrix:</strong></p>
+<pre><code>[[0 0 1 0 0 0]
+ [0 0 0 0 0 0]
+ [1 0 0 0 1 1]
+ [0 0 0 0 1 0]
+ [0 0 1 1 0 1]
+ [0 0 1 0 1 0]]
+</code></pre>
+<p><strong>Vertex Set:</strong> {1, 2, 3, 4, 5, 6} (vertices indexed 1-6)</p>
+<p><strong>Edge List:</strong> [(1, 3), (3, 5), (3, 6), (4, 5), (5, 6)]</p>
+<p><strong>Adjacency List:</strong></p>
+<pre><code>{1: [3],
+ 2: [],
+ 3: [1, 5, 6],
+ 4: [5],
+ 5: [3, 4, 6],
+ 6: [3, 5]}
+</code></pre>
+<h3 id="graph-3-undirected">Graph 3 (Undirected)</h3>
+<p><strong>Given Adjacency List:</strong></p>
+<pre><code>{1: [4],
+ 2: [4],
+ 3: [5, 6],
+ 4: [1, 2, 6],
+ 5: [3],
+ 6: [3, 4]}
+</code></pre>
+<p><strong>Vertex Set:</strong> {1, 2, 3, 4, 5, 6}</p>
+<p><strong>Edge List:</strong> [(1, 4), (2, 4), (3, 5), (3, 6), (4, 6)]</p>
+<p><strong>Adjacency Matrix:</strong></p>
+<pre><code>    1  2  3  4  5  6
+1 [ 0  0  0  1  0  0 ]
+2 [ 0  0  0  1  0  0 ]
+3 [ 0  0  0  0  1  1 ]
+4 [ 1  1  0  0  0  1 ]
+5 [ 0  0  1  0  0  0 ]
+6 [ 0  0  1  1  0  0 ]
+</code></pre>
+<h3 id="graph-4-directed">Graph 4 (Directed)</h3>
+<p><strong>Given Edge List:</strong> [(1, 2), (2, 5), (3, 4), (4, 1), (5, 2), (5, 3), (6, 3), (6, 5)]</p>
+<p><strong>Vertex Set:</strong> {1, 2, 3, 4, 5, 6}</p>
+<p><strong>Adjacency Matrix:</strong></p>
+<pre><code>    1  2  3  4  5  6
+1 [ 0  1  0  0  0  0 ]
+2 [ 0  0  0  0  1  0 ]
+3 [ 0  0  0  1  0  0 ]
+4 [ 1  0  0  0  0  0 ]
+5 [ 0  1  1  0  0  0 ]
+6 [ 0  0  1  0  1  0 ]
+</code></pre>
+<p><strong>Adjacency List:</strong></p>
+<pre><code>{1: [2],
+ 2: [5],
+ 3: [4],
+ 4: [1],
+ 5: [2, 3],
+ 6: [3, 5]}
+</code></pre>
+<h3 id="graph-5-directed">Graph 5 (Directed)</h3>
+<p><strong>Given Adjacency Matrix:</strong></p>
+<pre><code>[[0 1 0 1 0 1]
+ [0 0 0 0 0 0]
+ [0 1 0 0 1 0]
+ [1 0 0 0 1 0]
+ [1 0 0 1 0 1]
+ [0 1 0 1 1 0]]
+</code></pre>
+<p><strong>Vertex Set:</strong> {1, 2, 3, 4, 5, 6}</p>
+<p><strong>Edge List:</strong> [(1, 2), (1, 4), (1, 6), (3, 2), (3, 5), (4, 1), (4, 5), (5, 1), (5, 4), (5, 6), (6, 2), (6, 4), (6, 5)]</p>
+<p><strong>Adjacency List:</strong></p>
+<pre><code>{1: [2, 4, 6],
+ 2: [],
+ 3: [2, 5],
+ 4: [1, 5],
+ 5: [1, 4, 6],
+ 6: [2, 4, 5]}
+</code></pre>
+<h3 id="graph-6-directed">Graph 6 (Directed)</h3>
+<p><strong>Given Adjacency List:</strong></p>
+<pre><code>{1: [2, 6],
+ 2: [1, 4],
+ 3: [4, 5],
+ 4: [1, 6],
+ 5: [2, 3],
+ 6: [1, 3, 5]}
+</code></pre>
+<p><strong>Vertex Set:</strong> {1, 2, 3, 4, 5, 6}</p>
+<p><strong>Edge List:</strong> [(1, 2), (1, 6), (2, 1), (2, 4), (3, 4), (3, 5), (4, 1), (4, 6), (5, 2), (5, 3), (6, 1), (6, 3), (6, 5)]</p>
+<p><strong>Adjacency Matrix:</strong></p>
+<pre><code>    1  2  3  4  5  6
+1 [ 0  1  0  0  0  1 ]
+2 [ 1  0  0  1  0  0 ]
+3 [ 0  0  0  1  1  0 ]
+4 [ 1  0  0  0  0  1 ]
+5 [ 0  1  1  0  0  0 ]
+6 [ 1  0  1  0  1  0 ]
+</code></pre>
+<h2 id="task-2">Task 2</h2>
+<p>For the following undirected graph:</p>
+<pre><code>1: [3],
+2: [1, 4],
+3: [1, 4, 5],
+4: [6, 7],
+5: [6, 2],
+6: [4, 5],
+7: [8],
+8: [7]
+</code></pre>
+<p><strong>Note:</strong> There's an inconsistency in the given adjacency list. Correcting it to be symmetric for undirected graph:</p>
+<pre><code>1: [3, 2],
+2: [1, 4, 5],
+3: [1, 4, 5],
+4: [2, 3, 6, 7],
+5: [3, 2, 6],
+6: [4, 5],
+7: [4, 8],
+8: [7]
+</code></pre>
+<h3 id="answers">Answers:</h3>
+<ol>
+<li><strong>How many vertices and edges are there in the graph?</strong></li>
+<li><strong>Vertices:</strong> 8</li>
+<li><strong>Edges:</strong> 9 (counting each edge once: (1,2), (1,3), (2,4), (2,5), (3,4), (3,5), (4,6), (4,7), (5,6), (6,5) = duplicate, (7,8))</li>
+<li>
+<p><strong>Corrected count:</strong> 8 edges</p>
+</li>
+<li>
+<p><strong>Is the graph connected? Justify your answer.</strong></p>
+</li>
+<li>
+<p><strong>Yes</strong>, the graph is connected. All vertices can be reached from any other vertex through a path.</p>
+</li>
+<li>
+<p><strong>What is the diameter of the graph?</strong></p>
+</li>
+<li>
+<p>The diameter is <strong>4</strong> (longest shortest path, e.g., from vertex 8 to vertex 1: 8→7→4→2→1)</p>
+</li>
+<li>
+<p><strong>What is the radius of the graph?</strong></p>
+</li>
+<li>
+<p>The radius is <strong>2</strong> (minimum eccentricity among all vertices)</p>
+</li>
+<li>
+<p><strong>Which vertex (or vertices) is in the center of the graph?</strong></p>
+</li>
+<li>
+<p>Vertices <strong>2, 3, 4</strong> are in the center (vertices with eccentricity equal to radius)</p>
+</li>
+<li>
+<p><strong>Is the graph Eulerian? Why or why not?</strong></p>
+</li>
+<li>
+<p><strong>No</strong>, the graph is not Eulerian because vertices 1 and 8 have odd degree (degree 1), while Eulerian graphs require all vertices to have even degree.</p>
+</li>
+<li>
+<p><strong>Find the degree of vertex 4.</strong></p>
+</li>
+<li>
+<p><strong>Degree of vertex 4:</strong> 4 (connected to vertices 2, 3, 6, 7)</p>
+</li>
+<li>
+<p><strong>Find the shortest path from vertex 5 to vertex 8 using Dijkstra's algorithm.</strong></p>
+</li>
+<li>
+<p><strong>Shortest path:</strong> 5 → 2 → 4 → 7 → 8</p>
+</li>
+<li>
+<p><strong>What is the length of the shortest path from vertex 5 to vertex 8?</strong></p>
+</li>
+<li>
+<p><strong>Length:</strong> 4</p>
+</li>
+<li>
+<p><strong>Does the graph contain a cycle? If yes, what is the length of one cycle?</strong></p>
+<ul>
+<li><strong>Yes</strong>, the graph contains cycles. One example: 2 → 4 → 3 → 5 → 2, which has <strong>length 4</strong>.</li>
+</ul>
+</li>
+</ol>
+<h2 id="task-3">Task 3</h2>
+<p>Consider the above graph as a directed graph. In this case, the adjacency list represents directed edges:</p>
+<pre><code>1: [3],
+2: [1, 4],
+3: [1, 4, 5],
+4: [6, 7],
+5: [6, 2],
+6: [4, 5],
+7: [8],
+8: [7]
+</code></pre>
+<p>For a directed graph interpretation:
+- The graph may not be strongly connected
+- Some vertices may not be reachable from others
+- The analysis would need to consider directed paths only
+- Eulerian properties would require all vertices to have equal in-degree and out-degree</p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">

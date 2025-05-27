@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html class="writer-html5" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="../../../img/favicon.ico" rel="shortcut icon"/>
+<title>Combinatorics - Physics and Mathematics</title>
+<link href="../../../css/theme.css" rel="stylesheet"/>
+<link href="../../../css/theme_extra.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
+<script>
+        // Current page data
+        var mkdocs_page_name = "Combinatorics";
+        var mkdocs_page_input_path = "3 Discret_Mathematics/3 Recurrence and .../_05 Combinatorics.md";
+        var mkdocs_page_url = null;
+      </script>
+<!--[if lt IE 9]>
+      <script src="../../../js/html5shiv.min.js"></script>
+    <![endif]-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/yaml.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/rust.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/languages/python.min.js"></script>
+<script>hljs.highlightAll();</script>
+</head>
+<body class="wy-body-for-nav" role="document">
+<div class="wy-grid-for-nav">
+<nav class="wy-nav-side stickynav" data-toggle="wy-nav-shift">
+<div class="wy-side-scroll">
+<div class="wy-side-nav-search">
+<a class="icon icon-home" href="../../.."> Physics and Mathematics
+        </a><div role="search">
+<form action="../../../search.html" class="wy-form" id="rtd-search-form" method="get">
+<input aria-label="Search docs" name="q" placeholder="Search docs" title="Type search term here" type="text"/>
+</form>
+</div>
+</div>
+<div aria-label="Navigation menu" class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../..">Introduction</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">1 Physics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal">1 Mechanics</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../1%20Physics/1%20Mechanics/Problem_1/">Problem 1</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../1%20Physics/1%20Mechanics/Problem_2/">Problem 2</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">2 Gravity</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../1%20Physics/2%20Gravity/Problem_1/">Problem 1</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../1%20Physics/2%20Gravity/Problem_2/">Problem 2</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../1%20Physics/2%20Gravity/Problem_3/">Problem 3</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">3 Waves</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../1%20Physics/3%20Waves/Problem_1/">Interference Patterns on a Water Surface</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">4 Electromagnetism</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../1%20Physics/4%20Electromagnetism/Problem_1/">Problem 1</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">5 Circuits</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../1%20Physics/5%20Circuits/Problem_1/">Equivalent Resistance Using Graph Theory</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">6 Statistics</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../1%20Physics/6%20Statistics/Problem_1/">Problem 1</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../1%20Physics/6%20Statistics/Problem_2/">Problem 2</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">7 Measurements</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../1%20Physics/7%20Measurements/Problem_1/">Measurements</a>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">2 Mathematics</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../2%20Mathematics/1%20Linear_algebra/">Linear Algebra</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../2%20Mathematics/2%20Analytic_geometry/">Analytic Geometry</a>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../2%20Mathematics/3%20Calculus/">Calculus</a>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">3 Discret Mathematics</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal">1 Set Theory and ...</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="../../1%20Set%20Theory%20and%20.../_02%20Set_Theory/">Set Theory</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../1%20Set%20Theory%20and%20.../_03%20Relations/">Relations</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../1%20Set%20Theory%20and%20.../_04%20Functions/">Functions</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">2 Number Theory and ...</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="../../2%20Number%20Theory%20and%20.../_07%20Induction/">Induction</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../2%20Number%20Theory%20and%20.../_08%20Number_Theory/">Number Theory</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 current"><a class="reference internal current">3 Recurrence and ...</a>
+<ul class="current">
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Combinatorics</a>
+<ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#variations-without-repetition">Variations without repetition</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#solutions">Solutions:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#variations-with-repetition">Variations with repetition</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#solutions_1">Solutions:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#permutations-without-repetition">Permutations without repetition</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#solutions_2">Solutions:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#permutations-with-repetition">Permutations with repetition</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#solutions_3">Solutions:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#combinations-without-repetition">Combinations without repetition</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#solutions_4">Solutions:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#combinations-with-repetition">Combinations with repetition</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#solutions_5">Solutions:</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../_06%20Sequences_and_Series/">Sequences and Series</a>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../_09%20Recurrence/">Recurrence</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">4 Graph Theory and ...</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="../../4%20Graph%20Theory%20and%20.../_10%20Graph_Theory/">Graph Theory</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal">5 Logic</a>
+<ul>
+<li class="toctree-l2"><a class="reference internal" href="../../5%20Logic/_01%20Logic/">Logic</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</nav>
+<section class="wy-nav-content-wrap" data-toggle="wy-nav-shift">
+<nav aria-label="Mobile navigation menu" class="wy-nav-top" role="navigation">
+<i class="fa fa-bars" data-toggle="wy-nav-top"></i>
+<a href="../../..">Physics and Mathematics</a>
+</nav>
+<div class="wy-nav-content">
+<div class="rst-content"><div aria-label="breadcrumbs navigation" role="navigation">
+<ul class="wy-breadcrumbs">
+<li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
+<li class="breadcrumb-item">3 Discret Mathematics</li>
+<li class="breadcrumb-item">3 Recurrence and ...</li>
+<li class="breadcrumb-item active">Combinatorics</li>
+<li class="wy-breadcrumbs-aside">
+</li>
+</ul>
+<hr/>
+</div>
+<div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
+<div class="section" itemprop="articleBody">
+<h1 id="combinatorics">Combinatorics</h1>
+<h2 id="variations-without-repetition">Variations without repetition</h2>
+<p><strong>Formula:</strong> <span class="arithmatex">\(V(n,r) = P(n,r) = \frac{n!}{(n-r)!}\)</span> where we choose <span class="arithmatex">\(r\)</span> objects from <span class="arithmatex">\(n\)</span> objects and order matters.</p>
+<h3 id="solutions">Solutions:</h3>
+<ol>
+<li><strong>From five different balls, choose two and arrange them in a specific order. How many arrangements are possible?</strong></li>
+</ol>
+<p><span class="arithmatex">\(V(5,2) = \frac{5!}{(5-2)!} = \frac{5!}{3!} = \frac{5 \times 4 \times 3!}{3!} = 5 \times 4 = 20\)</span></p>
+<p><strong>Answer:</strong> 20 arrangements</p>
+<ol>
+<li><strong>You have four different books. Choose two and arrange them on a shelf in a specific order. How many such arrangements are there?</strong></li>
+</ol>
+<p><span class="arithmatex">\(V(4,2) = \frac{4!}{(4-2)!} = \frac{4!}{2!} = \frac{4 \times 3 \times 2!}{2!} = 4 \times 3 = 12\)</span></p>
+<p><strong>Answer:</strong> 12 arrangements</p>
+<ol>
+<li><strong>In a competition with 10 participants, how many ways can 3 finalists be selected and arranged in order?</strong></li>
+</ol>
+<p><span class="arithmatex">\(V(10,3) = \frac{10!}{(10-3)!} = \frac{10!}{7!} = 10 \times 9 \times 8 = 720\)</span></p>
+<p><strong>Answer:</strong> 720 ways</p>
+<ol>
+<li><strong>You have seven different keys. Choose three and arrange them in a specific order on a table. How many possible arrangements are there?</strong></li>
+</ol>
+<p><span class="arithmatex">\(V(7,3) = \frac{7!}{(7-3)!} = \frac{7!}{4!} = 7 \times 6 \times 5 = 210\)</span></p>
+<p><strong>Answer:</strong> 210 arrangements</p>
+<ol>
+<li><strong>At school, three people are chosen as leaders, and their roles (chairperson, deputy, and treasurer) are significant. How many different arrangements can be made for 8 candidates?</strong></li>
+</ol>
+<p><span class="arithmatex">\(V(8,3) = \frac{8!}{(8-3)!} = \frac{8!}{5!} = 8 \times 7 \times 6 = 336\)</span></p>
+<p><strong>Answer:</strong> 336 arrangements</p>
+<h2 id="variations-with-repetition">Variations with repetition</h2>
+<p><strong>Formula:</strong> <span class="arithmatex">\(V_r(n,r) = n^r\)</span> where we choose <span class="arithmatex">\(r\)</span> objects from <span class="arithmatex">\(n\)</span> objects with repetition allowed and order matters.</p>
+<h3 id="solutions_1">Solutions:</h3>
+<ol>
+<li><strong>You have three different colors of paint. How many different sequences of two colors can you create if colors can repeat?</strong></li>
+</ol>
+<p><span class="arithmatex">\(V_r(3,2) = 3^2 = 9\)</span></p>
+<p><strong>Answer:</strong> 9 sequences</p>
+<ol>
+<li><strong>The menu includes four different types of drinks. How many different two-drink combinations can you create, allowing repetition?</strong></li>
+</ol>
+<p><span class="arithmatex">\(V_r(4,2) = 4^2 = 16\)</span></p>
+<p><strong>Answer:</strong> 16 combinations</p>
+<ol>
+<li><strong>A lock code consists of three digits, each ranging from 1 to 5. How many different codes can be created if digits can repeat?</strong></li>
+</ol>
+<p><span class="arithmatex">\(V_r(5,3) = 5^3 = 125\)</span></p>
+<p><strong>Answer:</strong> 125 codes</p>
+<ol>
+<li><strong>In a class, you have 6 different pens. How many different combinations of two pens in a specific order can be made, allowing repetition of the same pen?</strong></li>
+</ol>
+<p><span class="arithmatex">\(V_r(6,2) = 6^2 = 36\)</span></p>
+<p><strong>Answer:</strong> 36 combinations</p>
+<ol>
+<li><strong>A shop offers three types of candies. How many different sets of two candies can be created if you are allowed to pick the same candy multiple times?</strong></li>
+</ol>
+<p><span class="arithmatex">\(V_r(3,2) = 3^2 = 9\)</span></p>
+<p><strong>Answer:</strong> 9 sets</p>
+<h2 id="permutations-without-repetition">Permutations without repetition</h2>
+<p><strong>Formula:</strong> <span class="arithmatex">\(P(n) = n!\)</span> where we arrange all <span class="arithmatex">\(n\)</span> objects in order.</p>
+<h3 id="solutions_2">Solutions:</h3>
+<ol>
+<li><strong>How many different three-digit numbers can be formed using the digits 1, 2, 3, 4 if no digit repeats?</strong></li>
+</ol>
+<p><span class="arithmatex">\(V(4,3) = \frac{4!}{(4-3)!} = \frac{4!}{1!} = 4 \times 3 \times 2 = 24\)</span></p>
+<p><strong>Answer:</strong> 24 numbers</p>
+<ol>
+<li><strong>You have 5 different letters: A, B, C, D, E. How many different words can you form using all of them?</strong></li>
+</ol>
+<p><span class="arithmatex">\(P(5) = 5! = 5 \times 4 \times 3 \times 2 \times 1 = 120\)</span></p>
+<p><strong>Answer:</strong> 120 words</p>
+<ol>
+<li><strong>In a group of 6 people, how many different ways can they be arranged in a line?</strong></li>
+</ol>
+<p><span class="arithmatex">\(P(6) = 6! = 6 \times 5 \times 4 \times 3 \times 2 \times 1 = 720\)</span></p>
+<p><strong>Answer:</strong> 720 ways</p>
+<ol>
+<li><strong>You have four different pictures. In how many different ways can they be hung on a wall in a row?</strong></li>
+</ol>
+<p><span class="arithmatex">\(P(4) = 4! = 4 \times 3 \times 2 \times 1 = 24\)</span></p>
+<p><strong>Answer:</strong> 24 ways</p>
+<ol>
+<li><strong>At school, there is a contest where 7 students need to line up in a specific order. How many different arrangements are possible?</strong></li>
+</ol>
+<p><span class="arithmatex">\(P(7) = 7! = 5040\)</span></p>
+<p><strong>Answer:</strong> 5040 arrangements</p>
+<h2 id="permutations-with-repetition">Permutations with repetition</h2>
+<p><strong>Formula:</strong> <span class="arithmatex">\(P(n; n_1, n_2, ..., n_k) = \frac{n!}{n_1! \times n_2! \times ... \times n_k!}\)</span> where <span class="arithmatex">\(n_i\)</span> is the number of identical objects of type <span class="arithmatex">\(i\)</span>.</p>
+<h3 id="solutions_3">Solutions:</h3>
+<ol>
+<li><strong>How many different words can be formed using the letters in the word "ANNA"?</strong></li>
+</ol>
+<p>We have 4 letters: A appears 2 times, N appears 2 times
+   <span class="arithmatex">\(P(4; 2, 2) = \frac{4!}{2! \times 2!} = \frac{24}{2 \times 2} = \frac{24}{4} = 6\)</span></p>
+<p><strong>Answer:</strong> 6 words</p>
+<ol>
+<li><strong>You have a box with three red balls and two green balls. How many different orders can these balls be arranged in?</strong></li>
+</ol>
+<p>We have 5 balls: 3 red (identical) and 2 green (identical)
+   <span class="arithmatex">\(P(5; 3, 2) = \frac{5!}{3! \times 2!} = \frac{120}{6 \times 2} = \frac{120}{12} = 10\)</span></p>
+<p><strong>Answer:</strong> 10 arrangements</p>
+<ol>
+<li><strong>In the word "COCONUT," there are three "O"s. How many distinct words can be formed by permuting the letters of this word?</strong></li>
+</ol>
+<p>We have 7 letters: C appears 2 times, O appears 2 times, N, U, T each appear 1 time
+   <span class="arithmatex">\(P(7; 2, 2, 1, 1, 1) = \frac{7!}{2! \times 2! \times 1! \times 1! \times 1!} = \frac{5040}{2 \times 2} = \frac{5040}{4} = 1260\)</span></p>
+<p><strong>Answer:</strong> 1260 words</p>
+<ol>
+<li><strong>In a group, there are 3 people named "Adam" and 2 people named "Eve." How many different arrangements of this group are possible?</strong></li>
+</ol>
+<p>We have 5 people: 3 Adams (identical) and 2 Eves (identical)
+   <span class="arithmatex">\(P(5; 3, 2) = \frac{5!}{3! \times 2!} = \frac{120}{6 \times 2} = 10\)</span></p>
+<p><strong>Answer:</strong> 10 arrangements</p>
+<ol>
+<li><strong>How many different numbers can be formed using the digits: 1, 1, 2, 2, 2?</strong></li>
+</ol>
+<p>We have 5 digits: 1 appears 2 times, 2 appears 3 times
+   <span class="arithmatex">\(P(5; 2, 3) = \frac{5!}{2! \times 3!} = \frac{120}{2 \times 6} = \frac{120}{12} = 10\)</span></p>
+<p><strong>Answer:</strong> 10 numbers</p>
+<h2 id="combinations-without-repetition">Combinations without repetition</h2>
+<p><strong>Formula:</strong> <span class="arithmatex">\(C(n,r) = \binom{n}{r} = \frac{n!}{r!(n-r)!}\)</span> where we choose <span class="arithmatex">\(r\)</span> objects from <span class="arithmatex">\(n\)</span> objects and order doesn't matter.</p>
+<h3 id="solutions_4">Solutions:</h3>
+<ol>
+<li><strong>You have 10 books and want to choose 4, but the order of selection doesn't matter. How many possible selections are there?</strong></li>
+</ol>
+<p><span class="arithmatex">\(C(10,4) = \binom{10}{4} = \frac{10!}{4!(10-4)!} = \frac{10!}{4! \times 6!} = \frac{10 \times 9 \times 8 \times 7}{4 \times 3 \times 2 \times 1} = \frac{5040}{24} = 210\)</span></p>
+<p><strong>Answer:</strong> 210 selections</p>
+<ol>
+<li><strong>In a class of 15 students, how many ways can you select three for a trip?</strong></li>
+</ol>
+<p><span class="arithmatex">\(C(15,3) = \binom{15}{3} = \frac{15!}{3!(15-3)!} = \frac{15 \times 14 \times 13}{3 \times 2 \times 1} = \frac{2730}{6} = 455\)</span></p>
+<p><strong>Answer:</strong> 455 ways</p>
+<ol>
+<li><strong>From a standard 52-card deck, you choose 5 cards. How many different hands can be formed?</strong></li>
+</ol>
+<p><span class="arithmatex">\(C(52,5) = \binom{52}{5} = \frac{52!}{5!(52-5)!} = \frac{52 \times 51 \times 50 \times 49 \times 48}{5 \times 4 \times 3 \times 2 \times 1} = \frac{311875200}{120} = 2598960\)</span></p>
+<p><strong>Answer:</strong> 2,598,960 hands</p>
+<ol>
+<li><strong>From 8 different fruits, choose 3 without considering the order. How many such selections are there?</strong></li>
+</ol>
+<p><span class="arithmatex">\(C(8,3) = \binom{8}{3} = \frac{8!}{3!(8-3)!} = \frac{8 \times 7 \times 6}{3 \times 2 \times 1} = \frac{336}{6} = 56\)</span></p>
+<p><strong>Answer:</strong> 56 selections</p>
+<ol>
+<li><strong>A company has 20 employees. How many ways can a 5-person team be chosen?</strong></li>
+</ol>
+<p><span class="arithmatex">\(C(20,5) = \binom{20}{5} = \frac{20!}{5!(20-5)!} = \frac{20 \times 19 \times 18 \times 17 \times 16}{5 \times 4 \times 3 \times 2 \times 1} = \frac{1860480}{120} = 15504\)</span></p>
+<p><strong>Answer:</strong> 15,504 ways</p>
+<h2 id="combinations-with-repetition">Combinations with repetition</h2>
+<p><strong>Formula:</strong> <span class="arithmatex">\(C_r(n,r) = \binom{n+r-1}{r} = \binom{n+r-1}{n-1}\)</span> where we choose <span class="arithmatex">\(r\)</span> objects from <span class="arithmatex">\(n\)</span> types with repetition allowed and order doesn't matter.</p>
+<h3 id="solutions_5">Solutions:</h3>
+<ol>
+<li><strong>A shop offers 4 different types of fruit. How many different sets of 3 fruits can you buy, if the same fruit can be selected multiple times?</strong></li>
+</ol>
+<p><span class="arithmatex">\(C_r(4,3) = \binom{4+3-1}{3} = \binom{6}{3} = \frac{6!}{3! \times 3!} = \frac{6 \times 5 \times 4}{3 \times 2 \times 1} = 20\)</span></p>
+<p><strong>Answer:</strong> 20 sets</p>
+<ol>
+<li><strong>You have 5 different types of candies. How many different sets of 4 candies can you choose if candies can repeat?</strong></li>
+</ol>
+<p><span class="arithmatex">\(C_r(5,4) = \binom{5+4-1}{4} = \binom{8}{4} = \frac{8!}{4! \times 4!} = \frac{8 \times 7 \times 6 \times 5}{4 \times 3 \times 2 \times 1} = 70\)</span></p>
+<p><strong>Answer:</strong> 70 sets</p>
+<ol>
+<li><strong>In a restaurant, there are 6 different desserts to choose from. How many different two-dessert sets can you create if you can choose the same dessert twice?</strong></li>
+</ol>
+<p><span class="arithmatex">\(C_r(6,2) = \binom{6+2-1}{2} = \binom{7}{2} = \frac{7!}{2! \times 5!} = \frac{7 \times 6}{2 \times 1} = 21\)</span></p>
+<p><strong>Answer:</strong> 21 sets</p>
+<ol>
+<li><strong>A flower shop offers 3 different types of flowers. How many bouquets of 5 flowers can be made if flowers can repeat?</strong></li>
+</ol>
+<p><span class="arithmatex">\(C_r(3,5) = \binom{3+5-1}{5} = \binom{7}{5} = \binom{7}{2} = \frac{7 \times 6}{2 \times 1} = 21\)</span></p>
+<p><strong>Answer:</strong> 21 bouquets</p>
+<ol>
+<li><strong>You have 7 different ice cream flavors. How many different 4-flavor combinations can you create if flavors can repeat?</strong></li>
+</ol>
+<p><span class="arithmatex">\(C_r(7,4) = \binom{7+4-1}{4} = \binom{10}{4} = \frac{10!}{4! \times 6!} = \frac{10 \times 9 \times 8 \times 7}{4 \times 3 \times 2 \times 1} = 210\)</span></p>
+<p><strong>Answer:</strong> 210 combinations</p>
+</div>
+</div><footer>
+<div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
+<a class="btn btn-neutral float-left" href="../../2%20Number%20Theory%20and%20.../_08%20Number_Theory/" title="Number Theory"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../_06%20Sequences_and_Series/" title="Sequences and Series">Next <span class="icon icon-circle-arrow-right"></span></a>
+</div>
+<hr/>
+<div role="contentinfo">
+<!-- Copyright etc -->
+</div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+</div>
+</div>
+</section>
+</div>
+<div aria-label="Versions" class="rst-versions" role="note">
+<span class="rst-current-version" data-toggle="rst-current-version">
+<span><a href="../../2%20Number%20Theory%20and%20.../_08%20Number_Theory/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../_06%20Sequences_and_Series/" style="color: #fcfcfc">Next »</a></span>
+</span>
+</div>
+<script src="../../../js/jquery-3.6.0.min.js"></script>
+<script>var base_url = "../../..";</script>
+<script src="../../../js/theme_extra.js"></script>
+<script src="../../../js/theme.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script src="../../../search/main.js"></script>
+<script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+</body>
+</html>

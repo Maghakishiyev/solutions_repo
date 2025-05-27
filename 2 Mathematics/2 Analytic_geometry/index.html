@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../img/favicon.ico" rel="shortcut icon"/>
-<title>Analytic geometry - Physics and Mathematics</title>
+<title>Analytic Geometry - Physics and Mathematics</title>
 <link href="../../css/theme.css" rel="stylesheet"/>
 <link href="../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Analytic geometry";
+        var mkdocs_page_name = "Analytic Geometry";
         var mkdocs_page_input_path = "2 Mathematics/2 Analytic_geometry.md";
         var mkdocs_page_url = null;
       </script>
@@ -82,9 +82,9 @@
 </li>
 <li class="toctree-l1"><a class="reference internal">6 Statistics</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../1%20Physics/6%20Statistics/Problem_1/">Statistics</a>
+<li class="toctree-l2"><a class="reference internal" href="../../1%20Physics/6%20Statistics/Problem_1/">Problem 1</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../1%20Physics/6%20Statistics/Problem_2/">Statistics</a>
+<li class="toctree-l2"><a class="reference internal" href="../../1%20Physics/6%20Statistics/Problem_2/">Problem 2</a>
 </li>
 </ul>
 </li>
@@ -99,8 +99,126 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../1%20Linear_algebra/">Linear Algebra</a>
 </li>
-<li class="toctree-l1 current"><a class="reference internal current" href="#">Analytic geometry</a>
+<li class="toctree-l1 current"><a class="reference internal current" href="#">Analytic Geometry</a>
 <ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="#11-vectors-i">11. Vectors I</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#problem-111">Problem 11.1</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-112">Problem 11.2</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-113">Problem 11.3</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-114">Problem 11.4</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-115">Problem 11.5</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#12-vectors-ii">12. Vectors II</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#problem-121">Problem 12.1</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-122">Problem 12.2</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-123">Problem 12.3</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-124">Problem 12.4</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-125">Problem 12.5</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-126">Problem 12.6</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#13-vectors-iii">13. Vectors III</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#problem-131">Problem 13.1</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-132">Problem 13.2</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-133">Problem 13.3</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-134">Problem 13.4</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#14-equations-of-lines-on-a-plane">14. Equations of Lines on a Plane</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#problem-141">Problem 14.1</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-142">Problem 14.2</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-143">Problem 14.3</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-144">Problem 14.4</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-145">Problem 14.5</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-146">Problem 14.6</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-147">Problem 14.7</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-148">Problem 14.8</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-149">Problem 14.9</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-1410">Problem 14.10</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#15-equations-of-second-order-curves-conic-sections">15. Equations of Second-Order Curves (Conic Sections)</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#problem-151">Problem 15.1</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-152">Problem 15.2</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-153">Problem 15.3</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-154">Problem 15.4</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-155">Problem 15.5</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-156">Problem 15.6</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#16-equations-of-planes-in-space">16. Equations of Planes in Space</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#problem-161">Problem 16.1</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-162">Problem 16.2</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-163">Problem 16.3</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-164">Problem 16.4</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-165">Problem 16.5</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-166">Problem 16.6</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-167">Problem 16.7</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-168">Problem 16.8</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-169">Problem 16.9</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-1610">Problem 16.10</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#17-equations-of-second-order-surfaces">17. Equations of Second-Order Surfaces</a>
+<ul>
+<li class="toctree-l3"><a class="reference internal" href="#problem-171">Problem 17.1</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-172">Problem 17.2</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-173">Problem 17.3</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#problem-174">Problem 17.4</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../3%20Calculus/">Calculus</a>
@@ -120,7 +238,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal">2 Number Theory and ...</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../3%20Discret_Mathematics/2%20Number%20Theory%20and%20.../_05%20Combinatorics/">Combinatorics</a>
+<li class="toctree-l2"><a class="reference internal" href="../../3%20Discret_Mathematics/2%20Number%20Theory%20and%20.../_07%20Induction/">Induction</a>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../3%20Discret_Mathematics/2%20Number%20Theory%20and%20.../_08%20Number_Theory/">Number Theory</a>
 </li>
@@ -128,9 +246,9 @@
 </li>
 <li class="toctree-l1"><a class="reference internal">3 Recurrence and ...</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../3%20Discret_Mathematics/3%20Recurrence%20and%20.../_06%20Sequences_and_Series/">Sequences and Series</a>
+<li class="toctree-l2"><a class="reference internal" href="../../3%20Discret_Mathematics/3%20Recurrence%20and%20.../_05%20Combinatorics/">Combinatorics</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../3%20Discret_Mathematics/3%20Recurrence%20and%20.../_07%20Induction/">Induction</a>
+<li class="toctree-l2"><a class="reference internal" href="../../3%20Discret_Mathematics/3%20Recurrence%20and%20.../_06%20Sequences_and_Series/">Sequences and Series</a>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../3%20Discret_Mathematics/3%20Recurrence%20and%20.../_09%20Recurrence/">Recurrence</a>
 </li>
@@ -162,7 +280,7 @@
 <ul class="wy-breadcrumbs">
 <li><a aria-label="Docs" class="icon icon-home" href="../.."></a></li>
 <li class="breadcrumb-item">2 Mathematics</li>
-<li class="breadcrumb-item active">Analytic geometry</li>
+<li class="breadcrumb-item active">Analytic Geometry</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -170,7 +288,443 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="analytic-geometry">Analytic geometry</h1>
+<h1 id="analytic-geometry">Analytic Geometry</h1>
+<h2 id="11-vectors-i">11. Vectors I</h2>
+<h3 id="problem-111">Problem 11.1</h3>
+<p><strong>Question:</strong> By what number should vector <span class="arithmatex">\(\mathbf{a} = [3, 4]\)</span> be multiplied so that its length is equal to 1?</p>
+<p><strong>Solution:</strong>
+The length of vector <span class="arithmatex">\(\mathbf{a} = [3, 4]\)</span> is:
+<span class="arithmatex">\(<span class="arithmatex">\(|\mathbf{a}| = \sqrt{3^2 + 4^2} = \sqrt{9 + 16} = \sqrt{25} = 5\)</span>\)</span></p>
+<p>To make the length equal to 1, we need to multiply by:
+<span class="arithmatex">\(<span class="arithmatex">\(k = \frac{1}{|\mathbf{a}|} = \frac{1}{5}\)</span>\)</span></p>
+<p><strong>Answer:</strong> The vector should be multiplied by <span class="arithmatex">\(\frac{1}{5}\)</span>.</p>
+<h3 id="problem-112">Problem 11.2</h3>
+<p><strong>Question:</strong> Calculate the length of vector <span class="arithmatex">\(\mathbf{b} = [1, 1]\)</span> and find the unit vector of this vector.</p>
+<p><strong>Solution:</strong>
+The length of vector <span class="arithmatex">\(\mathbf{b} = [1, 1]\)</span> is:
+<span class="arithmatex">\(<span class="arithmatex">\(|\mathbf{b}| = \sqrt{1^2 + 1^2} = \sqrt{2}\)</span>\)</span></p>
+<p>The unit vector is:
+<span class="arithmatex">\(<span class="arithmatex">\(\hat{\mathbf{b}} = \frac{\mathbf{b}}{|\mathbf{b}|} = \frac{[1, 1]}{\sqrt{2}} = \left[\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}\right] = \left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right]\)</span>\)</span></p>
+<p><strong>Answer:</strong> Length = <span class="arithmatex">\(\sqrt{2}\)</span>, Unit vector = <span class="arithmatex">\(\left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right]\)</span></p>
+<h3 id="problem-113">Problem 11.3</h3>
+<p><strong>Question:</strong> Plot the vector and the unit vector from the previous exercise.</p>
+<p><strong>Solution:</strong>
+Both vectors have the same direction but different magnitudes:
+- Original vector <span class="arithmatex">\(\mathbf{b} = [1, 1]\)</span> has length <span class="arithmatex">\(\sqrt{2} \approx 1.414\)</span>
+- Unit vector <span class="arithmatex">\(\hat{\mathbf{b}} = \left[\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right]\)</span> has length 1</p>
+<p>Both vectors make a 45° angle with the x-axis.</p>
+<h3 id="problem-114">Problem 11.4</h3>
+<p><strong>Question:</strong> Calculate the length of vector <span class="arithmatex">\(\mathbf{c} = [1, 2, 3]\)</span> and find the unit vector of this vector.</p>
+<p><strong>Solution:</strong>
+The length of vector <span class="arithmatex">\(\mathbf{c} = [1, 2, 3]\)</span> is:
+<span class="arithmatex">\(<span class="arithmatex">\(|\mathbf{c}| = \sqrt{1^2 + 2^2 + 3^2} = \sqrt{1 + 4 + 9} = \sqrt{14}\)</span>\)</span></p>
+<p>The unit vector is:
+<span class="arithmatex">\(<span class="arithmatex">\(\hat{\mathbf{c}} = \frac{\mathbf{c}}{|\mathbf{c}|} = \frac{[1, 2, 3]}{\sqrt{14}} = \left[\frac{1}{\sqrt{14}}, \frac{2}{\sqrt{14}}, \frac{3}{\sqrt{14}}\right]\)</span>\)</span></p>
+<p><strong>Answer:</strong> Length = <span class="arithmatex">\(\sqrt{14}\)</span>, Unit vector = <span class="arithmatex">\(\left[\frac{1}{\sqrt{14}}, \frac{2}{\sqrt{14}}, \frac{3}{\sqrt{14}}\right]\)</span></p>
+<h3 id="problem-115">Problem 11.5</h3>
+<p><strong>Question:</strong> Find the Cartesian coordinates of vector <span class="arithmatex">\(\mathbf{v} = [2, 3, 4]\)</span> in the basis <span class="arithmatex">\(\{\mathbf{b_1} = [1, 0, 1], \mathbf{b_2} = [0, 1, 0], \mathbf{b_3} = [1, 0, -1]\}\)</span>.</p>
+<p><strong>Solution:</strong>
+We need to find coefficients <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(y\)</span>, <span class="arithmatex">\(z\)</span> such that:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{v} = x\mathbf{b_1} + y\mathbf{b_2} + z\mathbf{b_3}\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\([2, 3, 4] = x[1, 0, 1] + y[0, 1, 0] + z[1, 0, -1]\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\([2, 3, 4] = [x + z, y, x - z]\)</span>\)</span></p>
+<p>This gives us the system:
+- <span class="arithmatex">\(x + z = 2\)</span>
+- <span class="arithmatex">\(y = 3\)</span>
+- <span class="arithmatex">\(x - z = 4\)</span></p>
+<p>From equations 1 and 3: <span class="arithmatex">\(2x = 6\)</span>, so <span class="arithmatex">\(x = 3\)</span>
+From equation 1: <span class="arithmatex">\(z = 2 - 3 = -1\)</span></p>
+<p><strong>Answer:</strong> The coordinates in the new basis are <span class="arithmatex">\([3, 3, -1]\)</span>.</p>
+<h2 id="12-vectors-ii">12. Vectors II</h2>
+<h3 id="problem-121">Problem 12.1</h3>
+<p><strong>Question:</strong> Perform the addition of vector <span class="arithmatex">\([2, 1]\)</span> to vector <span class="arithmatex">\([-1, 1]\)</span>. Plot both vectors and their sum on a graph.</p>
+<p><strong>Solution:</strong>
+Vector addition:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{a} + \mathbf{b} = [2, 1] + [-1, 1] = [2 + (-1), 1 + 1] = [1, 2]\)</span>\)</span></p>
+<p><strong>Answer:</strong> The sum is <span class="arithmatex">\([1, 2]\)</span>.</p>
+<h3 id="problem-122">Problem 12.2</h3>
+<p><strong>Question:</strong> Calculate the area of the triangle spanned by vectors <span class="arithmatex">\([2, 1, 2]\)</span> and <span class="arithmatex">\([-1, 1, 1]\)</span>.</p>
+<p><strong>Solution:</strong>
+The area of a triangle spanned by two vectors is half the magnitude of their cross product:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{a} \times \mathbf{b} = \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ 2 &amp; 1 &amp; 2 \\ -1 &amp; 1 &amp; 1 \end{vmatrix}\)</span>\)</span></p>
+<div class="arithmatex">\[= \mathbf{i}(1 \cdot 1 - 2 \cdot 1) - \mathbf{j}(2 \cdot 1 - 2 \cdot (-1)) + \mathbf{k}(2 \cdot 1 - 1 \cdot (-1))$$
+$$= \mathbf{i}(1 - 2) - \mathbf{j}(2 + 2) + \mathbf{k}(2 + 1)$$
+$$= [-1, -4, 3]\]</div>
+<div class="arithmatex">\[|\mathbf{a} \times \mathbf{b}| = \sqrt{(-1)^2 + (-4)^2 + 3^2} = \sqrt{1 + 16 + 9} = \sqrt{26}\]</div>
+<p>Area = <span class="arithmatex">\(\frac{1}{2}|\mathbf{a} \times \mathbf{b}| = \frac{\sqrt{26}}{2}\)</span></p>
+<p><strong>Answer:</strong> The area is <span class="arithmatex">\(\frac{\sqrt{26}}{2}\)</span>.</p>
+<h3 id="problem-123">Problem 12.3</h3>
+<p><strong>Question:</strong> Calculate the volume of the parallelepiped spanned by vectors <span class="arithmatex">\([2, 1, -1]\)</span>, <span class="arithmatex">\([-1, 1, 0]\)</span>, and <span class="arithmatex">\([1, 2, 1]\)</span>.</p>
+<p><strong>Solution:</strong>
+The volume is the absolute value of the scalar triple product:
+<span class="arithmatex">\(<span class="arithmatex">\(V = |\mathbf{a} \cdot (\mathbf{b} \times \mathbf{c})| = \begin{vmatrix} 2 &amp; 1 &amp; -1 \\ -1 &amp; 1 &amp; 0 \\ 1 &amp; 2 &amp; 1 \end{vmatrix}\)</span>\)</span></p>
+<p>Expanding along the third column:
+<span class="arithmatex">\(<span class="arithmatex">\(= -1 \begin{vmatrix} -1 &amp; 1 \\ 1 &amp; 2 \end{vmatrix} - 0 + 1 \begin{vmatrix} 2 &amp; 1 \\ -1 &amp; 1 \end{vmatrix}\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(= -1(-1 \cdot 2 - 1 \cdot 1) + 1(2 \cdot 1 - 1 \cdot (-1))\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(= -1(-2 - 1) + 1(2 + 1)\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(= -1(-3) + 3 = 3 + 3 = 6\)</span>\)</span></p>
+<p><strong>Answer:</strong> The volume is 6.</p>
+<h3 id="problem-124">Problem 12.4</h3>
+<p><strong>Question:</strong> Check if vectors <span class="arithmatex">\([2, 1]\)</span> and <span class="arithmatex">\([-1, 1]\)</span> are perpendicular.</p>
+<p><strong>Solution:</strong>
+Two vectors are perpendicular if their dot product equals zero:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{a} \cdot \mathbf{b} = [2, 1] \cdot [-1, 1] = 2 \cdot (-1) + 1 \cdot 1 = -2 + 1 = -1\)</span>\)</span></p>
+<p>Since the dot product is <span class="arithmatex">\(-1 \neq 0\)</span>, the vectors are not perpendicular.</p>
+<p><strong>Answer:</strong> No, the vectors are not perpendicular.</p>
+<h3 id="problem-125">Problem 12.5</h3>
+<p><strong>Question:</strong> Calculate the angle in degrees between vectors <span class="arithmatex">\([4, 2, 1]\)</span> and <span class="arithmatex">\([1, 3, 2]\)</span>.</p>
+<p><strong>Solution:</strong>
+The angle between two vectors is given by:
+<span class="arithmatex">\(<span class="arithmatex">\(\cos \theta = \frac{\mathbf{a} \cdot \mathbf{b}}{|\mathbf{a}||\mathbf{b}|}\)</span>\)</span></p>
+<div class="arithmatex">\[\mathbf{a} \cdot \mathbf{b} = 4 \cdot 1 + 2 \cdot 3 + 1 \cdot 2 = 4 + 6 + 2 = 12$$
+$$|\mathbf{a}| = \sqrt{4^2 + 2^2 + 1^2} = \sqrt{16 + 4 + 1} = \sqrt{21}$$
+$$|\mathbf{b}| = \sqrt{1^2 + 3^2 + 2^2} = \sqrt{1 + 9 + 4} = \sqrt{14}\]</div>
+<div class="arithmatex">\[\cos \theta = \frac{12}{\sqrt{21}\sqrt{14}} = \frac{12}{\sqrt{294}} = \frac{12}{7\sqrt{6}} = \frac{12\sqrt{6}}{42} = \frac{2\sqrt{6}}{7}\]</div>
+<div class="arithmatex">\[\theta = \arccos\left(\frac{2\sqrt{6}}{7}\right) \approx 31.0°\]</div>
+<p><strong>Answer:</strong> The angle is approximately 31.0°.</p>
+<h3 id="problem-126">Problem 12.6</h3>
+<p><strong>Question:</strong> For three-dimensional vectors: <span class="arithmatex">\(\mathbf{a}=[a_x, a_y, a_z]\)</span>, <span class="arithmatex">\(\mathbf{b}=[b_x, b_y, b_z]\)</span>, <span class="arithmatex">\(\mathbf{c}=[c_x, c_y, c_z]\)</span>, prove that the following identity is satisfied:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{a} \times (\mathbf{b} \times \mathbf{c}) = (\mathbf{a} \cdot \mathbf{c}) \mathbf{b} - (\mathbf{a} \cdot \mathbf{b}) \mathbf{c}\)</span>\)</span></p>
+<p><strong>Solution:</strong>
+This is the vector triple product identity. Let's prove it by expanding both sides.</p>
+<p>First, let's compute <span class="arithmatex">\(\mathbf{b} \times \mathbf{c}\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{b} \times \mathbf{c} = [b_y c_z - b_z c_y, b_z c_x - b_x c_z, b_x c_y - b_y c_x]\)</span>\)</span></p>
+<p>Now, <span class="arithmatex">\(\mathbf{a} \times (\mathbf{b} \times \mathbf{c})\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{a} \times (\mathbf{b} \times \mathbf{c}) = \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ a_x &amp; a_y &amp; a_z \\ b_y c_z - b_z c_y &amp; b_z c_x - b_x c_z &amp; b_x c_y - b_y c_x \end{vmatrix}\)</span>\)</span></p>
+<p>The x-component is:
+<span class="arithmatex">\(<span class="arithmatex">\(a_y(b_x c_y - b_y c_x) - a_z(b_z c_x - b_x c_z) = a_y b_x c_y - a_y b_y c_x - a_z b_z c_x + a_z b_x c_z\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(= b_x(a_y c_y + a_z c_z) - c_x(a_y b_y + a_z b_z)\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(= b_x(\mathbf{a} \cdot \mathbf{c} - a_x c_x) - c_x(\mathbf{a} \cdot \mathbf{b} - a_x b_x)\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(= b_x(\mathbf{a} \cdot \mathbf{c}) - c_x(\mathbf{a} \cdot \mathbf{b}) + a_x(c_x b_x - b_x c_x) = b_x(\mathbf{a} \cdot \mathbf{c}) - c_x(\mathbf{a} \cdot \mathbf{b})\)</span>\)</span></p>
+<p>This is the x-component of <span class="arithmatex">\((\mathbf{a} \cdot \mathbf{c}) \mathbf{b} - (\mathbf{a} \cdot \mathbf{b}) \mathbf{c}\)</span>.</p>
+<p>By similar calculations for y and z components, the identity is proven.</p>
+<h2 id="13-vectors-iii">13. Vectors III</h2>
+<h3 id="problem-131">Problem 13.1</h3>
+<p><strong>Question:</strong> Divide the line segment connecting points <span class="arithmatex">\(A(-1, 2)\)</span> and <span class="arithmatex">\(B(3, -2)\)</span> in the ratio <span class="arithmatex">\(1:3\)</span>. Illustrate the result on a graph.</p>
+<p><strong>Solution:</strong>
+To divide a line segment in ratio <span class="arithmatex">\(m:n\)</span>, the point <span class="arithmatex">\(P\)</span> is given by:
+<span class="arithmatex">\(<span class="arithmatex">\(P = \frac{n \cdot A + m \cdot B}{m + n}\)</span>\)</span></p>
+<p>For ratio <span class="arithmatex">\(1:3\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(P = \frac{3 \cdot A + 1 \cdot B}{1 + 3} = \frac{3(-1, 2) + 1(3, -2)}{4} = \frac{(-3, 6) + (3, -2)}{4} = \frac{(0, 4)}{4} = (0, 1)\)</span>\)</span></p>
+<p><strong>Answer:</strong> The point dividing the segment in ratio <span class="arithmatex">\(1:3\)</span> is <span class="arithmatex">\((0, 1)\)</span>.</p>
+<h3 id="problem-132">Problem 13.2</h3>
+<p><strong>Question:</strong> Project vector <span class="arithmatex">\(\mathbf{a} = (3, 4)\)</span> onto the <span class="arithmatex">\(OX\)</span> and <span class="arithmatex">\(OY\)</span> axes. Illustrate the result on a graph.</p>
+<p><strong>Solution:</strong>
+The projection onto coordinate axes is simply the corresponding component:
+- Projection onto <span class="arithmatex">\(OX\)</span> axis: <span class="arithmatex">\(\text{proj}_{OX} \mathbf{a} = (3, 0)\)</span>
+- Projection onto <span class="arithmatex">\(OY\)</span> axis: <span class="arithmatex">\(\text{proj}_{OY} \mathbf{a} = (0, 4)\)</span></p>
+<p><strong>Answer:</strong> Projection onto <span class="arithmatex">\(OX\)</span>: <span class="arithmatex">\((3, 0)\)</span>, Projection onto <span class="arithmatex">\(OY\)</span>: <span class="arithmatex">\((0, 4)\)</span>.</p>
+<h3 id="problem-133">Problem 13.3</h3>
+<p><strong>Question:</strong> Project vector <span class="arithmatex">\(\mathbf{a} = (2,3)\)</span> onto vector <span class="arithmatex">\(\mathbf{b} = (1, 1)\)</span>. Illustrate the result on a graph.</p>
+<p><strong>Solution:</strong>
+The projection of <span class="arithmatex">\(\mathbf{a}\)</span> onto <span class="arithmatex">\(\mathbf{b}\)</span> is:
+<span class="arithmatex">\(<span class="arithmatex">\(\text{proj}_{\mathbf{b}} \mathbf{a} = \frac{\mathbf{a} \cdot \mathbf{b}}{|\mathbf{b}|^2} \mathbf{b}\)</span>\)</span></p>
+<div class="arithmatex">\[\mathbf{a} \cdot \mathbf{b} = 2 \cdot 1 + 3 \cdot 1 = 5$$
+$$|\mathbf{b}|^2 = 1^2 + 1^2 = 2\]</div>
+<div class="arithmatex">\[\text{proj}_{\mathbf{b}} \mathbf{a} = \frac{5}{2}(1, 1) = \left(\frac{5}{2}, \frac{5}{2}\right)\]</div>
+<p><strong>Answer:</strong> The projection is <span class="arithmatex">\(\left(\frac{5}{2}, \frac{5}{2}\right)\)</span>.</p>
+<h3 id="problem-134">Problem 13.4</h3>
+<p><strong>Question:</strong> Project vector <span class="arithmatex">\(\mathbf{b} = (1, 1)\)</span> onto vector <span class="arithmatex">\(\mathbf{a} = (2, 3)\)</span>. Illustrate the result on a graph.</p>
+<p><strong>Solution:</strong>
+<span class="arithmatex">\(<span class="arithmatex">\(\text{proj}_{\mathbf{a}} \mathbf{b} = \frac{\mathbf{b} \cdot \mathbf{a}}{|\mathbf{a}|^2} \mathbf{a}\)</span>\)</span></p>
+<div class="arithmatex">\[\mathbf{b} \cdot \mathbf{a} = 1 \cdot 2 + 1 \cdot 3 = 5$$
+$$|\mathbf{a}|^2 = 2^2 + 3^2 = 13\]</div>
+<div class="arithmatex">\[\text{proj}_{\mathbf{a}} \mathbf{b} = \frac{5}{13}(2, 3) = \left(\frac{10}{13}, \frac{15}{13}\right)\]</div>
+<p><strong>Answer:</strong> The projection is <span class="arithmatex">\(\left(\frac{10}{13}, \frac{15}{13}\right)\)</span>.</p>
+<h2 id="14-equations-of-lines-on-a-plane">14. Equations of Lines on a Plane</h2>
+<h3 id="problem-141">Problem 14.1</h3>
+<p><strong>Question:</strong> The line passes through points <span class="arithmatex">\(A(1, 2)\)</span> and <span class="arithmatex">\(B(3, 4)\)</span>. Find the equation of the line.</p>
+<p><strong>Solution:</strong>
+The slope is: <span class="arithmatex">\(m = \frac{4-2}{3-1} = \frac{2}{2} = 1\)</span></p>
+<p>Using point-slope form with point <span class="arithmatex">\(A(1, 2)\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(y - 2 = 1(x - 1)\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(y = x + 1\)</span>\)</span></p>
+<p><strong>Answer:</strong> <span class="arithmatex">\(y = x + 1\)</span></p>
+<h3 id="problem-142">Problem 14.2</h3>
+<p><strong>Question:</strong> The line passes through point <span class="arithmatex">\(A(1, 2)\)</span> and is parallel to the line <span class="arithmatex">\(y = 2x + 3\)</span>. Find the equation of the line.</p>
+<p><strong>Solution:</strong>
+Parallel lines have the same slope. The slope of <span class="arithmatex">\(y = 2x + 3\)</span> is <span class="arithmatex">\(m = 2\)</span>.</p>
+<p>Using point-slope form:
+<span class="arithmatex">\(<span class="arithmatex">\(y - 2 = 2(x - 1)\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(y = 2x\)</span>\)</span></p>
+<p><strong>Answer:</strong> <span class="arithmatex">\(y = 2x\)</span></p>
+<h3 id="problem-143">Problem 14.3</h3>
+<p><strong>Question:</strong> The line passes through point <span class="arithmatex">\(A(1, 2)\)</span> and is perpendicular to the line <span class="arithmatex">\(y = 2x + 3\)</span>. Find the equation of the line.</p>
+<p><strong>Solution:</strong>
+Perpendicular lines have slopes that are negative reciprocals. If <span class="arithmatex">\(m_1 = 2\)</span>, then <span class="arithmatex">\(m_2 = -\frac{1}{2}\)</span>.</p>
+<p>Using point-slope form:
+<span class="arithmatex">\(<span class="arithmatex">\(y - 2 = -\frac{1}{2}(x - 1)\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(y = -\frac{1}{2}x + \frac{1}{2} + 2 = -\frac{1}{2}x + \frac{5}{2}\)</span>\)</span></p>
+<p><strong>Answer:</strong> <span class="arithmatex">\(y = -\frac{1}{2}x + \frac{5}{2}\)</span></p>
+<h3 id="problem-144">Problem 14.4</h3>
+<p><strong>Question:</strong> We have two lines <span class="arithmatex">\(y = 2x + 3\)</span> and <span class="arithmatex">\(y = 3x + 2\)</span>. Find the intersection point of these lines and calculate the angle between them.</p>
+<p><strong>Solution:</strong>
+<strong>Intersection point:</strong>
+Setting the equations equal:
+<span class="arithmatex">\(<span class="arithmatex">\(2x + 3 = 3x + 2\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(x = 1\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(y = 2(1) + 3 = 5\)</span>\)</span></p>
+<p>Intersection point: <span class="arithmatex">\((1, 5)\)</span></p>
+<p><strong>Angle between lines:</strong>
+The angle between two lines with slopes <span class="arithmatex">\(m_1\)</span> and <span class="arithmatex">\(m_2\)</span> is:
+<span class="arithmatex">\(<span class="arithmatex">\(\tan \theta = \left|\frac{m_1 - m_2}{1 + m_1 m_2}\right| = \left|\frac{2 - 3}{1 + 2 \cdot 3}\right| = \left|\frac{-1}{7}\right| = \frac{1}{7}\)</span>\)</span></p>
+<div class="arithmatex">\[\theta = \arctan\left(\frac{1}{7}\right) \approx 8.13°\]</div>
+<p><strong>Answer:</strong> Intersection point: <span class="arithmatex">\((1, 5)\)</span>, Angle: <span class="arithmatex">\(\arctan\left(\frac{1}{7}\right) \approx 8.13°\)</span></p>
+<h3 id="problem-145">Problem 14.5</h3>
+<p><strong>Question:</strong> Write the equation of the line passing through point <span class="arithmatex">\(A(1, 2)\)</span> and parallel to the vector <span class="arithmatex">\(\mathbf{v} = [2, 3]\)</span>.</p>
+<p><strong>Solution:</strong>
+The direction vector <span class="arithmatex">\(\mathbf{v} = [2, 3]\)</span> gives slope <span class="arithmatex">\(m = \frac{3}{2}\)</span>.</p>
+<p>Using point-slope form:
+<span class="arithmatex">\(<span class="arithmatex">\(y - 2 = \frac{3}{2}(x - 1)\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(y = \frac{3}{2}x + \frac{1}{2}\)</span>\)</span></p>
+<p><strong>Answer:</strong> <span class="arithmatex">\(y = \frac{3}{2}x + \frac{1}{2}\)</span></p>
+<h3 id="problem-146">Problem 14.6</h3>
+<p><strong>Question:</strong> We have the line <span class="arithmatex">\(y = 2x + 3\)</span>. Find an example of a line perpendicular and parallel to it.</p>
+<p><strong>Solution:</strong>
+<strong>Parallel line:</strong> Has the same slope <span class="arithmatex">\(m = 2\)</span>
+Example: <span class="arithmatex">\(y = 2x + 1\)</span></p>
+<p><strong>Perpendicular line:</strong> Has slope <span class="arithmatex">\(m = -\frac{1}{2}\)</span>
+Example: <span class="arithmatex">\(y = -\frac{1}{2}x + 1\)</span></p>
+<p><strong>Answer:</strong> Parallel: <span class="arithmatex">\(y = 2x + 1\)</span>, Perpendicular: <span class="arithmatex">\(y = -\frac{1}{2}x + 1\)</span></p>
+<h3 id="problem-147">Problem 14.7</h3>
+<p><strong>Question:</strong> We have the line <span class="arithmatex">\(y = 2x + 3\)</span> and point <span class="arithmatex">\(A(1, 2)\)</span>. Find the distance from point <span class="arithmatex">\(A\)</span> to the line.</p>
+<p><strong>Solution:</strong>
+Rewrite the line in standard form: <span class="arithmatex">\(2x - y + 3 = 0\)</span></p>
+<p>The distance from point <span class="arithmatex">\((x_0, y_0)\)</span> to line <span class="arithmatex">\(ax + by + c = 0\)</span> is:
+<span class="arithmatex">\(<span class="arithmatex">\(d = \frac{|ax_0 + by_0 + c|}{\sqrt{a^2 + b^2}}\)</span>\)</span></p>
+<div class="arithmatex">\[d = \frac{|2(1) - 1(2) + 3|}{\sqrt{2^2 + (-1)^2}} = \frac{|2 - 2 + 3|}{\sqrt{5}} = \frac{3}{\sqrt{5}} = \frac{3\sqrt{5}}{5}\]</div>
+<p><strong>Answer:</strong> <span class="arithmatex">\(\frac{3\sqrt{5}}{5}\)</span></p>
+<h3 id="problem-148">Problem 14.8</h3>
+<p><strong>Question:</strong> The line intersects the coordinate axes at points <span class="arithmatex">\(A(2, 0)\)</span> and <span class="arithmatex">\(B(0, 3)\)</span>. Find the equation of the line.</p>
+<p><strong>Solution:</strong>
+Using the intercept form: <span class="arithmatex">\(\frac{x}{a} + \frac{y}{b} = 1\)</span> where <span class="arithmatex">\(a = 2\)</span> and <span class="arithmatex">\(b = 3\)</span>:</p>
+<div class="arithmatex">\[\frac{x}{2} + \frac{y}{3} = 1\]</div>
+<p>Multiplying by 6:
+<span class="arithmatex">\(<span class="arithmatex">\(3x + 2y = 6\)</span>\)</span></p>
+<p>In slope-intercept form:
+<span class="arithmatex">\(<span class="arithmatex">\(y = -\frac{3}{2}x + 3\)</span>\)</span></p>
+<p><strong>Answer:</strong> <span class="arithmatex">\(y = -\frac{3}{2}x + 3\)</span> or <span class="arithmatex">\(3x + 2y = 6\)</span></p>
+<h3 id="problem-149">Problem 14.9</h3>
+<p><strong>Question:</strong> Calculate the angle between the line <span class="arithmatex">\(y = x + 3\)</span> and the <span class="arithmatex">\(Ox\)</span> axis.</p>
+<p><strong>Solution:</strong>
+The slope of the line is <span class="arithmatex">\(m = 1\)</span>.
+The angle with the x-axis is: <span class="arithmatex">\(\theta = \arctan(m) = \arctan(1) = 45°\)</span></p>
+<p><strong>Answer:</strong> <span class="arithmatex">\(45°\)</span></p>
+<h3 id="problem-1410">Problem 14.10</h3>
+<p><strong>Question:</strong> Provide a vector perpendicular to the line <span class="arithmatex">\(x + y + 1 = 0\)</span>.</p>
+<p><strong>Solution:</strong>
+For a line <span class="arithmatex">\(ax + by + c = 0\)</span>, the normal vector is <span class="arithmatex">\(\mathbf{n} = [a, b]\)</span>.</p>
+<p>For the line <span class="arithmatex">\(x + y + 1 = 0\)</span>, the normal vector is <span class="arithmatex">\(\mathbf{n} = [1, 1]\)</span>.</p>
+<p><strong>Answer:</strong> <span class="arithmatex">\([1, 1]\)</span> (or any scalar multiple like <span class="arithmatex">\([2, 2]\)</span>, <span class="arithmatex">\([-1, -1]\)</span>, etc.)</p>
+<h2 id="15-equations-of-second-order-curves-conic-sections">15. Equations of Second-Order Curves (Conic Sections)</h2>
+<h3 id="problem-151">Problem 15.1</h3>
+<p><strong>Question:</strong> Find the equation of a circle with center at point <span class="arithmatex">\(A(1,2)\)</span> and radius <span class="arithmatex">\(r=3\)</span>.</p>
+<p><strong>Solution:</strong>
+The general equation of a circle with center <span class="arithmatex">\((h, k)\)</span> and radius <span class="arithmatex">\(r\)</span> is:
+<span class="arithmatex">\(<span class="arithmatex">\((x - h)^2 + (y - k)^2 = r^2\)</span>\)</span></p>
+<p>With center <span class="arithmatex">\((1, 2)\)</span> and radius <span class="arithmatex">\(3\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\((x - 1)^2 + (y - 2)^2 = 9\)</span>\)</span></p>
+<p><strong>Answer:</strong> <span class="arithmatex">\((x - 1)^2 + (y - 2)^2 = 9\)</span></p>
+<h3 id="problem-152">Problem 15.2</h3>
+<p><strong>Question:</strong> Find the equation of a parabola intersecting the <span class="arithmatex">\(Ox\)</span> axis at points <span class="arithmatex">\(x=2\)</span>, <span class="arithmatex">\(x=4\)</span>, and passing through point <span class="arithmatex">\(y(3)=1\)</span>.</p>
+<p><strong>Solution:</strong>
+Since the parabola intersects the x-axis at <span class="arithmatex">\(x = 2\)</span> and <span class="arithmatex">\(x = 4\)</span>, it has the form:
+<span class="arithmatex">\(<span class="arithmatex">\(y = a(x - 2)(x - 4)\)</span>\)</span></p>
+<p>Using the condition <span class="arithmatex">\(y(3) = 1\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(1 = a(3 - 2)(3 - 4) = a(1)(-1) = -a\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(a = -1\)</span>\)</span></p>
+<p>Therefore: <span class="arithmatex">\(y = -(x - 2)(x - 4) = -(x^2 - 6x + 8) = -x^2 + 6x - 8\)</span></p>
+<p><strong>Answer:</strong> <span class="arithmatex">\(y = -x^2 + 6x - 8\)</span></p>
+<h3 id="problem-153">Problem 15.3</h3>
+<p><strong>Question:</strong> Find the center of the ellipse with the equation <span class="arithmatex">\(x^2 + 4y^2 - 4x - 16y + 16 = 0\)</span>.</p>
+<p><strong>Solution:</strong>
+Complete the square for both <span class="arithmatex">\(x\)</span> and <span class="arithmatex">\(y\)</span> terms:
+<span class="arithmatex">\(<span class="arithmatex">\(x^2 - 4x + 4y^2 - 16y + 16 = 0\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\((x^2 - 4x + 4) + 4(y^2 - 4y + 4) + 16 - 4 - 16 = 0\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\((x - 2)^2 + 4(y - 2)^2 = 4\)</span>\)</span></p>
+<p>Dividing by 4:
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{(x - 2)^2}{4} + \frac{(y - 2)^2}{1} = 1\)</span>\)</span></p>
+<p><strong>Answer:</strong> The center is <span class="arithmatex">\((2, 2)\)</span>.</p>
+<h3 id="problem-154">Problem 15.4</h3>
+<p><strong>Question:</strong> Find the slope (<span class="arithmatex">\(m&gt;0\)</span>) of the line <span class="arithmatex">\(y=mx-5\)</span> that is tangent to the circle with the equation <span class="arithmatex">\(x^2 + y^2=1\)</span>.</p>
+<p><strong>Solution:</strong>
+For the line to be tangent to the circle, the distance from the center <span class="arithmatex">\((0, 0)\)</span> to the line must equal the radius.</p>
+<p>Rewrite the line as <span class="arithmatex">\(mx - y - 5 = 0\)</span>.
+Distance from origin to line: <span class="arithmatex">\(d = \frac{|m(0) - 1(0) - 5|}{\sqrt{m^2 + 1}} = \frac{5}{\sqrt{m^2 + 1}}\)</span></p>
+<p>For tangency: <span class="arithmatex">\(d = r = 1\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{5}{\sqrt{m^2 + 1}} = 1\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(5 = \sqrt{m^2 + 1}\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(25 = m^2 + 1\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(m^2 = 24\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(m = 2\sqrt{6}\)</span>\)</span> (taking positive value)</p>
+<p><strong>Answer:</strong> <span class="arithmatex">\(m = 2\sqrt{6}\)</span></p>
+<h3 id="problem-155">Problem 15.5</h3>
+<p><strong>Question:</strong> Find the intersection points of the hyperbola <span class="arithmatex">\(x^2 - y^2 = 1\)</span> with the ellipse <span class="arithmatex">\(x^2 + 4y^2 = 6\)</span>.</p>
+<p><strong>Solution:</strong>
+From the hyperbola equation: <span class="arithmatex">\(x^2 = 1 + y^2\)</span>
+Substituting into the ellipse equation:
+<span class="arithmatex">\(<span class="arithmatex">\((1 + y^2) + 4y^2 = 6\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(1 + 5y^2 = 6\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(5y^2 = 5\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(y^2 = 1\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(y = \pm 1\)</span>\)</span></p>
+<p>When <span class="arithmatex">\(y = \pm 1\)</span>: <span class="arithmatex">\(x^2 = 1 + 1 = 2\)</span>, so <span class="arithmatex">\(x = \pm\sqrt{2}\)</span></p>
+<p><strong>Answer:</strong> The intersection points are <span class="arithmatex">\((\sqrt{2}, 1)\)</span>, <span class="arithmatex">\((\sqrt{2}, -1)\)</span>, <span class="arithmatex">\((-\sqrt{2}, 1)\)</span>, <span class="arithmatex">\((-\sqrt{2}, -1)\)</span>.</p>
+<h3 id="problem-156">Problem 15.6</h3>
+<p><strong>Question:</strong> For the given hyperbola <span class="arithmatex">\(x^2 - y^2 = 1\)</span>, find the distance between its branches.</p>
+<p><strong>Solution:</strong>
+The hyperbola <span class="arithmatex">\(x^2 - y^2 = 1\)</span> can be written as <span class="arithmatex">\(\frac{x^2}{1} - \frac{y^2}{1} = 1\)</span>.</p>
+<p>This is a hyperbola with <span class="arithmatex">\(a^2 = 1\)</span>, so <span class="arithmatex">\(a = 1\)</span>.
+The vertices are at <span class="arithmatex">\((\pm a, 0) = (\pm 1, 0)\)</span>.</p>
+<p>The distance between the branches is the distance between the vertices: <span class="arithmatex">\(2a = 2(1) = 2\)</span>.</p>
+<p><strong>Answer:</strong> The distance between branches is 2.</p>
+<h2 id="16-equations-of-planes-in-space">16. Equations of Planes in Space</h2>
+<h3 id="problem-161">Problem 16.1</h3>
+<p><strong>Question:</strong> The plane passes through points <span class="arithmatex">\(A(1, 2, 3)\)</span>, <span class="arithmatex">\(B(3, 4, 5)\)</span>, and <span class="arithmatex">\(C(2, 1, 4)\)</span>. Find the equation of the plane.</p>
+<p><strong>Solution:</strong>
+Find two vectors in the plane:
+<span class="arithmatex">\(<span class="arithmatex">\(\overrightarrow{AB} = (3-1, 4-2, 5-3) = (2, 2, 2)\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(\overrightarrow{AC} = (2-1, 1-2, 4-3) = (1, -1, 1)\)</span>\)</span></p>
+<p>The normal vector is their cross product:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{n} = \overrightarrow{AB} \times \overrightarrow{AC} = \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ 2 &amp; 2 &amp; 2 \\ 1 &amp; -1 &amp; 1 \end{vmatrix}\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(= \mathbf{i}(2 \cdot 1 - 2 \cdot (-1)) - \mathbf{j}(2 \cdot 1 - 2 \cdot 1) + \mathbf{k}(2 \cdot (-1) - 2 \cdot 1)\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(= \mathbf{i}(4) - \mathbf{j}(0) + \mathbf{k}(-4) = (4, 0, -4)\)</span>\)</span></p>
+<p>We can simplify: <span class="arithmatex">\(\mathbf{n} = (1, 0, -1)\)</span></p>
+<p>Using point <span class="arithmatex">\(A(1, 2, 3)\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(1(x - 1) + 0(y - 2) + (-1)(z - 3) = 0\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(x - 1 - z + 3 = 0\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(x - z + 2 = 0\)</span>\)</span></p>
+<p><strong>Answer:</strong> <span class="arithmatex">\(x - z + 2 = 0\)</span></p>
+<h3 id="problem-162">Problem 16.2</h3>
+<p><strong>Question:</strong> The plane passes through point <span class="arithmatex">\(A(1, 2, 3)\)</span> and is parallel to the plane <span class="arithmatex">\(2x + 3y + 4z = 5\)</span>. Find the equation of the plane.</p>
+<p><strong>Solution:</strong>
+Parallel planes have the same normal vector. The normal vector of <span class="arithmatex">\(2x + 3y + 4z = 5\)</span> is <span class="arithmatex">\((2, 3, 4)\)</span>.</p>
+<p>Using point <span class="arithmatex">\(A(1, 2, 3)\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(2(x - 1) + 3(y - 2) + 4(z - 3) = 0\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(2x - 2 + 3y - 6 + 4z - 12 = 0\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(2x + 3y + 4z = 20\)</span>\)</span></p>
+<p><strong>Answer:</strong> <span class="arithmatex">\(2x + 3y + 4z = 20\)</span></p>
+<h3 id="problem-163">Problem 16.3</h3>
+<p><strong>Question:</strong> The plane passes through point <span class="arithmatex">\(A(1, 2, 3)\)</span> and is perpendicular to the normal vector <span class="arithmatex">\(\mathbf{n} = [2, 3, 4]\)</span>. Find the equation of the plane.</p>
+<p><strong>Solution:</strong>
+Using the point-normal form with point <span class="arithmatex">\(A(1, 2, 3)\)</span> and normal <span class="arithmatex">\(\mathbf{n} = (2, 3, 4)\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(2(x - 1) + 3(y - 2) + 4(z - 3) = 0\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(2x - 2 + 3y - 6 + 4z - 12 = 0\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(2x + 3y + 4z = 20\)</span>\)</span></p>
+<p><strong>Answer:</strong> <span class="arithmatex">\(2x + 3y + 4z = 20\)</span></p>
+<h3 id="problem-164">Problem 16.4</h3>
+<p><strong>Question:</strong> We have two planes <span class="arithmatex">\(2x + 3y + 4z = 5\)</span> and <span class="arithmatex">\(3x + 4y + 2z = 6\)</span>. Find the line of intersection of these planes.</p>
+<p><strong>Solution:</strong>
+The line of intersection is found by solving the system and expressing one variable in terms of a parameter.</p>
+<p>From the first equation: <span class="arithmatex">\(2x + 3y + 4z = 5\)</span>
+From the second equation: <span class="arithmatex">\(3x + 4y + 2z = 6\)</span></p>
+<p>Let <span class="arithmatex">\(z = t\)</span> (parameter). Then:
+<span class="arithmatex">\(<span class="arithmatex">\(2x + 3y = 5 - 4t\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(3x + 4y = 6 - 2t\)</span>\)</span></p>
+<p>Solving this system:
+From the first: <span class="arithmatex">\(x = \frac{5 - 4t - 3y}{2}\)</span>
+Substituting into the second:
+<span class="arithmatex">\(<span class="arithmatex">\(3 \cdot \frac{5 - 4t - 3y}{2} + 4y = 6 - 2t\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{15 - 12t - 9y}{2} + 4y = 6 - 2t\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(15 - 12t - 9y + 8y = 12 - 4t\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(15 - 12t - y = 12 - 4t\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(y = 3 - 8t\)</span>\)</span></p>
+<p>Then: <span class="arithmatex">\(x = \frac{5 - 4t - 3(3 - 8t)}{2} = \frac{5 - 4t - 9 + 24t}{2} = \frac{-4 + 20t}{2} = -2 + 10t\)</span></p>
+<p><strong>Answer:</strong> The line of intersection is:
+<span class="arithmatex">\(<span class="arithmatex">\(\begin{cases} x = -2 + 10t \\ y = 3 - 8t \\ z = t \end{cases}\)</span>\)</span></p>
+<h3 id="problem-165">Problem 16.5</h3>
+<p><strong>Question:</strong> Write the equation of the plane passing through point <span class="arithmatex">\(A(1, 2, 3)\)</span> and parallel to vectors <span class="arithmatex">\(\vec{v_1} = [1, 0, 1]\)</span> and <span class="arithmatex">\(\vec{v_2} = [0, 1, -1]\)</span>.</p>
+<p><strong>Solution:</strong>
+The normal vector is the cross product of the two direction vectors:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{n} = \vec{v_1} \times \vec{v_2} = \begin{vmatrix} \mathbf{i} &amp; \mathbf{j} &amp; \mathbf{k} \\ 1 &amp; 0 &amp; 1 \\ 0 &amp; 1 &amp; -1 \end{vmatrix}\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(= \mathbf{i}(0 \cdot (-1) - 1 \cdot 1) - \mathbf{j}(1 \cdot (-1) - 1 \cdot 0) + \mathbf{k}(1 \cdot 1 - 0 \cdot 0)\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(= \mathbf{i}(-1) - \mathbf{j}(-1) + \mathbf{k}(1) = (-1, 1, 1)\)</span>\)</span></p>
+<p>Using point <span class="arithmatex">\(A(1, 2, 3)\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(-1(x - 1) + 1(y - 2) + 1(z - 3) = 0\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(-x + 1 + y - 2 + z - 3 = 0\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(-x + y + z = 4\)</span>\)</span></p>
+<p><strong>Answer:</strong> <span class="arithmatex">\(-x + y + z = 4\)</span> or <span class="arithmatex">\(x - y - z + 4 = 0\)</span></p>
+<h3 id="problem-166">Problem 16.6</h3>
+<p><strong>Question:</strong> We have the plane <span class="arithmatex">\(2x + 3y + 4z = 5\)</span>. Find an example of a plane parallel and perpendicular to it.</p>
+<p><strong>Solution:</strong>
+<strong>Parallel plane:</strong> Has the same normal vector <span class="arithmatex">\((2, 3, 4)\)</span>
+Example: <span class="arithmatex">\(2x + 3y + 4z = 10\)</span></p>
+<p><strong>Perpendicular plane:</strong> Its normal vector must be perpendicular to <span class="arithmatex">\((2, 3, 4)\)</span>
+Example normal vector: <span class="arithmatex">\((1, 0, -\frac{1}{2})\)</span> (since <span class="arithmatex">\(2(1) + 3(0) + 4(-\frac{1}{2}) = 0\)</span>)
+Example: <span class="arithmatex">\(x - \frac{1}{2}z = 1\)</span> or <span class="arithmatex">\(2x - z = 2\)</span></p>
+<p><strong>Answer:</strong> Parallel: <span class="arithmatex">\(2x + 3y + 4z = 10\)</span>, Perpendicular: <span class="arithmatex">\(2x - z = 2\)</span></p>
+<h3 id="problem-167">Problem 16.7</h3>
+<p><strong>Question:</strong> We have the plane <span class="arithmatex">\(2x + 3y + 4z = 5\)</span> and point <span class="arithmatex">\(A(1, 2, 3)\)</span>. Find the distance from point <span class="arithmatex">\(A\)</span> to this plane.</p>
+<p><strong>Solution:</strong>
+The distance from point <span class="arithmatex">\((x_0, y_0, z_0)\)</span> to plane <span class="arithmatex">\(ax + by + cz = d\)</span> is:
+<span class="arithmatex">\(<span class="arithmatex">\(\text{distance} = \frac{|ax_0 + by_0 + cz_0 - d|}{\sqrt{a^2 + b^2 + c^2}}\)</span>\)</span></p>
+<div class="arithmatex">\[\text{distance} = \frac{|2(1) + 3(2) + 4(3) - 5|}{\sqrt{2^2 + 3^2 + 4^2}} = \frac{|2 + 6 + 12 - 5|}{\sqrt{4 + 9 + 16}} = \frac{15}{\sqrt{29}} = \frac{15\sqrt{29}}{29}\]</div>
+<p><strong>Answer:</strong> <span class="arithmatex">\(\frac{15\sqrt{29}}{29}\)</span></p>
+<h3 id="problem-168">Problem 16.8</h3>
+<p><strong>Question:</strong> The plane intersects the coordinate axes at points <span class="arithmatex">\(A(2, 0, 0)\)</span>, <span class="arithmatex">\(B(0, 3, 0)\)</span>, and <span class="arithmatex">\(C(0, 0, 4)\)</span>. Find the equation of the plane.</p>
+<p><strong>Solution:</strong>
+Using the intercept form: <span class="arithmatex">\(\frac{x}{a} + \frac{y}{b} + \frac{z}{c} = 1\)</span> where <span class="arithmatex">\(a = 2\)</span>, <span class="arithmatex">\(b = 3\)</span>, <span class="arithmatex">\(c = 4\)</span>:</p>
+<div class="arithmatex">\[\frac{x}{2} + \frac{y}{3} + \frac{z}{4} = 1\]</div>
+<p>Multiplying by 12:
+<span class="arithmatex">\(<span class="arithmatex">\(6x + 4y + 3z = 12\)</span>\)</span></p>
+<p><strong>Answer:</strong> <span class="arithmatex">\(6x + 4y + 3z = 12\)</span></p>
+<h3 id="problem-169">Problem 16.9</h3>
+<p><strong>Question:</strong> Calculate the angle between the plane <span class="arithmatex">\(x + y + z = 1\)</span> and the plane <span class="arithmatex">\(x = 0\)</span> (i.e., the <span class="arithmatex">\(yz\)</span> plane).</p>
+<p><strong>Solution:</strong>
+The normal vectors are:
+- Plane 1: <span class="arithmatex">\(\mathbf{n_1} = (1, 1, 1)\)</span>
+- Plane 2: <span class="arithmatex">\(\mathbf{n_2} = (1, 0, 0)\)</span></p>
+<p>The angle between planes equals the angle between their normal vectors:
+<span class="arithmatex">\(<span class="arithmatex">\(\cos \theta = \frac{\mathbf{n_1} \cdot \mathbf{n_2}}{|\mathbf{n_1}||\mathbf{n_2}|} = \frac{(1, 1, 1) \cdot (1, 0, 0)}{\sqrt{3} \cdot 1} = \frac{1}{\sqrt{3}}\)</span>\)</span></p>
+<div class="arithmatex">\[\theta = \arccos\left(\frac{1}{\sqrt{3}}\right) = \arccos\left(\frac{\sqrt{3}}{3}\right) \approx 54.74°\]</div>
+<p><strong>Answer:</strong> <span class="arithmatex">\(\arccos\left(\frac{\sqrt{3}}{3}\right) \approx 54.74°\)</span></p>
+<h3 id="problem-1610">Problem 16.10</h3>
+<p><strong>Question:</strong> Find the vector perpendicular to the plane <span class="arithmatex">\(x + y + z = 1\)</span>.</p>
+<p><strong>Solution:</strong>
+For a plane <span class="arithmatex">\(ax + by + cz = d\)</span>, the normal vector is <span class="arithmatex">\((a, b, c)\)</span>.</p>
+<p>For the plane <span class="arithmatex">\(x + y + z = 1\)</span>, the normal vector is <span class="arithmatex">\((1, 1, 1)\)</span>.</p>
+<p><strong>Answer:</strong> <span class="arithmatex">\((1, 1, 1)\)</span> (or any scalar multiple)</p>
+<h2 id="17-equations-of-second-order-surfaces">17. Equations of Second-Order Surfaces</h2>
+<h3 id="problem-171">Problem 17.1</h3>
+<p><strong>Question:</strong> Write the equation of a sphere with center at point <span class="arithmatex">\(P=(1,2,3)\)</span> and radius <span class="arithmatex">\(r=3\)</span>.</p>
+<p><strong>Solution:</strong>
+The general equation of a sphere with center <span class="arithmatex">\((h, k, l)\)</span> and radius <span class="arithmatex">\(r\)</span> is:
+<span class="arithmatex">\(<span class="arithmatex">\((x - h)^2 + (y - k)^2 + (z - l)^2 = r^2\)</span>\)</span></p>
+<p>With center <span class="arithmatex">\((1, 2, 3)\)</span> and radius <span class="arithmatex">\(3\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\((x - 1)^2 + (y - 2)^2 + (z - 3)^2 = 9\)</span>\)</span></p>
+<p><strong>Answer:</strong> <span class="arithmatex">\((x - 1)^2 + (y - 2)^2 + (z - 3)^2 = 9\)</span></p>
+<h3 id="problem-172">Problem 17.2</h3>
+<p><strong>Question:</strong> Do the spheres with equations <span class="arithmatex">\(x^2 + y^2 + z^2 = 1\)</span> and <span class="arithmatex">\(x^2 + y^2 + z^2 = 2\)</span> have any common points?</p>
+<p><strong>Solution:</strong>
+The first sphere has center <span class="arithmatex">\((0, 0, 0)\)</span> and radius <span class="arithmatex">\(r_1 = 1\)</span>.
+The second sphere has center <span class="arithmatex">\((0, 0, 0)\)</span> and radius <span class="arithmatex">\(r_2 = \sqrt{2}\)</span>.</p>
+<p>Since both spheres are concentric (same center) but have different radii, they do not intersect.</p>
+<p><strong>Answer:</strong> No, the spheres have no common points.</p>
+<h3 id="problem-173">Problem 17.3</h3>
+<p><strong>Question:</strong> What curve in space is formed by the intersection of the sphere <span class="arithmatex">\(x^2 + y^2 + z^2 = 1\)</span> with the sphere <span class="arithmatex">\((x-1)^2 + y^2 + z^2 = 1\)</span>? Find the equation of this curve.</p>
+<p><strong>Solution:</strong>
+Expanding the second equation:
+<span class="arithmatex">\(<span class="arithmatex">\(x^2 - 2x + 1 + y^2 + z^2 = 1\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(x^2 + y^2 + z^2 - 2x + 1 = 1\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(x^2 + y^2 + z^2 = 2x\)</span>\)</span></p>
+<p>Substituting the first equation:
+<span class="arithmatex">\(<span class="arithmatex">\(1 = 2x\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(x = \frac{1}{2}\)</span>\)</span></p>
+<p>From the first sphere equation with <span class="arithmatex">\(x = \frac{1}{2}\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{1}{4} + y^2 + z^2 = 1\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(y^2 + z^2 = \frac{3}{4}\)</span>\)</span></p>
+<p><strong>Answer:</strong> The intersection is a circle with equation <span class="arithmatex">\(x = \frac{1}{2}\)</span>, <span class="arithmatex">\(y^2 + z^2 = \frac{3}{4}\)</span>.</p>
+<h3 id="problem-174">Problem 17.4</h3>
+<p><strong>Question:</strong> Write the equation of the tangent plane to the paraboloid <span class="arithmatex">\(z=(x-1)^2+y^2+1\)</span> at point <span class="arithmatex">\(P(1,0,1)\)</span>.</p>
+<p><strong>Solution:</strong>
+Let <span class="arithmatex">\(f(x, y, z) = z - (x-1)^2 - y^2 - 1 = 0\)</span></p>
+<p>The gradient at point <span class="arithmatex">\((1, 0, 1)\)</span> is:
+<span class="arithmatex">\(<span class="arithmatex">\(\nabla f = \left(-2(x-1), -2y, 1\right) = (-2(1-1), -2(0), 1) = (0, 0, 1)\)</span>\)</span></p>
+<p>The tangent plane equation is:
+<span class="arithmatex">\(<span class="arithmatex">\(0(x - 1) + 0(y - 0) + 1(z - 1) = 0\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(z - 1 = 0\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(z = 1\)</span>\)</span></p>
+<p><strong>Answer:</strong> <span class="arithmatex">\(z = 1\)</span></p>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">

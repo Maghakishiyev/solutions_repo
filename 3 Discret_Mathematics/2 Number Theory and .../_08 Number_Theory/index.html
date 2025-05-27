@@ -82,9 +82,9 @@
 </li>
 <li class="toctree-l1"><a class="reference internal">6 Statistics</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../1%20Physics/6%20Statistics/Problem_1/">Statistics</a>
+<li class="toctree-l2"><a class="reference internal" href="../../../1%20Physics/6%20Statistics/Problem_1/">Problem 1</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../../1%20Physics/6%20Statistics/Problem_2/">Statistics</a>
+<li class="toctree-l2"><a class="reference internal" href="../../../1%20Physics/6%20Statistics/Problem_2/">Problem 2</a>
 </li>
 </ul>
 </li>
@@ -99,7 +99,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../2%20Mathematics/1%20Linear_algebra/">Linear Algebra</a>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../2%20Mathematics/2%20Analytic_geometry/">Analytic geometry</a>
+<li class="toctree-l1"><a class="reference internal" href="../../../2%20Mathematics/2%20Analytic_geometry/">Analytic Geometry</a>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../2%20Mathematics/3%20Calculus/">Calculus</a>
 </li>
@@ -118,19 +118,51 @@
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">2 Number Theory and ...</a>
 <ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../_05%20Combinatorics/">Combinatorics</a>
+<li class="toctree-l2"><a class="reference internal" href="../_07%20Induction/">Induction</a>
 </li>
 <li class="toctree-l2 current"><a class="reference internal current" href="#">Number Theory</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#task-1">Task 1</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#solution">Solution:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-2">Task 2</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#solution_1">Solution:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-3">Task 3</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#solution_2">Solution:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-4">Task 4</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#solution_3">Solution:</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#task-5">Task 5</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#solution_4">Solution:</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#summary-of-solutions">Summary of Solutions:</a>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal">3 Recurrence and ...</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../3%20Recurrence%20and%20.../_06%20Sequences_and_Series/">Sequences and Series</a>
+<li class="toctree-l2"><a class="reference internal" href="../../3%20Recurrence%20and%20.../_05%20Combinatorics/">Combinatorics</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../3%20Recurrence%20and%20.../_07%20Induction/">Induction</a>
+<li class="toctree-l2"><a class="reference internal" href="../../3%20Recurrence%20and%20.../_06%20Sequences_and_Series/">Sequences and Series</a>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../3%20Recurrence%20and%20.../_09%20Recurrence/">Recurrence</a>
 </li>
@@ -172,11 +204,170 @@
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
 <h1 id="number-theory">Number Theory</h1>
+<h2 id="task-1">Task 1</h2>
+<p><strong>Question:</strong> Check the following congruences:</p>
+<h3 id="solution">Solution:</h3>
+<ol>
+<li><strong><span class="arithmatex">\(12 \equiv 2 \pmod{5}\)</span></strong></li>
+</ol>
+<p>We need to check if <span class="arithmatex">\(5\)</span> divides <span class="arithmatex">\((12 - 2)\)</span>.
+   <span class="arithmatex">\(12 - 2 = 10 = 5 \cdot 2\)</span></p>
+<p>Since <span class="arithmatex">\(5\)</span> divides <span class="arithmatex">\(10\)</span>, the congruence is <strong>TRUE</strong>.</p>
+<ol>
+<li><strong><span class="arithmatex">\(12 \equiv 3 \pmod{10}\)</span></strong></li>
+</ol>
+<p>We need to check if <span class="arithmatex">\(10\)</span> divides <span class="arithmatex">\((12 - 3)\)</span>.
+   <span class="arithmatex">\(12 - 3 = 9\)</span></p>
+<p>Since <span class="arithmatex">\(10\)</span> does not divide <span class="arithmatex">\(9\)</span>, the congruence is <strong>FALSE</strong>.</p>
+<ol>
+<li><strong><span class="arithmatex">\(21 \equiv 1 \pmod{5}\)</span></strong></li>
+</ol>
+<p>We need to check if <span class="arithmatex">\(5\)</span> divides <span class="arithmatex">\((21 - 1)\)</span>.
+   <span class="arithmatex">\(21 - 1 = 20 = 5 \cdot 4\)</span></p>
+<p>Since <span class="arithmatex">\(5\)</span> divides <span class="arithmatex">\(20\)</span>, the congruence is <strong>TRUE</strong>.</p>
+<ol>
+<li><strong><span class="arithmatex">\(23 \equiv 3 \pmod{4}\)</span></strong></li>
+</ol>
+<p>We need to check if <span class="arithmatex">\(4\)</span> divides <span class="arithmatex">\((23 - 3)\)</span>.
+   <span class="arithmatex">\(23 - 3 = 20 = 4 \cdot 5\)</span></p>
+<p>Since <span class="arithmatex">\(4\)</span> divides <span class="arithmatex">\(20\)</span>, the congruence is <strong>TRUE</strong>.</p>
+<h2 id="task-2">Task 2</h2>
+<p><strong>Question:</strong> Prove that if <span class="arithmatex">\(a \equiv b \pmod{n}\)</span> and <span class="arithmatex">\(c \equiv d \pmod{n}\)</span>, then:</p>
+<h3 id="solution_1">Solution:</h3>
+<p><strong>Given:</strong> <span class="arithmatex">\(a \equiv b \pmod{n}\)</span> and <span class="arithmatex">\(c \equiv d \pmod{n}\)</span></p>
+<p>This means:
+- <span class="arithmatex">\(n \mid (a - b)\)</span>, so <span class="arithmatex">\(a - b = kn\)</span> for some integer <span class="arithmatex">\(k\)</span>
+- <span class="arithmatex">\(n \mid (c - d)\)</span>, so <span class="arithmatex">\(c - d = ln\)</span> for some integer <span class="arithmatex">\(l\)</span></p>
+<p>Therefore: <span class="arithmatex">\(a = b + kn\)</span> and <span class="arithmatex">\(c = d + ln\)</span></p>
+<h4 id="1-prove-a-c-equiv-b-d-pmodn">1. Prove: <span class="arithmatex">\(a + c \equiv b + d \pmod{n}\)</span></h4>
+<p><strong>Proof:</strong>
+<span class="arithmatex">\(<span class="arithmatex">\(a + c = (b + kn) + (d + ln) = (b + d) + (k + l)n\)</span>\)</span></p>
+<p>Therefore: <span class="arithmatex">\((a + c) - (b + d) = (k + l)n\)</span></p>
+<p>Since <span class="arithmatex">\((k + l)\)</span> is an integer, <span class="arithmatex">\(n \mid ((a + c) - (b + d))\)</span>.</p>
+<p>Thus: <span class="arithmatex">\(a + c \equiv b + d \pmod{n}\)</span> ✓</p>
+<h4 id="2-prove-a-c-equiv-b-d-pmodn">2. Prove: <span class="arithmatex">\(a - c \equiv b - d \pmod{n}\)</span></h4>
+<p><strong>Proof:</strong>
+<span class="arithmatex">\(<span class="arithmatex">\(a - c = (b + kn) - (d + ln) = (b - d) + (k - l)n\)</span>\)</span></p>
+<p>Therefore: <span class="arithmatex">\((a - c) - (b - d) = (k - l)n\)</span></p>
+<p>Since <span class="arithmatex">\((k - l)\)</span> is an integer, <span class="arithmatex">\(n \mid ((a - c) - (b - d))\)</span>.</p>
+<p>Thus: <span class="arithmatex">\(a - c \equiv b - d \pmod{n}\)</span> ✓</p>
+<h4 id="3-prove-ac-equiv-bd-pmodn">3. Prove: <span class="arithmatex">\(ac \equiv bd \pmod{n}\)</span></h4>
+<p><strong>Proof:</strong>
+<span class="arithmatex">\(<span class="arithmatex">\(ac = (b + kn)(d + ln) = bd + b(ln) + d(kn) + (kn)(ln)\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(= bd + bln + dkn + kln^2 = bd + n(bl + dk + kln)\)</span>\)</span></p>
+<p>Therefore: <span class="arithmatex">\(ac - bd = n(bl + dk + kln)\)</span></p>
+<p>Since <span class="arithmatex">\((bl + dk + kln)\)</span> is an integer, <span class="arithmatex">\(n \mid (ac - bd)\)</span>.</p>
+<p>Thus: <span class="arithmatex">\(ac \equiv bd \pmod{n}\)</span> ✓</p>
+<h4 id="4-prove-ak-equiv-bk-pmodn-for-all-k-in-mathbbn">4. Prove: <span class="arithmatex">\(a^k \equiv b^k \pmod{n}\)</span> for all <span class="arithmatex">\(k \in \mathbb{N}\)</span></h4>
+<p><strong>Proof by induction:</strong></p>
+<p><strong>Base case:</strong> <span class="arithmatex">\(k = 1\)</span>
+<span class="arithmatex">\(a^1 \equiv b^1 \pmod{n}\)</span> is given.</p>
+<p><strong>Inductive step:</strong> Assume <span class="arithmatex">\(a^k \equiv b^k \pmod{n}\)</span> for some <span class="arithmatex">\(k \geq 1\)</span>.</p>
+<p>We want to show: <span class="arithmatex">\(a^{k+1} \equiv b^{k+1} \pmod{n}\)</span></p>
+<div class="arithmatex">\[a^{k+1} = a \cdot a^k\]</div>
+<p>By the inductive hypothesis: <span class="arithmatex">\(a^k \equiv b^k \pmod{n}\)</span>
+By the given condition: <span class="arithmatex">\(a \equiv b \pmod{n}\)</span></p>
+<p>Using the multiplication property (part 3):
+<span class="arithmatex">\(<span class="arithmatex">\(a \cdot a^k \equiv b \cdot b^k \pmod{n}\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(a^{k+1} \equiv b^{k+1} \pmod{n}\)</span>\)</span></p>
+<p>By mathematical induction, <span class="arithmatex">\(a^k \equiv b^k \pmod{n}\)</span> for all <span class="arithmatex">\(k \in \mathbb{N}\)</span> ✓</p>
+<h2 id="task-3">Task 3</h2>
+<p><strong>Question:</strong> Compute the following greatest common divisors using the Euclidean algorithm:</p>
+<h3 id="solution_2">Solution:</h3>
+<h4 id="1-gcd12-75">1. <span class="arithmatex">\(\gcd(12, 75)\)</span></h4>
+<p><strong>Euclidean Algorithm:</strong>
+<span class="arithmatex">\(<span class="arithmatex">\(75 = 12 \cdot 6 + 3\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(12 = 3 \cdot 4 + 0\)</span>\)</span></p>
+<p>Since the remainder is 0, <span class="arithmatex">\(\gcd(12, 75) = 3\)</span>.</p>
+<h4 id="2-gcd12-68">2. <span class="arithmatex">\(\gcd(12, 68)\)</span></h4>
+<p><strong>Euclidean Algorithm:</strong>
+<span class="arithmatex">\(<span class="arithmatex">\(68 = 12 \cdot 5 + 8\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(12 = 8 \cdot 1 + 4\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(8 = 4 \cdot 2 + 0\)</span>\)</span></p>
+<p>Since the remainder is 0, <span class="arithmatex">\(\gcd(12, 68) = 4\)</span>.</p>
+<h4 id="3-gcd72-55">3. <span class="arithmatex">\(\gcd(72, 55)\)</span></h4>
+<p><strong>Euclidean Algorithm:</strong>
+<span class="arithmatex">\(<span class="arithmatex">\(72 = 55 \cdot 1 + 17\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(55 = 17 \cdot 3 + 4\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(17 = 4 \cdot 4 + 1\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(4 = 1 \cdot 4 + 0\)</span>\)</span></p>
+<p>Since the remainder is 0, <span class="arithmatex">\(\gcd(72, 55) = 1\)</span>.</p>
+<h4 id="4-gcd45-42">4. <span class="arithmatex">\(\gcd(45, 42)\)</span></h4>
+<p><strong>Euclidean Algorithm:</strong>
+<span class="arithmatex">\(<span class="arithmatex">\(45 = 42 \cdot 1 + 3\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(42 = 3 \cdot 14 + 0\)</span>\)</span></p>
+<p>Since the remainder is 0, <span class="arithmatex">\(\gcd(45, 42) = 3\)</span>.</p>
+<h2 id="task-4">Task 4</h2>
+<p><strong>Question:</strong> Compute the following least common multiples:</p>
+<h3 id="solution_3">Solution:</h3>
+<p>We use the formula: <span class="arithmatex">\(\text{lcm}(a, b) = \frac{|a \cdot b|}{\gcd(a, b)}\)</span></p>
+<h4 id="1-textlcm12-10">1. <span class="arithmatex">\(\text{lcm}(12, 10)\)</span></h4>
+<p>First find <span class="arithmatex">\(\gcd(12, 10)\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(12 = 10 \cdot 1 + 2\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(10 = 2 \cdot 5 + 0\)</span>\)</span></p>
+<p>So <span class="arithmatex">\(\gcd(12, 10) = 2\)</span>.</p>
+<p>Therefore: <span class="arithmatex">\(\text{lcm}(12, 10) = \frac{12 \cdot 10}{2} = \frac{120}{2} = 60\)</span></p>
+<h4 id="2-textlcm12-14">2. <span class="arithmatex">\(\text{lcm}(12, 14)\)</span></h4>
+<p>First find <span class="arithmatex">\(\gcd(12, 14)\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(14 = 12 \cdot 1 + 2\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(12 = 2 \cdot 6 + 0\)</span>\)</span></p>
+<p>So <span class="arithmatex">\(\gcd(12, 14) = 2\)</span>.</p>
+<p>Therefore: <span class="arithmatex">\(\text{lcm}(12, 14) = \frac{12 \cdot 14}{2} = \frac{168}{2} = 84\)</span></p>
+<h4 id="3-textlcm72-25">3. <span class="arithmatex">\(\text{lcm}(72, 25)\)</span></h4>
+<p>First find <span class="arithmatex">\(\gcd(72, 25)\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(72 = 25 \cdot 2 + 22\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(25 = 22 \cdot 1 + 3\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(22 = 3 \cdot 7 + 1\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(3 = 1 \cdot 3 + 0\)</span>\)</span></p>
+<p>So <span class="arithmatex">\(\gcd(72, 25) = 1\)</span>.</p>
+<p>Therefore: <span class="arithmatex">\(\text{lcm}(72, 25) = \frac{72 \cdot 25}{1} = 1800\)</span></p>
+<h4 id="4-textlcm45-60">4. <span class="arithmatex">\(\text{lcm}(45, 60)\)</span></h4>
+<p>First find <span class="arithmatex">\(\gcd(45, 60)\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(60 = 45 \cdot 1 + 15\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(45 = 15 \cdot 3 + 0\)</span>\)</span></p>
+<p>So <span class="arithmatex">\(\gcd(45, 60) = 15\)</span>.</p>
+<p>Therefore: <span class="arithmatex">\(\text{lcm}(45, 60) = \frac{45 \cdot 60}{15} = \frac{2700}{15} = 180\)</span></p>
+<h2 id="task-5">Task 5</h2>
+<p><strong>Question:</strong> Solve congruences of the form <span class="arithmatex">\(ax \equiv b \pmod{m}\)</span>:</p>
+<h3 id="solution_4">Solution:</h3>
+<p>To solve <span class="arithmatex">\(ax \equiv b \pmod{m}\)</span>, we need <span class="arithmatex">\(\gcd(a, m) \mid b\)</span> for a solution to exist.</p>
+<h4 id="1-2x-equiv-3-pmod5">1. <span class="arithmatex">\(2x \equiv 3 \pmod{5}\)</span></h4>
+<p>Check: <span class="arithmatex">\(\gcd(2, 5) = 1\)</span> and <span class="arithmatex">\(1 \mid 3\)</span> ✓</p>
+<p>We need the multiplicative inverse of <span class="arithmatex">\(2\)</span> modulo <span class="arithmatex">\(5\)</span>.
+Since <span class="arithmatex">\(2 \cdot 3 = 6 \equiv 1 \pmod{5}\)</span>, we have <span class="arithmatex">\(2^{-1} \equiv 3 \pmod{5}\)</span>.</p>
+<p>Therefore: <span class="arithmatex">\(x \equiv 3 \cdot 3 \equiv 9 \equiv 4 \pmod{5}\)</span></p>
+<p><strong>Answer:</strong> <span class="arithmatex">\(x \equiv 4 \pmod{5}\)</span></p>
+<h4 id="2-3x-equiv-4-pmod7">2. <span class="arithmatex">\(3x \equiv 4 \pmod{7}\)</span></h4>
+<p>Check: <span class="arithmatex">\(\gcd(3, 7) = 1\)</span> and <span class="arithmatex">\(1 \mid 4\)</span> ✓</p>
+<p>We need the multiplicative inverse of <span class="arithmatex">\(3\)</span> modulo <span class="arithmatex">\(7\)</span>.
+Since <span class="arithmatex">\(3 \cdot 5 = 15 \equiv 1 \pmod{7}\)</span>, we have <span class="arithmatex">\(3^{-1} \equiv 5 \pmod{7}\)</span>.</p>
+<p>Therefore: <span class="arithmatex">\(x \equiv 4 \cdot 5 \equiv 20 \equiv 6 \pmod{7}\)</span></p>
+<p><strong>Answer:</strong> <span class="arithmatex">\(x \equiv 6 \pmod{7}\)</span></p>
+<h4 id="3-4x-equiv-5-pmod6">3. <span class="arithmatex">\(4x \equiv 5 \pmod{6}\)</span></h4>
+<p>Check: <span class="arithmatex">\(\gcd(4, 6) = 2\)</span> and <span class="arithmatex">\(2 \nmid 5\)</span> ✗</p>
+<p>Since <span class="arithmatex">\(\gcd(4, 6) = 2\)</span> does not divide <span class="arithmatex">\(5\)</span>, this congruence has <strong>no solution</strong>.</p>
+<h4 id="4-5x-equiv-6-pmod8">4. <span class="arithmatex">\(5x \equiv 6 \pmod{8}\)</span></h4>
+<p>Check: <span class="arithmatex">\(\gcd(5, 8) = 1\)</span> and <span class="arithmatex">\(1 \mid 6\)</span> ✓</p>
+<p>We need the multiplicative inverse of <span class="arithmatex">\(5\)</span> modulo <span class="arithmatex">\(8\)</span>.
+Since <span class="arithmatex">\(5 \cdot 5 = 25 \equiv 1 \pmod{8}\)</span>, we have <span class="arithmatex">\(5^{-1} \equiv 5 \pmod{8}\)</span>.</p>
+<p>Therefore: <span class="arithmatex">\(x \equiv 6 \cdot 5 \equiv 30 \equiv 6 \pmod{8}\)</span></p>
+<p><strong>Answer:</strong> <span class="arithmatex">\(x \equiv 6 \pmod{8}\)</span></p>
+<h4 id="5-6x-equiv-7-pmod9">5. <span class="arithmatex">\(6x \equiv 7 \pmod{9}\)</span></h4>
+<p>Check: <span class="arithmatex">\(\gcd(6, 9) = 3\)</span> and <span class="arithmatex">\(3 \nmid 7\)</span> ✗</p>
+<p>Since <span class="arithmatex">\(\gcd(6, 9) = 3\)</span> does not divide <span class="arithmatex">\(7\)</span>, this congruence has <strong>no solution</strong>.</p>
+<h3 id="summary-of-solutions">Summary of Solutions:</h3>
+<ol>
+<li><span class="arithmatex">\(x \equiv 4 \pmod{5}\)</span></li>
+<li><span class="arithmatex">\(x \equiv 6 \pmod{7}\)</span></li>
+<li>No solution</li>
+<li><span class="arithmatex">\(x \equiv 6 \pmod{8}\)</span></li>
+<li>No solution</li>
+</ol>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-left" href="../_05%20Combinatorics/" title="Combinatorics"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-<a class="btn btn-neutral float-right" href="../../3%20Recurrence%20and%20.../_06%20Sequences_and_Series/" title="Sequences and Series">Next <span class="icon icon-circle-arrow-right"></span></a>
+<a class="btn btn-neutral float-left" href="../_07%20Induction/" title="Induction"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../../3%20Recurrence%20and%20.../_05%20Combinatorics/" title="Combinatorics">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
 <div role="contentinfo">
@@ -191,8 +382,8 @@
 </div>
 <div aria-label="Versions" class="rst-versions" role="note">
 <span class="rst-current-version" data-toggle="rst-current-version">
-<span><a href="../_05%20Combinatorics/" style="color: #fcfcfc">« Previous</a></span>
-<span><a href="../../3%20Recurrence%20and%20.../_06%20Sequences_and_Series/" style="color: #fcfcfc">Next »</a></span>
+<span><a href="../_07%20Induction/" style="color: #fcfcfc">« Previous</a></span>
+<span><a href="../../3%20Recurrence%20and%20.../_05%20Combinatorics/" style="color: #fcfcfc">Next »</a></span>
 </span>
 </div>
 <script src="../../../js/jquery-3.6.0.min.js"></script>
