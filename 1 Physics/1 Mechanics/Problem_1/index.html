@@ -88,7 +88,7 @@
 <ul>
 <li class="toctree-l2"><a class="reference internal" href="../../2%20Gravity/Problem_1/">Problem 1</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../2%20Gravity/Problem_2/">Problem 2</a>
+<li class="toctree-l2"><a class="reference internal" href="../../2%20Gravity/Problem_2/">Problem 2: Cosmic Velocities and Escape Dynamics</a>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../2%20Gravity/Problem_3/">Problem 3</a>
 </li>
@@ -224,10 +224,13 @@ components:</p>
 <p>Setting <span class="arithmatex">\( y(t) = 0 \)</span> to find the total flight time: $$ t_f = \frac{2 v_0
 \sin(\theta)}{g} $$</p>
 <h3 id="range-formula">Range Formula:</h3>
-<p>The horizontal range <span class="arithmatex">\( R \)</span> is given by:</p>
+<p>The horizontal range <span class="arithmatex">\(R\)</span> is given by:</p>
 <div class="arithmatex">\[ R = v_0 \cos(\theta) t_f = \frac{v_0^2 \sin(2\theta)}{g} \]</div>
-<p>This equation shows that the range is maximized at <span class="arithmatex">\( \theta = 45^\circ \)</span>,
-assuming other parameters remain constant.</p>
+<p>This equation shows that the range is maximized at <span class="arithmatex">\(\theta = 45°\)</span>, assuming other parameters remain constant.</p>
+<p><strong>Mathematical proof for maximum range:</strong>
+Taking the derivative with respect to <span class="arithmatex">\(\theta\)</span>:
+$$ \frac{dR}{d\theta} = \frac{v_0^2}{g} \cdot 2\cos(2\theta) = 0 $$</p>
+<p>This gives <span class="arithmatex">\(\cos(2\theta) = 0\)</span>, which means <span class="arithmatex">\(2\theta = 90°\)</span>, therefore <span class="arithmatex">\(\theta = 45°\)</span>.</p>
 <hr/>
 <h2 id="2-analysis-of-the-range">2. Analysis of the Range</h2>
 <h3 id="influence-of-initial-conditions">Influence of Initial Conditions</h3>
@@ -240,32 +243,29 @@ assuming other parameters remain constant.</p>
     peaking at <span class="arithmatex">\( 45^\circ \)</span>.</li>
 </ul>
 <h3 id="graphical-representation">Graphical Representation</h3>
-<p>Below is a Python script to visualize how the range changes with <span class="arithmatex">\( \theta \)</span>:</p>
-<pre><code class="language-python">import numpy as np
-import matplotlib.pyplot as plt
-
-def range_function(theta, v0, g=9.81):
-    return (v0**2 * np.sin(2 * np.radians(theta))) / g
-
-# Parameters
-v0 = 20  # initial velocity in m/s
-theta = np.linspace(0, 90, 100)  # range of angles
-g = 9.81  # gravity
-
-# Compute ranges
-ranges = range_function(theta, v0, g)
-
-# Plot results
-plt.figure(figsize=(8,5))
-plt.plot(theta, ranges, label=f'v0 = {v0} m/s')
-plt.xlabel('Launch Angle (degrees)')
-plt.ylabel('Range (m)')
-plt.title('Projectile Range vs. Launch Angle')
-plt.legend()
-plt.grid()
-plt.show()
-</code></pre>
+<p>The relationship between launch angle and range can be visualized using the theoretical formula. The simulation shows the characteristic parabolic relationship with maximum range at 45°.</p>
+<p><strong>Key observations:</strong>
+- Range increases from 0° to 45°
+- Range decreases from 45° to 90°<br/>
+- Symmetric angles (e.g., 30° and 60°) produce equal ranges
+- At 45°, <span class="arithmatex">\(\sin(2\theta) = \sin(90°) = 1\)</span>, giving maximum range</p>
 <p><img alt="Range vs. Launch Angle" src="../pics/problem1.png"/></p>
+<p><strong>Additional Analysis Plots:</strong></p>
+<p>The following visualizations provide deeper insights into projectile motion:</p>
+<ol>
+<li>
+<p><strong>Range vs Angle for Different Velocities:</strong> Shows how initial velocity affects the range-angle relationship</p>
+</li>
+<li>
+<p><strong>Trajectories for Different Angles:</strong> Displays actual flight paths for various launch angles</p>
+</li>
+<li>
+<p><strong>Effect of Gravity:</strong> Compares projectile motion on different celestial bodies</p>
+</li>
+</ol>
+<p><img alt="Trajectories for Different Angles" src="../pics/trajectories.png"/>
+<img alt="Range vs Initial Velocity" src="../pics/range_vs_velocity.png"/>
+<img alt="Range on Different Planets" src="../pics/range_vs_gravity.png"/></p>
 <hr/>
 <h2 id="3-practical-applications">3. Practical Applications</h2>
 <ul>
@@ -282,9 +282,17 @@ plt.show()
 Incorporating drag force leads to differential equations that require numerical
 methods (e.g., Runge-Kutta) to solve.</p>
 <h3 id="example-adding-air-resistance">Example: Adding Air Resistance</h3>
-<p>The equations with drag <span class="arithmatex">\(F_d = -k v^2\)</span> lead to:</p>
-<div class="arithmatex">\[m \frac{d^2 x}{dt^2} = -k v_x^2$$ $$m \frac{d^2 y}{dt^2} = -mg - k v_y^2\]</div>
-<p>A numerical solver like Python's SciPy can be used to compute solutions.</p>
+<p>Real projectile motion includes air resistance, which significantly affects the trajectory. The drag force is proportional to velocity squared:</p>
+<div class="arithmatex">\[\vec{F}_d = -k|\vec{v}|\vec{v}\]</div>
+<p>This leads to coupled differential equations:
+<span class="arithmatex">\(<span class="arithmatex">\(m \frac{d^2 x}{dt^2} = -k v_x \sqrt{v_x^2 + v_y^2}\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(m \frac{d^2 y}{dt^2} = -mg - k v_y \sqrt{v_x^2 + v_y^2}\)</span>\)</span></p>
+<p><strong>Effects of air resistance:</strong>
+- Reduces maximum range
+- Optimal angle becomes less than 45°
+- Trajectory becomes asymmetric (steeper descent)
+- Range no longer quadratic in initial velocity</p>
+<p>These equations require numerical methods (Runge-Kutta) for solution, as implemented in our simulation code.</p>
 <hr/>
 <h2 id="5-limitations-and-further-considerations">5. Limitations and Further Considerations</h2>
 <ul>
