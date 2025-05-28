@@ -5,19 +5,25 @@ import os
 import imageio.v2 as imageio
 import tempfile
 
-image_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'docs', '1 Physics', '2 Gravity', 'pics')
+# Get the correct path to the images directory
+script_dir = os.path.dirname(os.path.abspath(__file__))
+repo_root = os.path.dirname(script_dir)
+image_dir = os.path.join(repo_root, 'docs', '1 Physics', '2 Gravity', 'pics')
 os.makedirs(image_dir, exist_ok=True)
 
-G = 6.67430e-11  
-M_earth = 5.972e24  
-M_sun = 1.989e30  
+# Physical constants
+G = 6.67430e-11  # Gravitational constant (m^3 kg^-1 s^-2)
+M_earth = 5.972e24  # Mass of Earth (kg)
+M_sun = 1.989e30  # Mass of Sun (kg)
+AU = 1.496e11  # Astronomical Unit (m)
 
 def calculate_period(radius, central_mass):
+    """Calculate orbital period using Kepler's Third Law"""
     return 2 * np.pi * np.sqrt(radius**3 / (G * central_mass))
 
 def simulate_circular_orbit(radius, central_mass, num_points=1000):
+    """Simulate a circular orbit and return position coordinates"""
     period = calculate_period(radius, central_mass)
-    
     velocity = 2 * np.pi * radius / period
     
     theta = np.linspace(0, 2*np.pi, num_points)
@@ -26,328 +32,294 @@ def simulate_circular_orbit(radius, central_mass, num_points=1000):
     
     return x, y, period, velocity
 
-planet_data = {
-    'Mercury': {'radius': 5.79e10, 'color': 'gray'},
-    'Venus': {'radius': 1.08e11, 'color': 'orange'},
-    'Earth': {'radius': 1.496e11, 'color': 'blue'},
-    'Mars': {'radius': 2.28e11, 'color': 'red'},
-    'Jupiter': {'radius': 7.78e11, 'color': 'brown'},
-    'Saturn': {'radius': 1.43e12, 'color': 'gold'},
-    'Uranus': {'radius': 2.87e12, 'color': 'lightblue'},
-    'Neptune': {'radius': 4.5e12, 'color': 'darkblue'}
-}
-
-plt.figure(figsize=(12, 12))
-
-plt.scatter(0, 0, s=200, color='yellow', label='Sun')
-
-for planet, data in planet_data.items():
-    x, y, period, _ = simulate_circular_orbit(data['radius'], M_sun)
-    plt.plot(x, y, color=data['color'], label=f'{planet} (T = {period/86400/365.25:.2f} years)')
-
-plt.grid(True, linestyle='--', alpha=0.7)
-plt.xlabel('Distance (m)')
-plt.ylabel('Distance (m)')
-plt.title('Orbits of Planets in the Solar System')
-plt.axis('equal')
-plt.legend(loc='upper right')
-plt.savefig(os.path.join(image_dir, 'solar_system_orbits.png'), dpi=300, bbox_inches='tight')
-
-radii = np.linspace(0.1e11, 5e12, 100)
-periods = [calculate_period(r, M_sun) for r in radii]
-periods_years = np.array(periods) / (86400 * 365.25)  
-radii_au = np.array(radii) / 1.496e11  
-
-periods_squared = periods_years**2
-radii_cubed = radii_au**3
-
-plt.figure(figsize=(12, 8))
-
-plt.plot(radii_cubed, periods_squared, 'b-', linewidth=2)
-
-planet_positions = {}
-
-for planet, data in planet_data.items():
-    radius_au_cubed = (data['radius']/1.496e11)**3
-    period_years_squared = (calculate_period(data['radius'], M_sun)/86400/365.25)**2
-    plt.scatter(radius_au_cubed, period_years_squared, color=data['color'], s=80)
-    planet_positions[planet] = (radius_au_cubed, period_years_squared)
-
-label_offsets = {
-    'Mercury': (10, 10),
-    'Venus': (15, -25),
-    'Earth': (-50, 20),
-    'Mars': (20, 30),
-    'Jupiter': (15, -30),
-    'Saturn': (-70, -20),
-    'Uranus': (20, 25),
-    'Neptune': (-80, -30)
-}
-
-for planet, (x, y) in planet_positions.items():
-    plt.annotate(planet, 
-                xy=(x, y),
-                xytext=label_offsets[planet], 
-                textcoords='offset points',
-                arrowprops=dict(arrowstyle='->', lw=1.5, color=planet_data[planet]['color']),
-                fontsize=12,
-                fontweight='bold')
-
-plt.grid(True)
-plt.xlabel('Orbital Radius Cubed (AU³)', fontsize=12)
-plt.ylabel('Orbital Period Squared (years²)', fontsize=12)
-plt.title('Verification of Kepler’s Third Law: T² ∝ r³', fontsize=14)
-
-plt.text(0.05, 0.95, 'T² = (4π²/GM) × r³', transform=plt.gca().transAxes, 
-        fontsize=12, verticalalignment='top', 
-        bbox=dict(boxstyle='round', facecolor='white', alpha=0.8))
-
-plt.xlim(-5, max(radii_cubed) * 1.1)
-plt.ylim(-100, max(periods_squared) * 1.1)
-
-plt.tight_layout()
-plt.savefig(os.path.join(image_dir, 'keplers_third_law.png'), dpi=300, bbox_inches='tight')
-
-plt.figure(figsize=(10, 6))
-plt.loglog(radii_au, periods_years, 'b-', linewidth=2)
-
-for planet, data in planet_data.items():
-    period_years = calculate_period(data['radius'], M_sun) / (86400 * 365.25)
-    radius_au = data['radius'] / 1.496e11
-    plt.scatter(radius_au, period_years, color=data['color'])
-    plt.annotate(planet, (radius_au, period_years), xytext=(5, 5), textcoords='offset points')
-
-plt.grid(True, which='both', linestyle='--', alpha=0.7)
-plt.xlabel('Orbital Radius (AU) - Log Scale')
-plt.ylabel('Orbital Period (years) - Log Scale')
-plt.title('Kepler’s Third Law: Log-Log Plot')
-plt.savefig(os.path.join(image_dir, 'keplers_law_loglog.png'), dpi=300, bbox_inches='tight')
-
-plt.figure(figsize=(10, 10))
-
-plt.scatter(0, 0, s=200, color='blue', label='Central Body')
-
-orbit_radius = 1.0
-theta = np.linspace(0, 2*np.pi, 100)
-x_orbit = orbit_radius * np.cos(theta)
-y_orbit = orbit_radius * np.sin(theta)
-plt.plot(x_orbit, y_orbit, 'k--', alpha=0.3)
-
-angles = [0, np.pi/4, np.pi/2, 3*np.pi/4]
-colors = ['red', 'green', 'purple', 'orange']
-
-for i, angle in enumerate(angles):
-    x = orbit_radius * np.cos(angle)
-    y = orbit_radius * np.sin(angle)
+def generate_main_plot():
+    """Generate the main plot referenced in the markdown as problem1.png"""
+    # Create the Kepler's Third Law verification plot
+    orbit_radii = np.linspace(0.1, 10, 100) * AU  # 0.1 to 10 AU
+    orbit_periods = []
     
-    vx = -np.sin(angle) * 0.3
-    vy = np.cos(angle) * 0.3
+    for radius in orbit_radii:
+        period = calculate_period(radius, M_sun)
+        orbit_periods.append(period / (60 * 60 * 24 * 365.25))  # Convert to years
     
-    ax_val = -np.cos(angle) * 0.3
-    ay_val = -np.sin(angle) * 0.3
+    orbit_periods = np.array(orbit_periods)
+    orbit_radii_au = orbit_radii / AU  # Convert to AU
     
-    plt.scatter(x, y, color=colors[i], s=100, zorder=10)
+    # Plot T^2 vs R^3 to verify linear relationship
+    plt.figure(figsize=(10, 6))
+    plt.plot(orbit_radii_au**3, orbit_periods**2, 'b-', linewidth=2, label="Kepler's Third Law")
+    plt.xlabel('Orbital Radius Cubed (AU³)')
+    plt.ylabel('Orbital Period Squared (years²)')
+    plt.title('Verification of Kepler\'s Third Law: T² ∝ R³')
+    plt.grid(True, alpha=0.3)
+    plt.legend()
     
-    plt.arrow(0, 0, x, y, color=colors[i], width=0.01, length_includes_head=True, alpha=0.7, label='Position' if i == 0 else '')
+    # Add theoretical annotation
+    plt.text(0.05, 0.95, 'T² = (4π²/GM) × R³\nLinear relationship confirms Kepler\'s Law', 
+             transform=plt.gca().transAxes, verticalalignment='top',
+             bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8))
     
-    plt.arrow(x, y, vx, vy, color='green', width=0.01, length_includes_head=True, alpha=0.7, label='Velocity' if i == 0 else '')
+    plt.tight_layout()
+    plt.savefig(os.path.join(image_dir, 'problem1.png'), dpi=300, bbox_inches='tight')
+    plt.close()
+
+def run_comprehensive_analysis():
+    """Run comprehensive orbital mechanics analysis"""
+    # Planet data for solar system analysis
+    planet_data = {
+        'Mercury': {'radius': 0.387 * AU, 'color': 'gray'},
+        'Venus': {'radius': 0.723 * AU, 'color': 'orange'},
+        'Earth': {'radius': 1.000 * AU, 'color': 'blue'},
+        'Mars': {'radius': 1.524 * AU, 'color': 'red'},
+        'Jupiter': {'radius': 5.203 * AU, 'color': 'brown'},
+        'Saturn': {'radius': 9.537 * AU, 'color': 'gold'},
+        'Uranus': {'radius': 19.191 * AU, 'color': 'lightblue'},
+        'Neptune': {'radius': 30.069 * AU, 'color': 'darkblue'}
+    }
+
+    # 1. Solar system orbits visualization
+    plt.figure(figsize=(14, 14))
     
-    plt.arrow(x, y, ax_val, ay_val, color='blue', width=0.01, length_includes_head=True, alpha=0.7, label='Acceleration' if i == 0 else '')
+    plt.scatter(0, 0, s=300, color='yellow', label='Sun', edgecolors='orange', linewidth=2)
+    
+    for planet, data in planet_data.items():
+        x, y, period, _ = simulate_circular_orbit(data['radius'], M_sun)
+        plt.plot(x/AU, y/AU, color=data['color'], linewidth=2, 
+                label=f'{planet} (T = {period/86400/365.25:.2f} years)')
+    
+    plt.grid(True, linestyle='--', alpha=0.7)
+    plt.xlabel('Distance (AU)')
+    plt.ylabel('Distance (AU)')
+    plt.title('Orbits of Planets in the Solar System')
+    plt.axis('equal')
+    plt.legend(loc='upper right', bbox_to_anchor=(1.15, 1))
+    plt.tight_layout()
+    plt.savefig(os.path.join(image_dir, 'solar_system_orbits.png'), dpi=300, bbox_inches='tight')
+    plt.close()
 
-plt.grid(True, linestyle='--', alpha=0.7)
-plt.xlim(-1.5, 1.5)
-plt.ylim(-1.5, 1.5)
-plt.axis('equal')
-plt.xlabel('x')
-plt.ylabel('y')
-plt.title('Circular Orbit Dynamics')
-plt.legend(loc='upper right')
-plt.savefig(os.path.join(image_dir, 'orbit_dynamics.png'), dpi=300, bbox_inches='tight')
+    # 2. Detailed Kepler's Third Law verification with planets
+    radii = np.linspace(0.1, 40, 200) * AU
+    periods = [calculate_period(r, M_sun) for r in radii]
+    periods_years = np.array(periods) / (86400 * 365.25)  
+    radii_au = np.array(radii) / AU
 
-def create_orbit_animation():
-    with tempfile.TemporaryDirectory() as tmpdirname:
-        fig, ax = plt.subplots(figsize=(10, 10))
+    periods_squared = periods_years**2
+    radii_cubed = radii_au**3
+
+    plt.figure(figsize=(12, 8))
+    plt.plot(radii_cubed, periods_squared, 'b-', linewidth=2, alpha=0.7, label='Theoretical curve')
+
+    planet_positions = {}
+    for planet, data in planet_data.items():
+        radius_au_cubed = (data['radius']/AU)**3
+        period_years_squared = (calculate_period(data['radius'], M_sun)/86400/365.25)**2
+        plt.scatter(radius_au_cubed, period_years_squared, color=data['color'], s=100, 
+                   edgecolors='black', linewidth=1, zorder=10)
+        planet_positions[planet] = (radius_au_cubed, period_years_squared)
+
+    # Label planets with arrows
+    label_offsets = {
+        'Mercury': (20, 20),
+        'Venus': (30, -40),
+        'Earth': (-80, 30),
+        'Mars': (40, 40),
+        'Jupiter': (30, -50),
+        'Saturn': (-120, -30),
+        'Uranus': (40, 50),
+        'Neptune': (-150, -50)
+    }
+
+    for planet, (x, y) in planet_positions.items():
+        plt.annotate(planet, 
+                    xy=(x, y),
+                    xytext=label_offsets[planet], 
+                    textcoords='offset points',
+                    arrowprops=dict(arrowstyle='->', lw=2, color=planet_data[planet]['color']),
+                    fontsize=12,
+                    fontweight='bold',
+                    bbox=dict(boxstyle='round,pad=0.3', facecolor='white', alpha=0.8))
+
+    plt.grid(True, alpha=0.3)
+    plt.xlabel('Orbital Radius Cubed (AU³)', fontsize=14)
+    plt.ylabel('Orbital Period Squared (years²)', fontsize=14)
+    plt.title('Verification of Kepler\'s Third Law with Solar System Planets', fontsize=16)
+
+    plt.text(0.05, 0.95, 'T² = (4π²/GM) × R³', transform=plt.gca().transAxes, 
+            fontsize=14, verticalalignment='top', 
+            bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.8))
+
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(os.path.join(image_dir, 'keplers_third_law.png'), dpi=300, bbox_inches='tight')
+    plt.close()
+
+    # 3. Log-log plot of Kepler's Third Law
+    plt.figure(figsize=(10, 8))
+    plt.loglog(radii_au, periods_years, 'b-', linewidth=3, alpha=0.7, label='T ∝ R^(3/2)')
+
+    for planet, data in planet_data.items():
+        period_years = calculate_period(data['radius'], M_sun) / (86400 * 365.25)
+        radius_au = data['radius'] / AU
+        plt.scatter(radius_au, period_years, color=data['color'], s=100, 
+                   edgecolors='black', linewidth=1, zorder=10)
+        plt.annotate(planet, (radius_au, period_years), 
+                    xytext=(10, 10), textcoords='offset points',
+                    fontsize=11, fontweight='bold')
+
+    plt.grid(True, which='both', linestyle='--', alpha=0.7)
+    plt.xlabel('Orbital Radius (AU) - Log Scale', fontsize=14)
+    plt.ylabel('Orbital Period (years) - Log Scale', fontsize=14)
+    plt.title('Kepler\'s Third Law: Log-Log Plot\n(Slope = 3/2 confirms T ∝ R^(3/2))', fontsize=16)
+    plt.legend(fontsize=12)
+    plt.tight_layout()
+    plt.savefig(os.path.join(image_dir, 'keplers_law_loglog.png'), dpi=300, bbox_inches='tight')
+    plt.close()
+
+    # 4. Circular orbit dynamics demonstration
+    plt.figure(figsize=(10, 10))
+    
+    # Central body
+    plt.scatter(0, 0, s=400, color='gold', label='Central Body', 
+               edgecolors='orange', linewidth=3, zorder=10)
+    
+    # Orbit path
+    orbit_radius = 1.0
+    theta = np.linspace(0, 2*np.pi, 200)
+    x_orbit = orbit_radius * np.cos(theta)
+    y_orbit = orbit_radius * np.sin(theta)
+    plt.plot(x_orbit, y_orbit, 'k--', alpha=0.5, linewidth=2, label='Orbital path')
+    
+    # Show forces and velocities at different positions
+    angles = [0, np.pi/3, np.pi, 4*np.pi/3]
+    colors = ['red', 'green', 'purple', 'orange']
+    
+    for i, angle in enumerate(angles):
+        x = orbit_radius * np.cos(angle)
+        y = orbit_radius * np.sin(angle)
         
-        n_frames = 50
-        frames_filenames = []
+        # Velocity vector (tangent to orbit)
+        vx = -np.sin(angle) * 0.4
+        vy = np.cos(angle) * 0.4
         
-        central_body = plt.scatter([], [], s=200, color='blue', label='Central Body')
-        satellite = plt.scatter([], [], color='red', s=100, label='Satellite')
-        position = plt.Line2D([], [], color='red', lw=2, label='Position')
-        velocity = plt.Line2D([], [], color='green', lw=2, label='Velocity')
-        acceleration = plt.Line2D([], [], color='blue', lw=2, label='Acceleration')
+        # Acceleration vector (toward center)
+        ax_val = -np.cos(angle) * 0.3
+        ay_val = -np.sin(angle) * 0.3
         
-        for i in range(n_frames):
-            ax.clear()
-            
-            angle = 2 * np.pi * i / n_frames
-            
-            ax.scatter(0, 0, s=200, color='blue')
-            
-            orbit_radius = 1.0
-            theta = np.linspace(0, 2*np.pi, 100)
-            x_orbit = orbit_radius * np.cos(theta)
-            y_orbit = orbit_radius * np.sin(theta)
-            ax.plot(x_orbit, y_orbit, 'k--', alpha=0.3)
-            
-            x = orbit_radius * np.cos(angle)
-            y = orbit_radius * np.sin(angle)
-            
-            vx = -np.sin(angle) * 0.3
-            vy = np.cos(angle) * 0.3
-            
-            ax_val = -np.cos(angle) * 0.3
-            ay_val = -np.sin(angle) * 0.3
-            
-            ax.scatter(x, y, color='red', s=100, zorder=10)
-            
-            ax.arrow(0, 0, x, y, color='red', width=0.01, length_includes_head=True, 
-                     alpha=0.7)
-            
-            ax.arrow(x, y, vx, vy, color='green', width=0.01, length_includes_head=True, 
-                     alpha=0.7)
-            
-            ax.arrow(x, y, ax_val, ay_val, color='blue', width=0.01, length_includes_head=True, 
-                     alpha=0.7)
-            
-            ax.set_xlim(-1.5, 1.5)
-            ax.set_ylim(-1.5, 1.5)
-            ax.set_aspect('equal')
-            ax.grid(True, linestyle='--', alpha=0.7)
-            ax.set_xlabel('x', fontsize=12)
-            ax.set_ylabel('y', fontsize=12)
-            ax.set_title('Circular Orbit Dynamics', fontsize=14)
-            
-            ax.legend(handles=[central_body, satellite, position, velocity, acceleration], 
-                      loc='upper right')
-            
-            frame_filename = os.path.join(tmpdirname, f'frame_{i:03d}.png')
-            plt.savefig(frame_filename, dpi=100, bbox_inches='tight')
-            frames_filenames.append(frame_filename)
+        # Orbiting body
+        plt.scatter(x, y, color=colors[i], s=150, zorder=10, edgecolors='black')
         
-        with imageio.get_writer(os.path.join(image_dir, 'orbit_dynamics.gif'), mode='I', duration=0.1, loop=0) as writer:
-            for frame_filename in frames_filenames:
-                image = imageio.imread(frame_filename)
-                writer.append_data(image)
+        # Position vector
+        plt.arrow(0, 0, x, y, color=colors[i], width=0.02, 
+                 length_includes_head=True, alpha=0.7, 
+                 label='Position vector' if i == 0 else '')
         
-        plt.savefig(os.path.join(image_dir, 'orbit_dynamics.png'), dpi=300, bbox_inches='tight')
-
-masses = [1e24, 5e24, 1e25, 5e25, 1e26]
-radii = np.linspace(1e7, 1e8, 100)
-
-plt.figure(figsize=(10, 6))
-
-for mass in masses:
-    periods = [calculate_period(r, mass) for r in radii]
-    plt.plot(radii/1000, np.array(periods)/3600, label=f'Mass = {mass:.1e} kg')
-
-plt.grid(True)
-plt.xlabel('Orbital Radius (km)')
-plt.ylabel('Orbital Period (hours)')
-plt.title('Effect of Central Mass on Orbital Period')
-plt.legend()
-plt.savefig(os.path.join(image_dir, 'different_masses.png'), dpi=300, bbox_inches='tight')
-
-M_moon = 7.342e22  
-earth_moon_distance = 3.844e8  
-
-barycenter_distance = earth_moon_distance * M_moon / (M_earth + M_moon)
-
-earth_orbit_radius = barycenter_distance
-earth_x, earth_y, _, _ = simulate_circular_orbit(earth_orbit_radius, 1, num_points=100)
-
-moon_orbit_radius = earth_moon_distance - barycenter_distance
-moon_x, moon_y, _, _ = simulate_circular_orbit(moon_orbit_radius, 1, num_points=100)
-
-earth_x = earth_x - barycenter_distance
-moon_x = moon_x + (earth_moon_distance - barycenter_distance)
-
-plt.figure(figsize=(10, 8))
-plt.plot(earth_x, earth_y, 'b-', label='Earth')
-plt.plot(moon_x, moon_y, 'gray', label='Moon')
-plt.scatter(0, 0, c='k', s=20, label='Barycenter')
-plt.scatter(earth_x[0], earth_y[0], c='b', s=100)
-plt.scatter(moon_x[0], moon_y[0], c='gray', s=30)
-
-for i in range(0, 100, 10):
-    plt.plot([earth_x[i], moon_x[i]], [earth_y[i], moon_y[i]], 'k--', alpha=0.3)
-
-plt.grid(True)
-plt.axis('equal')
-plt.xlabel('Distance (m)')
-plt.ylabel('Distance (m)')
-plt.title('Earth-Moon System Orbiting Around Common Barycenter')
-plt.legend()
-plt.savefig(os.path.join(image_dir, 'earth_moon_system_actual.png'), dpi=300, bbox_inches='tight')
-
-def create_earth_moon_animation():
-    with tempfile.TemporaryDirectory() as tmpdirname:
-        fig, ax = plt.subplots(figsize=(10, 10))
+        # Velocity vector
+        plt.arrow(x, y, vx, vy, color='blue', width=0.02, 
+                 length_includes_head=True, alpha=0.8,
+                 label='Velocity vector' if i == 0 else '')
         
-        n_frames = 50
-        frames_filenames = []
-        
-        earth_dot = plt.scatter([], [], s=200, color='blue', label='Earth')
-        moon_dot = plt.scatter([], [], s=100, color='gray', label='Moon')
-        barycenter_dot = plt.scatter([], [], s=30, color='black', label='Barycenter')
-        
-        visualization_earth_radius = 0.3  
-        visualization_moon_radius = 1.0  
-        
-        for i in range(n_frames):
-            ax.clear()
-            
-            angle = 2 * np.pi * i / n_frames
-            
-            earth_x = visualization_earth_radius * np.cos(angle)
-            earth_y = visualization_earth_radius * np.sin(angle)
-            
-            moon_x = visualization_moon_radius * np.cos(angle + np.pi)
-            moon_y = visualization_moon_radius * np.sin(angle + np.pi)
-            
-            theta = np.linspace(0, 2*np.pi, 100)
-            earth_path_x = visualization_earth_radius * np.cos(theta)
-            earth_path_y = visualization_earth_radius * np.sin(theta)
-            ax.plot(earth_path_x, earth_path_y, 'b--', alpha=0.5)
-            
-            moon_path_x = visualization_moon_radius * np.cos(theta + np.pi)
-            moon_path_y = visualization_moon_radius * np.sin(theta + np.pi)
-            ax.plot(moon_path_x, moon_path_y, 'gray', linestyle='--', alpha=0.5)
-            
-            ax.scatter(earth_x, earth_y, s=200, color='blue')
-            ax.scatter(moon_x, moon_y, s=80, color='gray')
-            
-            ax.scatter(0, 0, s=30, color='black')
-            
-            ax.plot([earth_x, moon_x], [earth_y, moon_y], 'k-', alpha=0.7)
-            
-            ax.set_xlim(-1.5, 1.5)
-            ax.set_ylim(-1.5, 1.5)
-            ax.set_aspect('equal')
-            ax.grid(True, linestyle='--', alpha=0.7)
-            ax.set_xlabel('Distance (arbitrary units)', fontsize=12)
-            ax.set_ylabel('Distance (arbitrary units)', fontsize=12)
-            ax.set_title('Earth-Moon System Orbiting Around Common Barycenter\n(Not to scale - for educational purposes only)', fontsize=14)
-            
-            ax.legend(handles=[earth_dot, moon_dot, barycenter_dot], loc='upper right')
-            
-            ax.text(0.02, 0.02, 'Note: Visualization not to actual scale', 
-                    transform=ax.transAxes, fontsize=10, 
-                    bbox=dict(facecolor='white', alpha=0.7))
-            
-            frame_filename = os.path.join(tmpdirname, f'frame_{i:03d}.png')
-            plt.savefig(frame_filename, dpi=100, bbox_inches='tight')
-            frames_filenames.append(frame_filename)
-        
-        with imageio.get_writer(os.path.join(image_dir, 'earth_moon_system.gif'), mode='I', duration=0.1, loop=0) as writer:
-            for frame_filename in frames_filenames:
-                image = imageio.imread(frame_filename)
-                writer.append_data(image)
-        
-        plt.savefig(os.path.join(image_dir, 'earth_moon_system.png'), dpi=300, bbox_inches='tight')
+        # Acceleration vector
+        plt.arrow(x, y, ax_val, ay_val, color='red', width=0.02, 
+                 length_includes_head=True, alpha=0.8,
+                 label='Centripetal acceleration' if i == 0 else '')
 
-# Run the animation functions
-create_orbit_animation()
-create_earth_moon_animation()
+    plt.grid(True, linestyle='--', alpha=0.7)
+    plt.xlim(-1.8, 1.8)
+    plt.ylim(-1.8, 1.8)
+    plt.axis('equal')
+    plt.xlabel('x (normalized units)', fontsize=12)
+    plt.ylabel('y (normalized units)', fontsize=12)
+    plt.title('Circular Orbit Dynamics\nVectors at Different Orbital Positions', fontsize=14)
+    plt.legend(loc='upper right', bbox_to_anchor=(1.3, 1))
+    plt.tight_layout()
+    plt.savefig(os.path.join(image_dir, 'orbit_dynamics.png'), dpi=300, bbox_inches='tight')
+    plt.close()
 
-print(f"Images saved to {image_dir}")
+    # 5. Effect of central mass on orbital characteristics
+    masses = [0.5*M_sun, 1.0*M_sun, 2.0*M_sun, 5.0*M_sun]
+    radii_range = np.linspace(0.5, 5, 100) * AU
+    
+    plt.figure(figsize=(12, 8))
+    
+    for i, mass in enumerate(masses):
+        periods = [calculate_period(r, mass) for r in radii_range]
+        periods_years = np.array(periods) / (86400 * 365.25)
+        plt.plot(radii_range/AU, periods_years, linewidth=3, 
+                label=f'Mass = {mass/M_sun:.1f} M☉')
+    
+    plt.grid(True, alpha=0.3)
+    plt.xlabel('Orbital Radius (AU)', fontsize=14)
+    plt.ylabel('Orbital Period (years)', fontsize=14)
+    plt.title('Effect of Central Mass on Orbital Period', fontsize=16)
+    plt.legend(fontsize=12)
+    plt.tight_layout()
+    plt.savefig(os.path.join(image_dir, 'different_masses.png'), dpi=300, bbox_inches='tight')
+    plt.close()
+
+    # 6. Earth-Moon system barycenter
+    M_moon = 7.342e22  
+    earth_moon_distance = 3.844e8  # meters
+    
+    # Calculate barycenter position
+    barycenter_distance_from_earth = earth_moon_distance * M_moon / (M_earth + M_moon)
+    
+    plt.figure(figsize=(12, 8))
+    
+    # Create visualization of Earth-Moon system
+    earth_orbit_radius = barycenter_distance_from_earth
+    moon_orbit_radius = earth_moon_distance - barycenter_distance_from_earth
+    
+    # Generate orbital paths
+    theta = np.linspace(0, 2*np.pi, 100)
+    earth_x = earth_orbit_radius * np.cos(theta)
+    earth_y = earth_orbit_radius * np.sin(theta)
+    
+    moon_x = moon_orbit_radius * np.cos(theta + np.pi)
+    moon_y = moon_orbit_radius * np.sin(theta + np.pi)
+    
+    plt.plot(earth_x/1000, earth_y/1000, 'b-', linewidth=3, label='Earth orbit around barycenter')
+    plt.plot(moon_x/1000, moon_y/1000, 'gray', linewidth=3, label='Moon orbit around barycenter')
+    
+    # Show current positions
+    plt.scatter(earth_x[0]/1000, earth_y[0]/1000, c='blue', s=200, 
+               label='Earth', edgecolors='darkblue', linewidth=2)
+    plt.scatter(moon_x[0]/1000, moon_y[0]/1000, c='gray', s=100, 
+               label='Moon', edgecolors='black', linewidth=2)
+    plt.scatter(0, 0, c='red', s=50, label='Barycenter', marker='x', linewidth=3)
+    
+    # Show connecting line
+    plt.plot([earth_x[0]/1000, moon_x[0]/1000], [earth_y[0]/1000, moon_y[0]/1000], 
+             'k--', alpha=0.5, linewidth=2)
+    
+    plt.grid(True, alpha=0.3)
+    plt.axis('equal')
+    plt.xlabel('Distance (km)', fontsize=14)
+    plt.ylabel('Distance (km)', fontsize=14)
+    plt.title('Earth-Moon System: Orbits Around Common Barycenter', fontsize=16)
+    plt.legend(fontsize=12)
+    
+    # Add informative text
+    plt.text(0.02, 0.98, f'Barycenter distance from Earth center: {barycenter_distance_from_earth/1000:.0f} km\n'
+                        f'Earth radius: {6371:.0f} km\n'
+                        f'Barycenter is {barycenter_distance_from_earth/6371000:.1f} Earth radii from center',
+             transform=plt.gca().transAxes, verticalalignment='top',
+             bbox=dict(boxstyle='round', facecolor='lightblue', alpha=0.8))
+    
+    plt.tight_layout()
+    plt.savefig(os.path.join(image_dir, 'earth_moon_barycenter.png'), dpi=300, bbox_inches='tight')
+    plt.close()
+    
+    print(f"All orbital mechanics visualizations saved to {image_dir}")
+
+if __name__ == "__main__":
+    print("Generating orbital mechanics visualizations...")
+    
+    # Generate the main plot referenced in Problem_1.md
+    generate_main_plot()
+    print("Generated problem1.png")
+    
+    # Generate comprehensive analysis plots
+    run_comprehensive_analysis()
+    print("Generated all comprehensive orbital mechanics plots")
+    
+    print("Orbital mechanics visualization generation complete!")
