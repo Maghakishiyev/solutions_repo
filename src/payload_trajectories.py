@@ -6,7 +6,9 @@ import imageio
 import tempfile
 from scipy.integrate import solve_ivp
 
-image_dir = os.path.join('docs', '1 Physics', '2 Gravity', 'pics')
+script_dir = os.path.dirname(os.path.abspath(__file__))
+repo_root = os.path.dirname(script_dir)
+image_dir = os.path.join(repo_root, 'docs', '1 Physics', '2 Gravity', 'pics')
 os.makedirs(image_dir, exist_ok=True)
 
 G = 6.67430e-11  

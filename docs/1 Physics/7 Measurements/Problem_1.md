@@ -58,10 +58,10 @@ This exercise emphasizes rigorous measurement practices, uncertainty analysis, a
 
 #### Statistical Analysis
 - Mean time for 10 oscillations (T̄₁₀): 20.084 s
-- Standard deviation (σₜ): 0.037 s
-- Standard error of the mean (ΔT₁₀ = σₜ/√n): 0.012 s
+- Standard deviation (σₜ): 0.0366 s
+- Standard error of the mean (ΔT₁₀ = σₜ/√n): 0.0116 s
 - Period of one oscillation (T = T̄₁₀/10): 2.0084 s
-- Uncertainty in period (ΔT = ΔT₁₀/10): 0.0012 s
+- Uncertainty in period (ΔT = ΔT₁₀/10): 0.00116 s
 
 #### Calculation of Gravitational Acceleration
 
@@ -80,11 +80,11 @@ The relative uncertainty in g is calculated using:
 $\frac{\Delta g}{g} = \sqrt{\left(\frac{\Delta L}{L}\right)^2 + \left(2\frac{\Delta T}{T}\right)^2}$
 
 Substituting our values:
-$\frac{\Delta g}{g} = \sqrt{\left(\frac{0.0005}{1.000}\right)^2 + \left(2 \times \frac{0.0012}{2.0084}\right)^2}$
-$\frac{\Delta g}{g} = \sqrt{(0.0005)^2 + (0.0012)^2} = 0.0013$
+$\frac{\Delta g}{g} = \sqrt{\left(\frac{0.0005}{1.000}\right)^2 + \left(2 \times \frac{0.00116}{2.0084}\right)^2}$
+$\frac{\Delta g}{g} = \sqrt{(0.0005)^2 + (0.001155)^2} = 0.00126$
 
 Therefore:
-$\Delta g = 0.0013 \times 9.7872 = 0.0123 \text{ m/s}^2$
+$\Delta g = 0.00126 \times 9.7872 = 0.0123 \text{ m/s}^2$
 
 **Final result:** $g = 9.787 \pm 0.012 \text{ m/s}^2$
 
@@ -125,8 +125,8 @@ This difference is slightly larger than our calculated uncertainty, suggesting t
 The uncertainty in our measurement of g (0.012 m/s²) represents about 0.12% of the measured value. Analysis shows that timing uncertainty contributes more significantly to the overall uncertainty than length measurement uncertainty.
 
 The ratio of contributions is:
-- Length relative uncertainty: 0.0005 (39.8% of total uncertainty)
-- Timing relative uncertainty: 0.0012 (60.2% of total uncertainty)
+- Length relative uncertainty: 0.0005 (15.9% of total uncertainty)
+- Timing relative uncertainty: 0.001155 (84.1% of total uncertainty)
 
 This suggests that improving the time measurement precision would be more effective in reducing the overall uncertainty than improving the length measurement.
 

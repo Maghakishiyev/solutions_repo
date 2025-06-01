@@ -5,7 +5,9 @@ import os
 from mpl_toolkits.mplot3d import Axes3D
 from matplotlib import cm
 
-image_dir = os.path.join('docs', '1 Physics', '3 Waves', 'pics')
+script_dir = os.path.dirname(os.path.abspath(__file__))
+repo_root = os.path.dirname(script_dir)
+image_dir = os.path.join(repo_root, 'docs', '1 Physics', '3 Waves', 'pics')
 os.makedirs(image_dir, exist_ok=True)
 
 A = 1.0  

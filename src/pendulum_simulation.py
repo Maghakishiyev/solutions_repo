@@ -318,8 +318,13 @@ def simulate_gravity_measurement():
     g_uncertainty = relative_uncertainty_g * measured_g
     
     # Calculate percentage contributions to the uncertainty
-    length_contribution = ((L_uncertainty/L) / relative_uncertainty_g) * 100
-    time_contribution = ((2*period_uncertainty/period) / relative_uncertainty_g) * 100
+    # The components are the squared relative uncertainties
+    length_rel_unc_sq = (L_uncertainty/L)**2
+    time_rel_unc_sq = (2*period_uncertainty/period)**2
+    total_rel_unc_sq = length_rel_unc_sq + time_rel_unc_sq
+    
+    length_contribution = (length_rel_unc_sq / total_rel_unc_sq) * 100
+    time_contribution = (time_rel_unc_sq / total_rel_unc_sq) * 100
     
     # Create visualizations
     
@@ -427,5 +432,5 @@ if __name__ == "__main__":
     run_comprehensive_analysis()
     print("Generated all comprehensive analysis plots")
     
-    # Uncomment the following line if you want to run the gravity measurement simulation too
-    # simulate_gravity_measurement()
+    # Run the gravity measurement simulation
+    simulate_gravity_measurement()

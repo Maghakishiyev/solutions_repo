@@ -444,49 +444,77 @@ The implementation was tested on several example circuits:
 
 #### Example 1: Simple Series Circuit
 
-A simple series circuit with three resistors (10kΩ, 20kΩ, and 30kΩ) connected in
-series.
+A simple series circuit with three resistors (10Ω, 20Ω, and 30Ω) connected in series.
 
 ![Simple Series Circuit](./pics/example_1_circuit.png)
+*Initial series circuit configuration*
+
+**Algorithm Reduction Steps:**
+
+![Step 1](./pics/example_1_step_1.png)
+*Step 1: First series reduction*
+
+![Step 2](./pics/example_1_step_2.png) 
+*Step 2: Final series reduction*
 
 **Calculation:**
-$R_{eq} = R_1 + R_2 + R_3 = 10k\Omega + 20k\Omega + 30k\Omega = 60k\Omega$
+$R_{eq} = R_1 + R_2 + R_3 = 10\Omega + 20\Omega + 30\Omega = 60\Omega$
 
-The algorithm correctly calculates the equivalent resistance as 60kΩ.
+The algorithm correctly calculates the equivalent resistance as **60.000Ω** in 2 reduction steps.
 
 #### Example 2: Simple Parallel Circuit
 
-A simple parallel circuit with two resistors (10kΩ and 20kΩ) connected in
-parallel.
+A simple parallel circuit with two resistors (10Ω and 20Ω) connected in parallel.
 
 ![Simple Parallel Circuit](./pics/example_2_circuit.png)
+*Initial parallel circuit configuration*
+
+**Algorithm Reduction Steps:**
+
+![Step 1](./pics/example_2_step_1.png)
+*Step 1: Parallel reduction of two resistors*
 
 **Calculation:**
-$\frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2} = \frac{1}{10k\Omega} + \frac{1}{20k\Omega} = \frac{2}{20k\Omega} + \frac{1}{20k\Omega} = \frac{3}{20k\Omega}$
+$\frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2} = \frac{1}{10\Omega} + \frac{1}{20\Omega} = \frac{2}{20\Omega} + \frac{1}{20\Omega} = \frac{3}{20\Omega}$
 
-$R_{eq} = \frac{20k\Omega}{3} \approx 6.67k\Omega$
+$R_{eq} = \frac{20\Omega}{3} = 6.67\Omega$
 
-The algorithm correctly calculates the equivalent resistance as 6.67kΩ.
+The algorithm correctly calculates the equivalent resistance as **6.667Ω** in 1 reduction step.
 
 #### Example 3: Mixed Series-Parallel Circuit
 
 A more complex circuit with a combination of series and parallel connections.
 
 ![Mixed Series-Parallel Circuit](./pics/example_3_circuit.png)
+*Initial mixed series-parallel circuit configuration*
 
-The algorithm reduces this circuit step by step, first identifying series
-connections and then parallel connections, until the equivalent resistance is
-calculated.
+**Algorithm Reduction Steps:**
+
+![Step 1](./pics/example_3_step_1.png)
+*Step 1: First series reduction*
+
+![Step 2](./pics/example_3_step_2.png)
+*Step 2: Second series reduction*
+
+![Step 3](./pics/example_3_step_3.png)
+*Step 3: Parallel reduction*
+
+![Step 4](./pics/example_3_step_4.png)
+*Step 4: Final series reduction*
+
+The algorithm reduces this circuit step by step, first identifying series connections and then parallel connections, until the equivalent resistance is calculated as **150.000Ω** in 4 reduction steps.
 
 #### Example 4: Wheatstone Bridge Circuit
 
-A Wheatstone bridge circuit, which is a more complex configuration that includes
-a bridge resistor.
+A Wheatstone bridge circuit, which is a more complex configuration that includes a bridge resistor.
 
 ![Wheatstone Bridge Circuit](./pics/example_4_circuit.png)
+*Wheatstone bridge circuit - requires delta-wye transformation*
 
-This circuit requires multiple reduction steps, including both series and
-parallel reductions.
+**Analysis Result:**
+This circuit cannot be reduced using only series and parallel reductions. It requires advanced techniques such as delta-wye transformations or nodal analysis to solve. This demonstrates the limitations of the basic graph reduction algorithm and the need for more sophisticated methods for complex circuit topologies.
+
+**Note:** The algorithm correctly identifies that this circuit cannot be simplified with basic reduction rules, which is the expected behavior for circuits requiring delta-wye transformations.
 
 ## Analysis and Efficiency
 

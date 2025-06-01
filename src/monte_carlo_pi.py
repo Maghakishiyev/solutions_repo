@@ -7,7 +7,9 @@ from matplotlib.lines import Line2D
 
 def create_directory():
     """Create necessary directory for saving plots."""
-    plot_dir = os.path.join('docs', '1 Physics', '6 Statistics', 'pics')
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    repo_root = os.path.dirname(script_dir)
+    plot_dir = os.path.join(repo_root, 'docs', '1 Physics', '6 Statistics', 'pics')
     os.makedirs(plot_dir, exist_ok=True)
     return plot_dir
 
