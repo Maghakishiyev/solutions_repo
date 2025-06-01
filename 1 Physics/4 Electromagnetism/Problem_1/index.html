@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 1 - Physics and Mathematics</title>
+<title>Problem 1: Simulating the Effects of the Lorentz Force - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 1";
+        var mkdocs_page_name = "Problem 1: Simulating the Effects of the Lorentz Force";
         var mkdocs_page_input_path = "1 Physics/4 Electromagnetism/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -58,39 +58,127 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../2%20Gravity/Problem_2/">Problem 2: Cosmic Velocities and Escape Dynamics</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../2%20Gravity/Problem_3/">Problem 3</a>
+<li class="toctree-l2"><a class="reference internal" href="../../2%20Gravity/Problem_3/">Problem 3: Trajectories of a Freely Released Payload Near Earth</a>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal">3 Waves</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../3%20Waves/Problem_1/">Interference Patterns on a Water Surface</a>
+<li class="toctree-l2"><a class="reference internal" href="../../3%20Waves/Problem_1/">Problem 1: Interference Patterns on a Water Surface</a>
 </li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">4 Electromagnetism</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1: Simulating the Effects of the Lorentz Force</a>
 <ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="#1-theoretical-background">1. Theoretical Background</a>
+<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#1-theoretical-foundation">1. Theoretical Foundation</a>
 <ul>
-<li class="toctree-l4"><a class="reference internal" href="#the-lorentz-force">The Lorentz Force</a>
+<li class="toctree-l4"><a class="reference internal" href="#11-the-lorentz-force-law">1.1 The Lorentz Force Law</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#12-equation-of-motion">1.2 Equation of Motion</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#13-key-physical-parameters">1.3 Key Physical Parameters</a>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#2-problem-setup">2. Problem Setup</a>
+<li class="toctree-l3"><a class="reference internal" href="#2-motion-in-different-field-configurations">2. Motion in Different Field Configurations</a>
 <ul>
-<li class="toctree-l4"><a class="reference internal" href="#1-choosing-field-configurations">1. Choosing Field Configurations</a>
+<li class="toctree-l4"><a class="reference internal" href="#21-motion-in-uniform-magnetic-field-only">2.1 Motion in Uniform Magnetic Field Only</a>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#2-computing-the-motion">2. Computing the Motion</a>
+<li class="toctree-l4"><a class="reference internal" href="#22-motion-in-combined-electric-and-magnetic-fields">2.2 Motion in Combined Electric and Magnetic Fields</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#23-motion-in-non-uniform-fields">2.3 Motion in Non-uniform Fields</a>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#3-computational-model">3. Computational Model</a>
+<li class="toctree-l3"><a class="reference internal" href="#3-applications-and-real-world-systems">3. Applications and Real-World Systems</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#31-particle-accelerators">3.1 Particle Accelerators</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#4-observations-and-analysis">4. Observations and Analysis</a>
+<li class="toctree-l4"><a class="reference internal" href="#32-mass-spectrometry">3.2 Mass Spectrometry</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#5-conclusion">5. Conclusion</a>
+<li class="toctree-l4"><a class="reference internal" href="#33-plasma-confinement">3.3 Plasma Confinement</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#34-electromagnetic-devices">3.4 Electromagnetic Devices</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-numerical-methods-and-computational-implementation">4. Numerical Methods and Computational Implementation</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#41-runge-kutta-integration">4.1 Runge-Kutta Integration</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#42-conservation-laws">4.2 Conservation Laws</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#43-computational-challenges">4.3 Computational Challenges</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#5-simulation-results-and-analysis">5. Simulation Results and Analysis</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#51-uniform-magnetic-field">5.1 Uniform Magnetic Field</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#52-combined-electric-and-magnetic-fields">5.2 Combined Electric and Magnetic Fields</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#53-velocity-selector-configuration">5.3 Velocity Selector Configuration</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#54-helical-motion-in-magnetic-field">5.4 Helical Motion in Magnetic Field</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#55-magnetic-bottle-confinement">5.5 Magnetic Bottle Confinement</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#56-parameter-sensitivity-analysis">5.6 Parameter Sensitivity Analysis</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#6-advanced-phenomena-and-extensions">6. Advanced Phenomena and Extensions</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#61-relativistic-effects">6.1 Relativistic Effects</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#62-radiation-reaction">6.2 Radiation Reaction</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#63-collective-effects">6.3 Collective Effects</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#7-experimental-validation">7. Experimental Validation</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#71-historical-experiments">7.1 Historical Experiments</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#72-modern-applications">7.2 Modern Applications</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#8-computational-implementation-details">8. Computational Implementation Details</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#81-core-functions">8.1 Core Functions</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#82-visualization-capabilities">8.2 Visualization Capabilities</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#83-physical-scenarios">8.3 Physical Scenarios</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#9-educational-significance">9. Educational Significance</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#91-physics-concepts-demonstrated">9.1 Physics Concepts Demonstrated</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#92-mathematical-skills">9.2 Mathematical Skills</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#93-engineering-applications">9.3 Engineering Applications</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#10-conclusion">10. Conclusion</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#101-key-insights">10.1 Key Insights</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#102-future-extensions">10.2 Future Extensions</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#references-and-further-reading">References and Further Reading</a>
 </li>
 </ul>
 </li>
@@ -183,7 +271,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">4 Electromagnetism</li>
-<li class="breadcrumb-item active">Problem 1</li>
+<li class="breadcrumb-item active">Problem 1: Simulating the Effects of the Lorentz Force</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -191,110 +279,314 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-1">Problem 1</h1>
-<p>Charged Particle Motion in Electric and Magnetic Fields</p>
-<h2 id="1-theoretical-background">1. Theoretical Background</h2>
-<h3 id="the-lorentz-force">The Lorentz Force</h3>
-<p>The motion of a charged particle in electric and magnetic fields is governed by
-the Lorentz force equation:</p>
-<div class="arithmatex">\[
-\mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})
-\]</div>
-<p>where:</p>
+<h1 id="problem-1-simulating-the-effects-of-the-lorentz-force">Problem 1: Simulating the Effects of the Lorentz Force</h1>
+<h2 id="motivation">Motivation</h2>
+<p>The Lorentz force, expressed as <span class="arithmatex">\(\mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})\)</span>, governs the motion of charged particles in electric and magnetic fields. It is foundational in fields like plasma physics, particle accelerators, and astrophysics. By focusing on simulations, we can explore the practical applications and visualize the complex trajectories that arise due to this force.</p>
+<hr/>
+<h2 id="1-theoretical-foundation">1. Theoretical Foundation</h2>
+<h3 id="11-the-lorentz-force-law">1.1 The Lorentz Force Law</h3>
+<p>The motion of a charged particle in electromagnetic fields is governed by the Lorentz force equation:</p>
+<div class="arithmatex">\[\mathbf{F} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})\]</div>
+<p>where:
+- <span class="arithmatex">\(q\)</span> is the electric charge of the particle
+- <span class="arithmatex">\(\mathbf{E}\)</span> is the electric field vector
+- <span class="arithmatex">\(\mathbf{v}\)</span> is the velocity vector of the particle
+- <span class="arithmatex">\(\mathbf{B}\)</span> is the magnetic field vector
+- <span class="arithmatex">\(\times\)</span> denotes the vector cross product</p>
+<h3 id="12-equation-of-motion">1.2 Equation of Motion</h3>
+<p>Combining the Lorentz force with Newton's second law:</p>
+<div class="arithmatex">\[m\frac{d\mathbf{v}}{dt} = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})\]</div>
+<p>This yields the acceleration:</p>
+<div class="arithmatex">\[\frac{d\mathbf{v}}{dt} = \frac{q}{m}(\mathbf{E} + \mathbf{v} \times \mathbf{B})\]</div>
+<h3 id="13-key-physical-parameters">1.3 Key Physical Parameters</h3>
+<h4 id="cyclotron-frequency">Cyclotron Frequency</h4>
+<p>For motion in a uniform magnetic field, the cyclotron frequency is:
+<span class="arithmatex">\(<span class="arithmatex">\(\omega_c = \frac{qB}{m}\)</span>\)</span></p>
+<h4 id="larmor-radius-gyroradius">Larmor Radius (Gyroradius)</h4>
+<p>The radius of circular motion in a magnetic field:
+<span class="arithmatex">\(<span class="arithmatex">\(r_L = \frac{mv_\perp}{qB}\)</span>\)</span></p>
+<p>where <span class="arithmatex">\(v_\perp\)</span> is the velocity component perpendicular to the magnetic field.</p>
+<h4 id="cyclotron-period">Cyclotron Period</h4>
+<p>The time for one complete circular orbit:
+<span class="arithmatex">\(<span class="arithmatex">\(T_c = \frac{2\pi}{\omega_c} = \frac{2\pi m}{qB}\)</span>\)</span></p>
+<hr/>
+<h2 id="2-motion-in-different-field-configurations">2. Motion in Different Field Configurations</h2>
+<h3 id="21-motion-in-uniform-magnetic-field-only">2.1 Motion in Uniform Magnetic Field Only</h3>
+<p>When <span class="arithmatex">\(\mathbf{E} = 0\)</span> and <span class="arithmatex">\(\mathbf{B} = B_0\hat{z}\)</span> (uniform field in z-direction):</p>
+<p><strong>Case 1: Initial velocity perpendicular to B</strong>
+- <strong>Motion</strong>: Circular in the xy-plane
+- <strong>Radius</strong>: <span class="arithmatex">\(r = \frac{mv_0}{qB_0}\)</span>
+- <strong>Angular frequency</strong>: <span class="arithmatex">\(\omega = \frac{qB_0}{m}\)</span></p>
+<p><strong>Case 2: Initial velocity parallel to B</strong>
+- <strong>Motion</strong>: Straight line along the field direction
+- <strong>Force</strong>: Zero (no magnetic force on parallel motion)</p>
+<p><strong>Case 3: Initial velocity at arbitrary angle</strong>
+- <strong>Motion</strong>: Helical trajectory
+- <strong>Parallel component</strong>: Constant velocity <span class="arithmatex">\(v_\parallel\)</span>
+- <strong>Perpendicular component</strong>: Circular motion with radius <span class="arithmatex">\(r_L\)</span></p>
+<h3 id="22-motion-in-combined-electric-and-magnetic-fields">2.2 Motion in Combined Electric and Magnetic Fields</h3>
+<p>When both <span class="arithmatex">\(\mathbf{E}\)</span> and <span class="arithmatex">\(\mathbf{B}\)</span> are present:</p>
+<h4 id="exb-drift">ExB Drift</h4>
+<p>For crossed uniform fields, particles exhibit drift motion:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{v}_{\text{drift}} = \frac{\mathbf{E} \times \mathbf{B}}{B^2}\)</span>\)</span></p>
+<p>This drift is independent of charge and mass.</p>
+<h4 id="cyclotron-motion-drift">Cyclotron Motion + Drift</h4>
 <ul>
-<li><span class="arithmatex">\( q \)</span> is the charge of the particle,</li>
-<li><span class="arithmatex">\( \mathbf{E} \)</span> is the electric field,</li>
-<li><span class="arithmatex">\( \mathbf{B} \)</span> is the magnetic field,</li>
-<li><span class="arithmatex">\( \mathbf{v} \)</span> is the velocity of the particle.</li>
+<li><strong>Guiding center</strong>: Drifts with velocity <span class="arithmatex">\(\mathbf{v}_{\text{drift}}\)</span></li>
+<li><strong>Cyclotron motion</strong>: Superimposed circular motion around guiding center</li>
 </ul>
-<p>The trajectory of a charged particle depends on the initial conditions and the
-configuration of the fields. In a uniform magnetic field, the motion is
-typically circular or helical due to the perpendicular force exerted by <span class="arithmatex">\(
-\mathbf{B} \)</span> on <span class="arithmatex">\( \mathbf{v} \)</span>.</p>
+<h3 id="23-motion-in-non-uniform-fields">2.3 Motion in Non-uniform Fields</h3>
+<h4 id="magnetic-mirror-effect">Magnetic Mirror Effect</h4>
+<p>In a magnetic bottle configuration:
+- <strong>Magnetic moment</strong>: <span class="arithmatex">\(\mu = \frac{mv_\perp^2}{2B}\)</span> (adiabatic invariant)
+- <strong>Mirror condition</strong>: Particles reflect when <span class="arithmatex">\(\sin^2\theta &gt; B_0/B_{\text{max}}\)</span>
+- <strong>Pitch angle</strong>: Angle between velocity and magnetic field</p>
 <hr/>
-<h2 id="2-problem-setup">2. Problem Setup</h2>
-<h3 id="1-choosing-field-configurations">1. Choosing Field Configurations</h3>
-<p>We consider three cases:</p>
+<h2 id="3-applications-and-real-world-systems">3. Applications and Real-World Systems</h2>
+<h3 id="31-particle-accelerators">3.1 Particle Accelerators</h3>
+<h4 id="cyclotron">Cyclotron</h4>
+<ul>
+<li><strong>Principle</strong>: Particles spiral outward in constant magnetic field</li>
+<li><strong>Resonance condition</strong>: RF frequency = cyclotron frequency</li>
+<li><strong>Application</strong>: Medical isotope production, ion therapy</li>
+</ul>
+<h4 id="synchrotron">Synchrotron</h4>
+<ul>
+<li><strong>Principle</strong>: Magnetic field increases to maintain constant radius</li>
+<li><strong>Application</strong>: High-energy particle physics research</li>
+</ul>
+<h3 id="32-mass-spectrometry">3.2 Mass Spectrometry</h3>
+<p><strong>Time-of-Flight (TOF) Mass Spectrometer</strong>:
+- <strong>Principle</strong>: Different mass-to-charge ratios yield different flight times
+- <strong>Separation</strong>: <span class="arithmatex">\(t = \frac{L}{\sqrt{2qV/m}}\)</span> where <span class="arithmatex">\(V\)</span> is accelerating voltage</p>
+<p><strong>Magnetic Sector Mass Spectrometer</strong>:
+- <strong>Principle</strong>: Different masses follow different radii in magnetic field
+- <strong>Radius</strong>: <span class="arithmatex">\(r = \frac{\sqrt{2mV}}{qB}\)</span></p>
+<h3 id="33-plasma-confinement">3.3 Plasma Confinement</h3>
+<h4 id="magnetic-confinement-fusion">Magnetic Confinement Fusion</h4>
+<ul>
+<li><strong>Tokamak</strong>: Toroidal magnetic confinement</li>
+<li><strong>Stellarator</strong>: Three-dimensional magnetic confinement</li>
+<li><strong>Principle</strong>: Magnetic field confines hot plasma for fusion reactions</li>
+</ul>
+<h4 id="van-allen-radiation-belts">Van Allen Radiation Belts</h4>
+<ul>
+<li><strong>Mechanism</strong>: Earth's magnetic field traps charged particles</li>
+<li><strong>Motion</strong>: Combination of drift, bounce, and cyclotron motion</li>
+</ul>
+<h3 id="34-electromagnetic-devices">3.4 Electromagnetic Devices</h3>
+<h4 id="cathode-ray-tube-crt">Cathode Ray Tube (CRT)</h4>
+<ul>
+<li><strong>Deflection</strong>: Electric and magnetic fields control electron beam</li>
+<li><strong>Application</strong>: Television displays, oscilloscopes</li>
+</ul>
+<h4 id="hall-effect-devices">Hall Effect Devices</h4>
+<ul>
+<li><strong>Principle</strong>: Charge separation due to Lorentz force</li>
+<li><strong>Application</strong>: Current sensors, position sensors</li>
+</ul>
+<hr/>
+<h2 id="4-numerical-methods-and-computational-implementation">4. Numerical Methods and Computational Implementation</h2>
+<h3 id="41-runge-kutta-integration">4.1 Runge-Kutta Integration</h3>
+<p>The fourth-order Runge-Kutta method provides accurate numerical integration:</p>
+<div class="arithmatex">\[\mathbf{k}_1 = h\mathbf{f}(t_n, \mathbf{y}_n)$$
+$$\mathbf{k}_2 = h\mathbf{f}(t_n + h/2, \mathbf{y}_n + \mathbf{k}_1/2)$$
+$$\mathbf{k}_3 = h\mathbf{f}(t_n + h/2, \mathbf{y}_n + \mathbf{k}_2/2)$$
+$$\mathbf{k}_4 = h\mathbf{f}(t_n + h, \mathbf{y}_n + \mathbf{k}_3)$$
+$$\mathbf{y}_{n+1} = \mathbf{y}_n + \frac{1}{6}(\mathbf{k}_1 + 2\mathbf{k}_2 + 2\mathbf{k}_3 + \mathbf{k}_4)\]</div>
+<p>where <span class="arithmatex">\(\mathbf{f}(t, \mathbf{y}) = \frac{q}{m}(\mathbf{E} + \mathbf{v} \times \mathbf{B})\)</span>.</p>
+<h3 id="42-conservation-laws">4.2 Conservation Laws</h3>
+<h4 id="energy-conservation">Energy Conservation</h4>
+<p>In static electric fields, kinetic energy changes:
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{1}{2}mv^2(t) = \frac{1}{2}mv_0^2 + q\phi(\mathbf{r}_0) - q\phi(\mathbf{r}(t))\)</span>\)</span></p>
+<h4 id="magnetic-moment-conservation">Magnetic Moment Conservation</h4>
+<p>In slowly varying magnetic fields:
+<span class="arithmatex">\(<span class="arithmatex">\(\mu = \frac{mv_\perp^2}{2B} = \text{constant}\)</span>\)</span></p>
+<h3 id="43-computational-challenges">4.3 Computational Challenges</h3>
+<ul>
+<li><strong>Stiffness</strong>: Wide range of timescales (cyclotron vs. drift motion)</li>
+<li><strong>Energy Conservation</strong>: Ensuring numerical stability</li>
+<li><strong>Field Interpolation</strong>: Handling non-uniform field representations</li>
+</ul>
+<hr/>
+<h2 id="5-simulation-results-and-analysis">5. Simulation Results and Analysis</h2>
+<h3 id="51-uniform-magnetic-field">5.1 Uniform Magnetic Field</h3>
+<p><img alt="Circular Motion 2D" src="../pics/uniform_magnetic_field.png"/>
+<em>2D view: Circular motion of electron in uniform magnetic field</em></p>
+<p><img alt="Circular Motion 3D" src="../pics/uniform_magnetic_field_3d.png"/>
+<em>3D view: Circular motion showing trajectory in three dimensions</em></p>
+<p><strong>Key Observations:</strong>
+- Perfect circular trajectory for perpendicular initial velocity
+- Radius proportional to initial speed: <span class="arithmatex">\(r = \frac{mv_0}{qB}\)</span>
+- Period independent of radius: <span class="arithmatex">\(T = \frac{2\pi m}{qB}\)</span></p>
+<h3 id="52-combined-electric-and-magnetic-fields">5.2 Combined Electric and Magnetic Fields</h3>
+<p><img alt="ExB Drift 2D" src="../pics/combined_fields.png"/>
+<em>2D view: ExB drift motion in crossed electric and magnetic fields</em></p>
+<p><img alt="ExB Drift 3D" src="../pics/combined_fields_3d.png"/>
+<em>3D view: ExB drift motion showing cyclotron orbits superimposed on drift</em></p>
+<p><strong>Key Features:</strong>
+- <strong>Drift velocity</strong>: <span class="arithmatex">\(\mathbf{v}_d = \frac{\mathbf{E} \times \mathbf{B}}{B^2}\)</span>
+- <strong>Cyclotron motion</strong>: Superimposed on drift
+- <strong>Charge independence</strong>: Both positive and negative charges drift in same direction</p>
+<h3 id="53-velocity-selector-configuration">5.3 Velocity Selector Configuration</h3>
+<p><img alt="Velocity Selector" src="../pics/velocity_selector.png"/>
+<em>Velocity selector showing different trajectories for particles with different speeds</em></p>
+<p><strong>Selection Principle:</strong>
+- <strong>Selection condition</strong>: <span class="arithmatex">\(v = \frac{E}{B}\)</span> for straight-line motion
+- <strong>Faster particles</strong>: Curved toward electric field direction
+- <strong>Slower particles</strong>: Curved toward magnetic force direction</p>
+<h3 id="54-helical-motion-in-magnetic-field">5.4 Helical Motion in Magnetic Field</h3>
+<p><img alt="Helical Motion" src="../pics/helical_motion.png"/>
+<em>3D helical trajectory for particle with velocity components both parallel and perpendicular to magnetic field</em></p>
+<p><strong>Helical Characteristics:</strong>
+- <strong>Parallel motion</strong>: Constant velocity along magnetic field
+- <strong>Perpendicular motion</strong>: Circular motion with Larmor radius
+- <strong>Pitch</strong>: Determined by ratio of parallel to perpendicular velocity</p>
+<h3 id="55-magnetic-bottle-confinement">5.5 Magnetic Bottle Confinement</h3>
+<p><img alt="Magnetic Bottle" src="../pics/magnetic_bottle_trajectory.png"/>
+<em>Particle motion in magnetic bottle showing mirror effect</em></p>
+<p><strong>Physical Phenomena:</strong>
+- <strong>Magnetic mirroring</strong>: Particle reflects at high-field regions
+- <strong>Pitch angle evolution</strong>: <span class="arithmatex">\(\sin^2\theta = \frac{B_0}{B}\sin^2\theta_0\)</span>
+- <strong>Bounce motion</strong>: Oscillation between mirror points</p>
+<h3 id="56-parameter-sensitivity-analysis">5.6 Parameter Sensitivity Analysis</h3>
+<p><img alt="Parameter Exploration" src="../pics/parameter_exploration.png"/>
+<em>Comprehensive parameter exploration showing mass effects, field strength effects, velocity selection, and helical motion</em></p>
+<p><strong>Mass Dependence:</strong>
+- <strong>Larger mass</strong>: Larger Larmor radius, smaller cyclotron frequency
+- <strong>Smaller mass</strong>: Tighter orbits, faster motion</p>
+<p><strong>Field Strength Dependence:</strong>
+- <strong>Stronger B-field</strong>: Smaller radius, higher frequency
+- <strong>Weaker B-field</strong>: Larger radius, lower frequency</p>
+<p><img alt="Mass Effect" src="../pics/mass_effect.png"/>
+<em>Detailed comparison of electron vs proton trajectories</em></p>
+<p><img alt="Field Strength Effect" src="../pics/field_strength_effect.png"/>
+<em>Effect of different magnetic field strengths on trajectory radius</em></p>
+<hr/>
+<h2 id="6-advanced-phenomena-and-extensions">6. Advanced Phenomena and Extensions</h2>
+<h3 id="61-relativistic-effects">6.1 Relativistic Effects</h3>
+<p>For high-velocity particles, relativistic corrections become important:
+<span class="arithmatex">\(<span class="arithmatex">\(\mathbf{F} = \frac{d}{dt}(\gamma m \mathbf{v}) = q(\mathbf{E} + \mathbf{v} \times \mathbf{B})\)</span>\)</span></p>
+<p>where <span class="arithmatex">\(\gamma = \frac{1}{\sqrt{1 - v^2/c^2}}\)</span> is the Lorentz factor.</p>
+<h3 id="62-radiation-reaction">6.2 Radiation Reaction</h3>
+<p>Accelerating charged particles radiate electromagnetic energy:
+<span class="arithmatex">\(<span class="arithmatex">\(P_{\text{rad}} = \frac{q^2a^2}{6\pi\epsilon_0 c^3}\)</span>\)</span></p>
+<p>This leads to energy loss and orbit decay in accelerators.</p>
+<h3 id="63-collective-effects">6.3 Collective Effects</h3>
+<p>In plasmas, self-consistent electric and magnetic fields arise from charge and current distributions, leading to complex collective phenomena.</p>
+<hr/>
+<h2 id="7-experimental-validation">7. Experimental Validation</h2>
+<h3 id="71-historical-experiments">7.1 Historical Experiments</h3>
+<h4 id="jj-thomsons-cathode-ray-experiment-1897">J.J. Thomson's Cathode Ray Experiment (1897)</h4>
+<ul>
+<li><strong>Method</strong>: Crossed electric and magnetic fields</li>
+<li><strong>Result</strong>: Determination of electron charge-to-mass ratio</li>
+<li><strong>Significance</strong>: Discovery of the electron</li>
+</ul>
+<h4 id="mass-spectrometry-development">Mass Spectrometry Development</h4>
+<ul>
+<li><strong>Wien Filter</strong>: Velocity selector using crossed fields</li>
+<li><strong>Magnetic Focusing</strong>: Mass separation in magnetic sectors</li>
+</ul>
+<h3 id="72-modern-applications">7.2 Modern Applications</h3>
+<h4 id="particle-physics">Particle Physics</h4>
+<ul>
+<li><strong>Cloud Chambers</strong>: Visualization of charged particle tracks</li>
+<li><strong>Bubble Chambers</strong>: High-energy particle detection</li>
+<li><strong>Modern Detectors</strong>: Silicon tracking chambers, time projection chambers</li>
+</ul>
+<h4 id="space-physics">Space Physics</h4>
+<ul>
+<li><strong>Magnetospheric Missions</strong>: In-situ particle measurements</li>
+<li><strong>Solar Wind Studies</strong>: Particle velocity distribution measurements</li>
+</ul>
+<hr/>
+<h2 id="8-computational-implementation-details">8. Computational Implementation Details</h2>
+<p>The comprehensive Python simulation (<code>lorentz_force.py</code>) implements:</p>
+<h3 id="81-core-functions">8.1 Core Functions</h3>
+<ul>
+<li><strong><code>lorentz_force()</code></strong>: Calculates the Lorentz force vector</li>
+<li><strong><code>runge_kutta_step()</code></strong>: Fourth-order RK integration step</li>
+<li><strong><code>simulate_particle_motion()</code></strong>: Main simulation loop</li>
+<li><strong><code>calculate_larmor_radius()</code></strong>: Theoretical radius calculation</li>
+<li><strong><code>calculate_cyclotron_frequency()</code></strong>: Theoretical frequency calculation</li>
+</ul>
+<h3 id="82-visualization-capabilities">8.2 Visualization Capabilities</h3>
+<ul>
+<li><strong>2D trajectory plots</strong>: xy-plane projections with field indicators</li>
+<li><strong>3D trajectory plots</strong>: Full three-dimensional motion</li>
+<li><strong>Animated trajectories</strong>: Time-evolution visualization</li>
+<li><strong>Parameter exploration</strong>: Multiple trajectories comparison</li>
+</ul>
+<h3 id="83-physical-scenarios">8.3 Physical Scenarios</h3>
 <ol>
-<li>A uniform magnetic field <span class="arithmatex">\( \mathbf{B} \)</span> alone.</li>
-<li>Combined uniform electric and magnetic fields.</li>
-<li>Crossed electric and magnetic fields.</li>
+<li><strong>Uniform magnetic field</strong>: Circular and helical motion</li>
+<li><strong>Combined fields</strong>: ExB drift phenomena</li>
+<li><strong>Crossed fields</strong>: Velocity selector configuration</li>
+<li><strong>Magnetic bottle</strong>: Non-uniform field confinement</li>
+<li><strong>Parameter studies</strong>: Mass and field strength effects</li>
 </ol>
-<h3 id="2-computing-the-motion">2. Computing the Motion</h3>
-<p>Using numerical integration, we compute the particle's trajectory under the
-influence of the Lorentz force.</p>
 <hr/>
-<h2 id="3-computational-model">3. Computational Model</h2>
-<p>The following Python script simulates and visualizes the motion of a charged
-particle in an electromagnetic field.</p>
-<pre><code class="language-python">import numpy as np
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-
-# Constants (modifiable for parameter exploration)
-q = 1.6e-19  # Charge of the particle (C)
-m = 9.11e-31  # Mass of the particle (kg)
-B = np.array([0, 0, 1])  # Uniform magnetic field (T)
-E = np.array([0, 0, 0])  # Electric field (V/m)
-v0 = np.array([1e6, 0, 0])  # Initial velocity (m/s)
-r0 = np.array([0, 0, 0])  # Initial position (m)
-dt = 1e-10  # Time step (s)
-n_steps = 1000  # Number of time steps
-
-def lorentz_force(q, v, E, B):
-    """Computes the Lorentz force."""
-    return q * (E + np.cross(v, B))
-
-def simulate_motion(q, m, E, B, v0, r0, dt, n_steps):
-    """Simulates the motion of a charged particle in E and B fields."""
-    r = np.zeros((n_steps, 3))
-    v = np.zeros((n_steps, 3))
-    r[0] = r0
-    v[0] = v0
-
-    for i in range(1, n_steps):
-        F = lorentz_force(q, v[i-1], E, B)
-        a = F / m
-        v[i] = v[i-1] + a * dt
-        r[i] = r[i-1] + v[i] * dt
-
-    return r, v
-
-# Run simulation
-r, v = simulate_motion(q, m, E, B, v0, r0, dt, n_steps)
-
-# Visualization
-fig = plt.figure(figsize=(8, 6))
-ax = fig.add_subplot(111, projection='3d')
-ax.plot(r[:, 0], r[:, 1], r[:, 2], label='Particle Trajectory')
-ax.set_xlabel('X (m)')
-ax.set_ylabel('Y (m)')
-ax.set_zlabel('Z (m)')
-ax.set_title('Charged Particle Motion in a Magnetic Field')
-ax.legend()
-plt.show()
-</code></pre>
-<p><img alt="Charged Particle Motion" src="../pics/Figure_1.png"/></p>
+<h2 id="9-educational-significance">9. Educational Significance</h2>
+<h3 id="91-physics-concepts-demonstrated">9.1 Physics Concepts Demonstrated</h3>
+<ul>
+<li><strong>Vector operations</strong>: Cross products and vector fields</li>
+<li><strong>Conservation laws</strong>: Energy and magnetic moment conservation</li>
+<li><strong>Symmetry principles</strong>: Cyclotron motion symmetry</li>
+<li><strong>Scale separation</strong>: Fast cyclotron vs. slow drift motion</li>
+</ul>
+<h3 id="92-mathematical-skills">9.2 Mathematical Skills</h3>
+<ul>
+<li><strong>Differential equations</strong>: Coupled first-order ODEs</li>
+<li><strong>Numerical methods</strong>: Runge-Kutta integration</li>
+<li><strong>Vector calculus</strong>: Field representations and operations</li>
+<li><strong>Coordinate systems</strong>: Cartesian and cylindrical coordinates</li>
+</ul>
+<h3 id="93-engineering-applications">9.3 Engineering Applications</h3>
+<ul>
+<li><strong>Device design</strong>: Particle accelerators and spectrometers</li>
+<li><strong>Optimization</strong>: Field configurations for desired trajectories</li>
+<li><strong>Control systems</strong>: Magnetic steering and focusing</li>
+<li><strong>Diagnostics</strong>: Particle beam characterization</li>
+</ul>
 <hr/>
-<h2 id="4-observations-and-analysis">4. Observations and Analysis</h2>
+<h2 id="10-conclusion">10. Conclusion</h2>
+<p>This comprehensive analysis of charged particle motion in electromagnetic fields demonstrates the fundamental role of the Lorentz force in modern physics and technology. The simulations provide quantitative insights into:</p>
 <ol>
-<li><strong>Circular Motion</strong>: In a uniform magnetic field, the particle follows a
-   circular or helical path depending on the initial velocity.</li>
-<li><strong>Effect of Electric Field</strong>: Introducing an electric field results in drift
-   motion.</li>
-<li><strong>Larmor Radius</strong>: The radius of the circular trajectory is determined by the
-   balance of magnetic force and centripetal acceleration.</li>
+<li><strong>Fundamental Physics</strong>: The interplay between electric and magnetic forces</li>
+<li><strong>Technological Applications</strong>: From CRT displays to fusion reactors</li>
+<li><strong>Computational Methods</strong>: Numerical integration of complex dynamical systems</li>
+<li><strong>Experimental Techniques</strong>: Particle detection and characterization methods</li>
 </ol>
+<p>Understanding these principles is essential for applications in plasma physics, accelerator design, space science, and advanced electromagnetic devices. The computational tools developed here provide a foundation for exploring more complex phenomena such as collective plasma effects, radiation reaction, and relativistic dynamics.</p>
+<h3 id="101-key-insights">10.1 Key Insights</h3>
+<ul>
+<li><strong>Field geometry</strong>: Determines particle trajectory characteristics</li>
+<li><strong>Scale separation</strong>: Multiple timescales require careful numerical treatment</li>
+<li><strong>Conservation laws</strong>: Provide checks for numerical accuracy</li>
+<li><strong>Real-world relevance</strong>: Direct applications in modern technology</li>
+</ul>
+<h3 id="102-future-extensions">10.2 Future Extensions</h3>
+<ul>
+<li><strong>Relativistic dynamics</strong>: High-energy particle physics</li>
+<li><strong>Collective effects</strong>: Many-body interactions in plasmas</li>
+<li><strong>Stochastic forces</strong>: Collisional and turbulent effects</li>
+<li><strong>Quantum corrections</strong>: Quantum cyclotron motion</li>
+</ul>
 <hr/>
-<h2 id="5-conclusion">5. Conclusion</h2>
-<p>This simulation provides insights into charged particle dynamics in
-electromagnetic fields, relevant to applications such as cyclotrons, plasma
-confinement, and astrophysics. Extending this model to non-uniform fields or
-relativistic velocities can offer deeper insights into complex systems.</p>
+<h2 id="references-and-further-reading">References and Further Reading</h2>
+<ol>
+<li>Jackson, J. D. (1999). <em>Classical Electrodynamics</em>. John Wiley &amp; Sons.</li>
+<li>Griffiths, D. J. (2017). <em>Introduction to Electrodynamics</em>. Cambridge University Press.</li>
+<li>Chen, F. F. (2016). <em>Introduction to Plasma Physics and Controlled Fusion</em>. Springer.</li>
+<li>Wiedemann, H. (2015). <em>Particle Accelerator Physics</em>. Springer.</li>
+<li>Parks, G. K. (2004). <em>Physics of Space Plasmas</em>. Westview Press.</li>
+<li>Roos, C. E., Campanella, V. A., &amp; Walter, R. L. (2002). <em>Introduction to Modern Physics</em>. McGraw-Hill.</li>
+</ol>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-left" href="../../3%20Waves/Problem_1/" title="Interference Patterns on a Water Surface"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-left" href="../../3%20Waves/Problem_1/" title="Problem 1: Interference Patterns on a Water Surface"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 <a class="btn btn-neutral float-right" href="../../5%20Circuits/Problem_1/" title="Equivalent Resistance Using Graph Theory">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>

@@ -58,19 +58,19 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../2%20Gravity/Problem_2/">Problem 2: Cosmic Velocities and Escape Dynamics</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../2%20Gravity/Problem_3/">Problem 3</a>
+<li class="toctree-l2"><a class="reference internal" href="../../2%20Gravity/Problem_3/">Problem 3: Trajectories of a Freely Released Payload Near Earth</a>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal">3 Waves</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../3%20Waves/Problem_1/">Interference Patterns on a Water Surface</a>
+<li class="toctree-l2"><a class="reference internal" href="../../3%20Waves/Problem_1/">Problem 1: Interference Patterns on a Water Surface</a>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal">4 Electromagnetism</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../4%20Electromagnetism/Problem_1/">Problem 1</a>
+<li class="toctree-l2"><a class="reference internal" href="../../4%20Electromagnetism/Problem_1/">Problem 1: Simulating the Effects of the Lorentz Force</a>
 </li>
 </ul>
 </li>
@@ -602,32 +602,49 @@ progresses.</p>
 <h3 id="example-circuits">Example Circuits</h3>
 <p>The implementation was tested on several example circuits:</p>
 <h4 id="example-1-simple-series-circuit">Example 1: Simple Series Circuit</h4>
-<p>A simple series circuit with three resistors (10kΩ, 20kΩ, and 30kΩ) connected in
-series.</p>
-<p><img alt="Simple Series Circuit" src="../pics/example_1_circuit.png"/></p>
+<p>A simple series circuit with three resistors (10Ω, 20Ω, and 30Ω) connected in series.</p>
+<p><img alt="Simple Series Circuit" src="../pics/example_1_circuit.png"/>
+<em>Initial series circuit configuration</em></p>
+<p><strong>Algorithm Reduction Steps:</strong></p>
+<p><img alt="Step 1" src="../pics/example_1_step_1.png"/>
+<em>Step 1: First series reduction</em></p>
+<p><img alt="Step 2" src="../pics/example_1_step_2.png"/>
+<em>Step 2: Final series reduction</em></p>
 <p><strong>Calculation:</strong>
-<span class="arithmatex">\(R_{eq} = R_1 + R_2 + R_3 = 10k\Omega + 20k\Omega + 30k\Omega = 60k\Omega\)</span></p>
-<p>The algorithm correctly calculates the equivalent resistance as 60kΩ.</p>
+<span class="arithmatex">\(R_{eq} = R_1 + R_2 + R_3 = 10\Omega + 20\Omega + 30\Omega = 60\Omega\)</span></p>
+<p>The algorithm correctly calculates the equivalent resistance as <strong>60.000Ω</strong> in 2 reduction steps.</p>
 <h4 id="example-2-simple-parallel-circuit">Example 2: Simple Parallel Circuit</h4>
-<p>A simple parallel circuit with two resistors (10kΩ and 20kΩ) connected in
-parallel.</p>
-<p><img alt="Simple Parallel Circuit" src="../pics/example_2_circuit.png"/></p>
+<p>A simple parallel circuit with two resistors (10Ω and 20Ω) connected in parallel.</p>
+<p><img alt="Simple Parallel Circuit" src="../pics/example_2_circuit.png"/>
+<em>Initial parallel circuit configuration</em></p>
+<p><strong>Algorithm Reduction Steps:</strong></p>
+<p><img alt="Step 1" src="../pics/example_2_step_1.png"/>
+<em>Step 1: Parallel reduction of two resistors</em></p>
 <p><strong>Calculation:</strong>
-<span class="arithmatex">\(\frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2} = \frac{1}{10k\Omega} + \frac{1}{20k\Omega} = \frac{2}{20k\Omega} + \frac{1}{20k\Omega} = \frac{3}{20k\Omega}\)</span></p>
-<p><span class="arithmatex">\(R_{eq} = \frac{20k\Omega}{3} \approx 6.67k\Omega\)</span></p>
-<p>The algorithm correctly calculates the equivalent resistance as 6.67kΩ.</p>
+<span class="arithmatex">\(\frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2} = \frac{1}{10\Omega} + \frac{1}{20\Omega} = \frac{2}{20\Omega} + \frac{1}{20\Omega} = \frac{3}{20\Omega}\)</span></p>
+<p><span class="arithmatex">\(R_{eq} = \frac{20\Omega}{3} = 6.67\Omega\)</span></p>
+<p>The algorithm correctly calculates the equivalent resistance as <strong>6.667Ω</strong> in 1 reduction step.</p>
 <h4 id="example-3-mixed-series-parallel-circuit">Example 3: Mixed Series-Parallel Circuit</h4>
 <p>A more complex circuit with a combination of series and parallel connections.</p>
-<p><img alt="Mixed Series-Parallel Circuit" src="../pics/example_3_circuit.png"/></p>
-<p>The algorithm reduces this circuit step by step, first identifying series
-connections and then parallel connections, until the equivalent resistance is
-calculated.</p>
+<p><img alt="Mixed Series-Parallel Circuit" src="../pics/example_3_circuit.png"/>
+<em>Initial mixed series-parallel circuit configuration</em></p>
+<p><strong>Algorithm Reduction Steps:</strong></p>
+<p><img alt="Step 1" src="../pics/example_3_step_1.png"/>
+<em>Step 1: First series reduction</em></p>
+<p><img alt="Step 2" src="../pics/example_3_step_2.png"/>
+<em>Step 2: Second series reduction</em></p>
+<p><img alt="Step 3" src="../pics/example_3_step_3.png"/>
+<em>Step 3: Parallel reduction</em></p>
+<p><img alt="Step 4" src="../pics/example_3_step_4.png"/>
+<em>Step 4: Final series reduction</em></p>
+<p>The algorithm reduces this circuit step by step, first identifying series connections and then parallel connections, until the equivalent resistance is calculated as <strong>150.000Ω</strong> in 4 reduction steps.</p>
 <h4 id="example-4-wheatstone-bridge-circuit">Example 4: Wheatstone Bridge Circuit</h4>
-<p>A Wheatstone bridge circuit, which is a more complex configuration that includes
-a bridge resistor.</p>
-<p><img alt="Wheatstone Bridge Circuit" src="../pics/example_4_circuit.png"/></p>
-<p>This circuit requires multiple reduction steps, including both series and
-parallel reductions.</p>
+<p>A Wheatstone bridge circuit, which is a more complex configuration that includes a bridge resistor.</p>
+<p><img alt="Wheatstone Bridge Circuit" src="../pics/example_4_circuit.png"/>
+<em>Wheatstone bridge circuit - requires delta-wye transformation</em></p>
+<p><strong>Analysis Result:</strong>
+This circuit cannot be reduced using only series and parallel reductions. It requires advanced techniques such as delta-wye transformations or nodal analysis to solve. This demonstrates the limitations of the basic graph reduction algorithm and the need for more sophisticated methods for complex circuit topologies.</p>
+<p><strong>Note:</strong> The algorithm correctly identifies that this circuit cannot be simplified with basic reduction rules, which is the expected behavior for circuits requiring delta-wye transformations.</p>
 <h2 id="analysis-and-efficiency">Analysis and Efficiency</h2>
 <h3 id="algorithm-efficiency">Algorithm Efficiency</h3>
 <p>The time complexity of the algorithm depends on the number of nodes and edges in
@@ -678,7 +695,7 @@ provides deeper insights into the structure and behavior of electrical networks.
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-left" href="../../4%20Electromagnetism/Problem_1/" title="Problem 1"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-left" href="../../4%20Electromagnetism/Problem_1/" title="Problem 1: Simulating the Effects of the Lorentz Force"><span class="icon icon-circle-arrow-left"></span> Previous</a>
 <a class="btn btn-neutral float-right" href="../../6%20Statistics/Problem_1/" title="Problem 1">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>

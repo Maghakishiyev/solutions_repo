@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Problem 3 - Physics and Mathematics</title>
+<title>Problem 3: Trajectories of a Freely Released Payload Near Earth - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Problem 3";
+        var mkdocs_page_name = "Problem 3: Trajectories of a Freely Released Payload Near Earth";
         var mkdocs_page_input_path = "1 Physics/2 Gravity/Problem_3.md";
         var mkdocs_page_url = null;
       </script>
@@ -58,25 +58,87 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../Problem_2/">Problem 2: Cosmic Velocities and Escape Dynamics</a>
 </li>
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 3</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 3: Trajectories of a Freely Released Payload Near Earth</a>
 <ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#1-theoretical-foundation">1. Theoretical Foundation</a>
 <ul>
-<li class="toctree-l4"><a class="reference internal" href="#types-of-possible-trajectories">Types of Possible Trajectories</a>
+<li class="toctree-l4"><a class="reference internal" href="#11-fundamental-principles">1.1 Fundamental Principles</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#12-equations-of-motion">1.2 Equations of Motion</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#13-conservation-laws-and-orbital-parameters">1.3 Conservation Laws and Orbital Parameters</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#14-trajectory-classification">1.4 Trajectory Classification</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#15-critical-velocities">1.5 Critical Velocities</a>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#2-mathematical-analysis">2. Mathematical Analysis</a>
+<li class="toctree-l3"><a class="reference internal" href="#2-numerical-analysis-and-computational-methods">2. Numerical Analysis and Computational Methods</a>
 <ul>
-<li class="toctree-l4"><a class="reference internal" href="#equations-of-motion">Equations of Motion</a>
+<li class="toctree-l4"><a class="reference internal" href="#21-numerical-integration">2.1 Numerical Integration</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#22-orbital-parameter-calculation">2.2 Orbital Parameter Calculation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#23-periapsis-and-apoapsis">2.3 Periapsis and Apoapsis</a>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#3-computational-model">3. Computational Model</a>
+<li class="toctree-l3"><a class="reference internal" href="#3-practical-applications-and-mission-scenarios">3. Practical Applications and Mission Scenarios</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#31-satellite-deployment">3.1 Satellite Deployment</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#4-practical-applications">4. Practical Applications</a>
+<li class="toctree-l4"><a class="reference internal" href="#32-reentry-scenarios">3.2 Reentry Scenarios</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#5-conclusion">5. Conclusion</a>
+<li class="toctree-l4"><a class="reference internal" href="#33-escape-missions">3.3 Escape Missions</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#34-space-debris-analysis">3.4 Space Debris Analysis</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-computational-implementation">4. Computational Implementation</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#41-core-functions">4.1 Core Functions</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#42-analysis-capabilities">4.2 Analysis Capabilities</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#43-example-scenarios">4.3 Example Scenarios</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#5-results-and-analysis">5. Results and Analysis</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#51-trajectory-types-demonstration">5.1 Trajectory Types Demonstration</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#52-comparative-analysis">5.2 Comparative Analysis</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#53-key-findings">5.3 Key Findings</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#6-mathematical-verification">6. Mathematical Verification</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#61-energy-conservation-check">6.1 Energy Conservation Check</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#62-angular-momentum-conservation">6.2 Angular Momentum Conservation</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#63-orbit-equation-verification">6.3 Orbit Equation Verification</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#7-limitations-and-future-enhancements">7. Limitations and Future Enhancements</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#71-current-model-limitations">7.1 Current Model Limitations</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#72-potential-enhancements">7.2 Potential Enhancements</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#8-conclusion">8. Conclusion</a>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#references-and-further-reading">References and Further Reading</a>
 </li>
 </ul>
 </li>
@@ -84,13 +146,13 @@
 </li>
 <li class="toctree-l1"><a class="reference internal">3 Waves</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../3%20Waves/Problem_1/">Interference Patterns on a Water Surface</a>
+<li class="toctree-l2"><a class="reference internal" href="../../3%20Waves/Problem_1/">Problem 1: Interference Patterns on a Water Surface</a>
 </li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal">4 Electromagnetism</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../4%20Electromagnetism/Problem_1/">Problem 1</a>
+<li class="toctree-l2"><a class="reference internal" href="../../4%20Electromagnetism/Problem_1/">Problem 1: Simulating the Effects of the Lorentz Force</a>
 </li>
 </ul>
 </li>
@@ -181,7 +243,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">2 Gravity</li>
-<li class="breadcrumb-item active">Problem 3</li>
+<li class="breadcrumb-item active">Problem 3: Trajectories of a Freely Released Payload Near Earth</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -189,111 +251,217 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="problem-3">Problem 3</h1>
-<p>Trajectories of a Freely Released Payload Near Earth</p>
+<h1 id="problem-3-trajectories-of-a-freely-released-payload-near-earth">Problem 3: Trajectories of a Freely Released Payload Near Earth</h1>
+<h2 id="motivation">Motivation</h2>
+<p>When an object is released from a moving rocket near Earth, its trajectory depends on initial conditions and gravitational forces. This scenario presents a rich problem, blending principles of orbital mechanics and numerical methods. Understanding the potential trajectories is vital for space missions, such as deploying payloads or returning objects to Earth.</p>
+<hr/>
 <h2 id="1-theoretical-foundation">1. Theoretical Foundation</h2>
-<h3 id="types-of-possible-trajectories">Types of Possible Trajectories</h3>
-<p>The trajectory of a payload released near Earth depends on its initial velocity
-<span class="arithmatex">\( v \)</span> relative to Earth's gravitational pull. The possible trajectories are:</p>
+<h3 id="11-fundamental-principles">1.1 Fundamental Principles</h3>
+<p>The motion of a payload released near Earth is governed by Newton's law of universal gravitation and follows the principles of orbital mechanics. The gravitational force acting on a payload of mass <span class="arithmatex">\(m\)</span> at distance <span class="arithmatex">\(r\)</span> from Earth's center is:</p>
+<div class="arithmatex">\[F = \frac{GMm}{r^2}\]</div>
+<p>where <span class="arithmatex">\(G = 6.67430 \times 10^{-11} \, \text{m}^3\text{kg}^{-1}\text{s}^{-2}\)</span> is the gravitational constant and <span class="arithmatex">\(M = 5.972 \times 10^{24} \, \text{kg}\)</span> is Earth's mass.</p>
+<h3 id="12-equations-of-motion">1.2 Equations of Motion</h3>
+<p>The equation of motion for the payload in a two-dimensional coordinate system is:</p>
+<div class="arithmatex">\[\frac{d^2\mathbf{r}}{dt^2} = -\frac{GM}{r^3} \mathbf{r}\]</div>
+<p>where <span class="arithmatex">\(\mathbf{r} = (x, y)\)</span> is the position vector and <span class="arithmatex">\(r = |\mathbf{r}| = \sqrt{x^2 + y^2}\)</span>.</p>
+<p>In component form:
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{d^2x}{dt^2} = -\frac{GM}{r^3} x\)</span>\)</span>
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{d^2y}{dt^2} = -\frac{GM}{r^3} y\)</span>\)</span></p>
+<h3 id="13-conservation-laws-and-orbital-parameters">1.3 Conservation Laws and Orbital Parameters</h3>
+<h4 id="specific-energy">Specific Energy</h4>
+<p>The specific mechanical energy (energy per unit mass) is conserved:</p>
+<div class="arithmatex">\[E = \frac{1}{2}v^2 - \frac{GM}{r}\]</div>
+<p>where <span class="arithmatex">\(v = \sqrt{v_x^2 + v_y^2}\)</span> is the speed.</p>
+<h4 id="angular-momentum">Angular Momentum</h4>
+<p>For planar motion, the specific angular momentum is conserved:</p>
+<div class="arithmatex">\[h = |\mathbf{r} \times \mathbf{v}| = xv_y - yv_x\]</div>
+<h4 id="eccentricity">Eccentricity</h4>
+<p>The orbital eccentricity, which determines the shape of the trajectory, is:</p>
+<div class="arithmatex">\[e = \sqrt{1 + \frac{2Eh^2}{(GM)^2}}\]</div>
+<h3 id="14-trajectory-classification">1.4 Trajectory Classification</h3>
+<p>Based on the specific energy and eccentricity, trajectories are classified as:</p>
 <ol>
-<li><strong>Suborbital (Parabolic Trajectory)</strong>: If the payload does not reach orbital
-   velocity, it follows a ballistic path back to Earth.</li>
-<li><strong>Orbital (Elliptical Trajectory)</strong>: If the velocity is between the first
-   cosmic velocity <span class="arithmatex">\( v_1 \)</span> (orbital velocity) and escape velocity <span class="arithmatex">\( v_2 \)</span>,
-   the payload enters an elliptical orbit.</li>
-<li><strong>Escape (Hyperbolic Trajectory)</strong>: If the velocity exceeds escape velocity
-   <span class="arithmatex">\( v_2 \)</span>, the payload follows a hyperbolic trajectory and escapes Earth's
-   gravity.</li>
+<li><strong>Circular Orbit</strong> (<span class="arithmatex">\(e = 0\)</span>, <span class="arithmatex">\(E &lt; 0\)</span>):</li>
+<li>Occurs when <span class="arithmatex">\(v = \sqrt{\frac{GM}{r}}\)</span> (circular velocity)</li>
+<li>
+<p>Constant altitude orbit</p>
+</li>
+<li>
+<p><strong>Elliptical Orbit</strong> (<span class="arithmatex">\(0 &lt; e &lt; 1\)</span>, <span class="arithmatex">\(E &lt; 0\)</span>):</p>
+</li>
+<li>Bound orbit with varying altitude</li>
+<li>Includes both circular and eccentric elliptical orbits</li>
+<li>
+<p>Semi-major axis: <span class="arithmatex">\(a = -\frac{GM}{2E}\)</span></p>
+</li>
+<li>
+<p><strong>Parabolic Trajectory</strong> (<span class="arithmatex">\(e = 1\)</span>, <span class="arithmatex">\(E = 0\)</span>):</p>
+</li>
+<li>Escape trajectory with minimum energy</li>
+<li>
+<p>Escape velocity: <span class="arithmatex">\(v_{esc} = \sqrt{\frac{2GM}{r}}\)</span></p>
+</li>
+<li>
+<p><strong>Hyperbolic Trajectory</strong> (<span class="arithmatex">\(e &gt; 1\)</span>, <span class="arithmatex">\(E &gt; 0\)</span>):</p>
+</li>
+<li>Unbound trajectory with excess energy</li>
+<li>Payload escapes Earth's gravitational influence</li>
 </ol>
-<p>These scenarios are governed by Newton's Law of Gravitation:</p>
-<div class="arithmatex">\[
-F = \frac{GMm}{r^2}
-\]</div>
-<p>and Kepler’s Laws of Motion.</p>
+<h3 id="15-critical-velocities">1.5 Critical Velocities</h3>
+<h4 id="first-cosmic-velocity-circular-velocity">First Cosmic Velocity (Circular Velocity)</h4>
+<p>The minimum velocity for a circular orbit at radius <span class="arithmatex">\(r\)</span>:
+<span class="arithmatex">\(<span class="arithmatex">\(v_1 = \sqrt{\frac{GM}{r}}\)</span>\)</span></p>
+<p>At Earth's surface: <span class="arithmatex">\(v_1 = 7.91 \, \text{km/s}\)</span></p>
+<h4 id="second-cosmic-velocity-escape-velocity">Second Cosmic Velocity (Escape Velocity)</h4>
+<p>The minimum velocity to escape Earth's gravity:
+<span class="arithmatex">\(<span class="arithmatex">\(v_2 = \sqrt{\frac{2GM}{r}} = \sqrt{2} \cdot v_1\)</span>\)</span></p>
+<p>At Earth's surface: <span class="arithmatex">\(v_2 = 11.19 \, \text{km/s}\)</span></p>
 <hr/>
-<h2 id="2-mathematical-analysis">2. Mathematical Analysis</h2>
-<h3 id="equations-of-motion">Equations of Motion</h3>
-<p>The motion of the payload is governed by Newton’s Second Law:</p>
-<div class="arithmatex">\[
-\frac{d^2\mathbf{r}}{dt^2} = -\frac{GM}{r^3} \mathbf{r}
-\]</div>
-<p>where:</p>
+<h2 id="2-numerical-analysis-and-computational-methods">2. Numerical Analysis and Computational Methods</h2>
+<h3 id="21-numerical-integration">2.1 Numerical Integration</h3>
+<p>The orbital equations form a system of first-order ODEs:</p>
+<div class="arithmatex">\[\frac{d}{dt}\begin{pmatrix} x \\ y \\ v_x \\ v_y \end{pmatrix} = \begin{pmatrix} v_x \\ v_y \\ -\frac{GM}{r^3}x \\ -\frac{GM}{r^3}y \end{pmatrix}\]</div>
+<p>We use the Runge-Kutta 4th order method (RK45) with adaptive step size for high accuracy.</p>
+<h3 id="22-orbital-parameter-calculation">2.2 Orbital Parameter Calculation</h3>
+<p>From initial conditions <span class="arithmatex">\((x_0, y_0, v_{x0}, v_{y0})\)</span>, we calculate:</p>
 <ul>
-<li><span class="arithmatex">\( \mathbf{r} \)</span> is the position vector,</li>
-<li><span class="arithmatex">\( G \)</span> is the gravitational constant,</li>
-<li><span class="arithmatex">\( M \)</span> is Earth’s mass.</li>
+<li><strong>Specific energy</strong>: <span class="arithmatex">\(E = \frac{1}{2}(v_{x0}^2 + v_{y0}^2) - \frac{GM}{\sqrt{x_0^2 + y_0^2}}\)</span></li>
+<li><strong>Angular momentum</strong>: <span class="arithmatex">\(h = x_0 v_{y0} - y_0 v_{x0}\)</span></li>
+<li><strong>Eccentricity</strong>: <span class="arithmatex">\(e = \sqrt{1 + \frac{2Eh^2}{(GM)^2}}\)</span></li>
+<li><strong>Semi-major axis</strong>: <span class="arithmatex">\(a = -\frac{GM}{2E}\)</span> (for bound orbits)</li>
 </ul>
-<p>Numerical integration (e.g., Runge-Kutta method) is used to solve these
-equations.</p>
+<h3 id="23-periapsis-and-apoapsis">2.3 Periapsis and Apoapsis</h3>
+<p>For elliptical orbits (<span class="arithmatex">\(e &lt; 1\)</span>):
+- <strong>Periapsis distance</strong>: <span class="arithmatex">\(r_p = a(1 - e)\)</span>
+- <strong>Apoapsis distance</strong>: <span class="arithmatex">\(r_a = a(1 + e)\)</span></p>
+<p>For parabolic trajectories (<span class="arithmatex">\(e = 1\)</span>):
+- <strong>Periapsis distance</strong>: <span class="arithmatex">\(r_p = \frac{h^2}{2GM}\)</span></p>
 <hr/>
-<h2 id="3-computational-model">3. Computational Model</h2>
-<p>The following Python script simulates and visualizes the trajectory of a payload
-released near Earth.</p>
-<pre><code class="language-python">import numpy as np
-import matplotlib.pyplot as plt
-from scipy.integrate import solve_ivp
-
-# Constants
-G = 6.67430e-11  # Gravitational constant (m^3/kg/s^2)
-M = 5.972e24     # Earth mass (kg)
-R = 6.371e6      # Earth radius (m)
-
-# Equations of motion
-def equations(t, y):
-    x, vx, y, vy = y
-    r = np.sqrt(x**2 + y**2)
-    ax = -G * M * x / r**3
-    ay = -G * M * y / r**3
-    return [vx, ax, vy, ay]
-
-# Initial conditions (position in km, velocity in km/s)
-x0, y0 = R + 500000, 0  # Initial altitude: 500 km
-vx0, vy0 = 7.8e3, 0  # Initial velocity (near orbital velocity)
-y_init = [x0, vx0, y0, vy0]
-
-# Time span
-t_span = (0, 10000)
-t_eval = np.linspace(0, 10000, 1000)
-
-# Solve ODE
-sol = solve_ivp(equations, t_span, y_init, t_eval=t_eval, method='RK45')
-
-# Plot trajectory
-plt.figure(figsize=(6,6))
-plt.plot(sol.y[0], sol.y[2], label='Payload Trajectory')
-plt.scatter(0, 0, color='blue', label='Earth')
-plt.xlabel('X Position (m)')
-plt.ylabel('Y Position (m)')
-plt.title('Trajectory of a Freely Released Payload')
-plt.legend()
-plt.grid()
-plt.show()
-</code></pre>
-<p>This script:</p>
+<h2 id="3-practical-applications-and-mission-scenarios">3. Practical Applications and Mission Scenarios</h2>
+<h3 id="31-satellite-deployment">3.1 Satellite Deployment</h3>
+<p>Understanding payload trajectories is crucial for:
+- <strong>Orbital insertion</strong>: Achieving desired orbital parameters
+- <strong>Station-keeping</strong>: Maintaining proper orbit
+- <strong>Constellation deployment</strong>: Positioning multiple satellites</p>
+<h3 id="32-reentry-scenarios">3.2 Reentry Scenarios</h3>
+<p>For controlled reentry:
+- <strong>Deorbit burns</strong>: Reducing velocity to ensure atmospheric entry
+- <strong>Reentry angle</strong>: Optimizing entry trajectory for safety
+- <strong>Landing accuracy</strong>: Predicting touchdown location</p>
+<h3 id="33-escape-missions">3.3 Escape Missions</h3>
+<p>For interplanetary missions:
+- <strong>Trans-lunar injection</strong>: Escaping Earth's sphere of influence
+- <strong>Planetary transfers</strong>: Hohmann transfer orbits
+- <strong>Gravity assists</strong>: Using planetary flybys for trajectory modification</p>
+<h3 id="34-space-debris-analysis">3.4 Space Debris Analysis</h3>
+<p>Tracking uncontrolled payloads:
+- <strong>Collision avoidance</strong>: Predicting debris trajectories
+- <strong>Atmospheric decay</strong>: Estimating reentry times
+- <strong>Space situational awareness</strong>: Monitoring orbital environment</p>
+<hr/>
+<h2 id="4-computational-implementation">4. Computational Implementation</h2>
+<p>The comprehensive Python simulation (<code>payload_trajectories.py</code>) implements:</p>
+<h3 id="41-core-functions">4.1 Core Functions</h3>
 <ul>
-<li>Defines gravitational equations of motion.</li>
-<li>Uses numerical integration to compute the trajectory.</li>
-<li>Plots the resulting trajectory.</li>
+<li><strong><code>payload_dynamics()</code></strong>: Implements the gravitational equations of motion</li>
+<li><strong><code>simulate_trajectory()</code></strong>: Numerical integration using RK45 method</li>
+<li><strong><code>calculate_orbital_parameters()</code></strong>: Computes energy, eccentricity, and orbit type</li>
+<li><strong><code>plot_trajectory()</code></strong>: Visualizes individual trajectories</li>
+<li><strong><code>plot_multiple_trajectories()</code></strong>: Compares different initial conditions</li>
 </ul>
-<p><img alt="Trajectory of a Freely Released Payload" src="../pics/problem3.png"/></p>
+<h3 id="42-analysis-capabilities">4.2 Analysis Capabilities</h3>
+<p>The simulation generates comprehensive visualizations:</p>
+<ol>
+<li><strong>Individual trajectory plots</strong> for each orbit type</li>
+<li><strong>Trajectory comparisons</strong> showing different initial velocities</li>
+<li><strong>Angular analysis</strong> showing effect of release direction</li>
+<li><strong>Speed analysis</strong> demonstrating velocity effects on orbit shape</li>
+<li><strong>Animated trajectories</strong> for dynamic visualization</li>
+</ol>
+<h3 id="43-example-scenarios">4.3 Example Scenarios</h3>
+<p>The code simulates realistic scenarios:
+- <strong>Low Earth Orbit (LEO)</strong> deployment at 300 km altitude
+- <strong>Reentry trajectories</strong> with insufficient orbital velocity
+- <strong>Escape trajectories</strong> exceeding escape velocity
+- <strong>Transfer orbits</strong> for satellite maneuvering</p>
 <hr/>
-<h2 id="4-practical-applications">4. Practical Applications</h2>
+<h2 id="5-results-and-analysis">5. Results and Analysis</h2>
+<h3 id="51-trajectory-types-demonstration">5.1 Trajectory Types Demonstration</h3>
+<p><img alt="Circular Orbit" src="../pics/circular_orbit.png"/>
+<em>Circular orbit at 300 km altitude with exact circular velocity</em></p>
+<p><img alt="Elliptical Orbit" src="../pics/elliptical_orbit.png"/>
+<em>Elliptical orbit with 90% of circular velocity</em></p>
+<p><img alt="Parabolic Trajectory" src="../pics/parabolic_trajectory.png"/>
+<em>Parabolic escape trajectory at exact escape velocity</em></p>
+<p><img alt="Hyperbolic Trajectory" src="../pics/hyperbolic_trajectory.png"/>
+<em>Hyperbolic trajectory with 120% of escape velocity</em></p>
+<p><img alt="Reentry Trajectory" src="../pics/reentry_trajectory.png"/>
+<em>Suborbital reentry trajectory with 70% of circular velocity</em></p>
+<h3 id="52-comparative-analysis">5.2 Comparative Analysis</h3>
+<p><img alt="Trajectory Comparison" src="../pics/trajectory_comparison.png"/>
+<em>Comparison of all trajectory types from the same initial position</em></p>
+<p><img alt="Speed Effects" src="../pics/speed_trajectories.png"/>
+<em>Effect of different initial speeds on trajectory shape</em></p>
+<p><img alt="Angular Effects" src="../pics/angle_trajectories.png"/>
+<em>Effect of release angle on circular-velocity trajectories</em></p>
+<h3 id="53-key-findings">5.3 Key Findings</h3>
+<ol>
+<li><strong>Velocity threshold effects</strong>: Small changes in initial velocity dramatically affect trajectory type</li>
+<li><strong>Energy considerations</strong>: Bound vs. unbound orbits determined by total energy sign</li>
+<li><strong>Angular momentum conservation</strong>: Determines orbit orientation and eccentricity</li>
+<li><strong>Mission planning implications</strong>: Precise velocity control required for desired outcomes</li>
+</ol>
+<hr/>
+<h2 id="6-mathematical-verification">6. Mathematical Verification</h2>
+<h3 id="61-energy-conservation-check">6.1 Energy Conservation Check</h3>
+<p>For any trajectory, the total energy should remain constant:
+<span class="arithmatex">\(<span class="arithmatex">\(E(t) = \frac{1}{2}[v_x^2(t) + v_y^2(t)] - \frac{GM}{\sqrt{x^2(t) + y^2(t)}} = \text{constant}\)</span>\)</span></p>
+<h3 id="62-angular-momentum-conservation">6.2 Angular Momentum Conservation</h3>
+<p>For central force motion:
+<span class="arithmatex">\(<span class="arithmatex">\(h(t) = x(t)v_y(t) - y(t)v_x(t) = \text{constant}\)</span>\)</span></p>
+<h3 id="63-orbit-equation-verification">6.3 Orbit Equation Verification</h3>
+<p>The trajectory should satisfy the orbit equation:
+<span class="arithmatex">\(<span class="arithmatex">\(\frac{1}{r} = \frac{GM}{h^2}(1 + e\cos\theta)\)</span>\)</span></p>
+<p>where <span class="arithmatex">\(\theta\)</span> is the true anomaly measured from periapsis.</p>
+<hr/>
+<h2 id="7-limitations-and-future-enhancements">7. Limitations and Future Enhancements</h2>
+<h3 id="71-current-model-limitations">7.1 Current Model Limitations</h3>
 <ul>
-<li><strong>Satellite Deployment</strong>: Ensuring correct initial conditions for stable
-    orbits.</li>
-<li><strong>Reentry Scenarios</strong>: Calculating reentry angles and speeds.</li>
-<li><strong>Escape Missions</strong>: Planning interplanetary transfers.</li>
+<li><strong>Two-dimensional analysis</strong>: Actual orbits are three-dimensional</li>
+<li><strong>Point mass assumption</strong>: Earth treated as a point mass</li>
+<li><strong>No atmospheric effects</strong>: Drag forces not considered</li>
+<li><strong>No perturbations</strong>: Solar/lunar gravity and Earth oblateness ignored</li>
+</ul>
+<h3 id="72-potential-enhancements">7.2 Potential Enhancements</h3>
+<ul>
+<li><strong>Three-dimensional implementation</strong>: Full 3D orbital mechanics</li>
+<li><strong>Atmospheric modeling</strong>: Including drag effects for low orbits</li>
+<li><strong>Perturbation analysis</strong>: Adding third-body effects</li>
+<li><strong>Relativistic corrections</strong>: General relativity effects for high precision</li>
 </ul>
 <hr/>
-<h2 id="5-conclusion">5. Conclusion</h2>
-<p>Understanding the possible trajectories of a released payload is crucial for
-space missions. By analyzing the velocity and gravitational influence, we can
-determine whether an object will reenter, orbit, or escape Earth.</p>
+<h2 id="8-conclusion">8. Conclusion</h2>
+<p>This comprehensive analysis of payload trajectories near Earth demonstrates the fundamental principles of orbital mechanics and their practical applications. The numerical simulations provide insight into:</p>
+<ul>
+<li>The critical role of initial velocity in determining trajectory type</li>
+<li>The mathematical relationships governing orbital motion</li>
+<li>The practical considerations for space mission design</li>
+<li>The computational methods required for trajectory analysis</li>
+</ul>
+<p>Understanding these principles is essential for space mission planning, satellite operations, and space situational awareness. The computational tools developed here provide a foundation for more advanced orbital mechanics analysis and mission design applications.</p>
+<hr/>
+<h2 id="references-and-further-reading">References and Further Reading</h2>
+<ol>
+<li>Vallado, D. A. (2013). <em>Fundamentals of Astrodynamics and Applications</em>. Microcosm Press.</li>
+<li>Curtis, H. D. (2013). <em>Orbital Mechanics for Engineering Students</em>. Butterworth-Heinemann.</li>
+<li>Prussing, J. E., &amp; Conway, B. A. (2012). <em>Orbital Mechanics</em>. Oxford University Press.</li>
+<li>Battin, R. H. (1999). <em>An Introduction to the Mathematics and Methods of Astrodynamics</em>. AIAA.</li>
+</ol>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
 <a class="btn btn-neutral float-left" href="../Problem_2/" title="Problem 2: Cosmic Velocities and Escape Dynamics"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-<a class="btn btn-neutral float-right" href="../../3%20Waves/Problem_1/" title="Interference Patterns on a Water Surface">Next <span class="icon icon-circle-arrow-right"></span></a>
+<a class="btn btn-neutral float-right" href="../../3%20Waves/Problem_1/" title="Problem 1: Interference Patterns on a Water Surface">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
 <div role="contentinfo">

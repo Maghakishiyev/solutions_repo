@@ -6,13 +6,13 @@
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <link href="../../../img/favicon.ico" rel="shortcut icon"/>
-<title>Interference Patterns on a Water Surface - Physics and Mathematics</title>
+<title>Problem 1: Interference Patterns on a Water Surface - Physics and Mathematics</title>
 <link href="../../../css/theme.css" rel="stylesheet"/>
 <link href="../../../css/theme_extra.css" rel="stylesheet"/>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" rel="stylesheet"/>
 <script>
         // Current page data
-        var mkdocs_page_name = "Interference Patterns on a Water Surface";
+        var mkdocs_page_name = "Problem 1: Interference Patterns on a Water Surface";
         var mkdocs_page_input_path = "1 Physics/3 Waves/Problem_1.md";
         var mkdocs_page_url = null;
       </script>
@@ -58,41 +58,127 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="../../2%20Gravity/Problem_2/">Problem 2: Cosmic Velocities and Escape Dynamics</a>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../../2%20Gravity/Problem_3/">Problem 3</a>
+<li class="toctree-l2"><a class="reference internal" href="../../2%20Gravity/Problem_3/">Problem 3: Trajectories of a Freely Released Payload Near Earth</a>
 </li>
 </ul>
 </li>
 <li class="toctree-l1 current"><a class="reference internal current">3 Waves</a>
 <ul class="current">
-<li class="toctree-l2 current"><a class="reference internal current" href="#">Interference Patterns on a Water Surface</a>
+<li class="toctree-l2 current"><a class="reference internal current" href="#">Problem 1: Interference Patterns on a Water Surface</a>
 <ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="#motivation">Motivation</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#theoretical-background">Theoretical Background</a>
+<li class="toctree-l3"><a class="reference internal" href="#1-theoretical-foundation">1. Theoretical Foundation</a>
 <ul>
-<li class="toctree-l4"><a class="reference internal" href="#principle-of-superposition">Principle of Superposition</a>
+<li class="toctree-l4"><a class="reference internal" href="#11-wave-equation-and-cylindrical-wave-solution">1.1 Wave Equation and Cylindrical Wave Solution</a>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#constructive-and-destructive-interference">Constructive and Destructive Interference</a>
+<li class="toctree-l4"><a class="reference internal" href="#12-physical-basis-of-the-cylindrical-wave">1.2 Physical Basis of the Cylindrical Wave</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#13-dispersion-relation-for-water-waves">1.3 Dispersion Relation for Water Waves</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#14-principle-of-linear-superposition">1.4 Principle of Linear Superposition</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#15-interference-conditions">1.5 Interference Conditions</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#16-path-difference-and-interference-patterns">1.6 Path Difference and Interference Patterns</a>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#analysis-of-interference-patterns-for-regular-polygons">Analysis of Interference Patterns for Regular Polygons</a>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#computational-model-and-visualization">Computational Model and Visualization</a>
+<li class="toctree-l3"><a class="reference internal" href="#2-mathematical-analysis-for-regular-polygons">2. Mathematical Analysis for Regular Polygons</a>
 <ul>
-<li class="toctree-l4"><a class="reference internal" href="#triangle-3-vertices">Triangle (3 Vertices)</a>
+<li class="toctree-l4"><a class="reference internal" href="#21-geometric-configuration">2.1 Geometric Configuration</a>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#square-4-vertices">Square (4 Vertices)</a>
+<li class="toctree-l4"><a class="reference internal" href="#22-symmetry-analysis">2.2 Symmetry Analysis</a>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#pentagon-5-vertices">Pentagon (5 Vertices)</a>
+<li class="toctree-l4"><a class="reference internal" href="#23-far-field-approximation">2.3 Far-Field Approximation</a>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="#hexagon-6-vertices">Hexagon (6 Vertices)</a>
+<li class="toctree-l4"><a class="reference internal" href="#24-intensity-distribution">2.4 Intensity Distribution</a>
 </li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#observations-and-conclusions">Observations and Conclusions</a>
+<li class="toctree-l3"><a class="reference internal" href="#3-computational-implementation">3. Computational Implementation</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#31-core-functions">3.1 Core Functions</a>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#applications">Applications</a>
+<li class="toctree-l4"><a class="reference internal" href="#32-visualization-capabilities">3.2 Visualization Capabilities</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#33-analysis-parameters">3.3 Analysis Parameters</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#4-results-and-analysis">4. Results and Analysis</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#41-triangle-3-vertices-analysis">4.1 Triangle (3 Vertices) Analysis</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#42-square-4-vertices-analysis">4.2 Square (4 Vertices) Analysis</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#43-pentagon-5-vertices-analysis">4.3 Pentagon (5 Vertices) Analysis</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#44-hexagon-6-vertices-analysis">4.4 Hexagon (6 Vertices) Analysis</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#5-quantitative-analysis">5. Quantitative Analysis</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#51-central-amplitude-enhancement">5.1 Central Amplitude Enhancement</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#52-angular-distribution-analysis">5.2 Angular Distribution Analysis</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#53-interference-visibility">5.3 Interference Visibility</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#6-physical-insights-and-wave-phenomena">6. Physical Insights and Wave Phenomena</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#61-coherence-requirements">6.1 Coherence Requirements</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#62-scaling-properties">6.2 Scaling Properties</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#63-energy-conservation">6.3 Energy Conservation</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#7-real-world-applications">7. Real-World Applications</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#71-acoustic-applications">7.1 Acoustic Applications</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#72-electromagnetic-applications">7.2 Electromagnetic Applications</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#73-optical-applications">7.3 Optical Applications</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#74-water-wave-applications">7.4 Water Wave Applications</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#8-advanced-considerations">8. Advanced Considerations</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#81-nonlinear-effects">8.1 Nonlinear Effects</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#82-dispersion-effects">8.2 Dispersion Effects</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#83-damping-and-attenuation">8.3 Damping and Attenuation</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#9-experimental-verification">9. Experimental Verification</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#91-laboratory-setup">9.1 Laboratory Setup</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#92-measurement-techniques">9.2 Measurement Techniques</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#93-data-analysis">9.3 Data Analysis</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#10-conclusion">10. Conclusion</a>
+<ul>
+<li class="toctree-l4"><a class="reference internal" href="#101-key-findings">10.1 Key Findings</a>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="#102-educational-value">10.2 Educational Value</a>
+</li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#references-and-further-reading">References and Further Reading</a>
 </li>
 </ul>
 </li>
@@ -100,7 +186,7 @@
 </li>
 <li class="toctree-l1"><a class="reference internal">4 Electromagnetism</a>
 <ul>
-<li class="toctree-l2"><a class="reference internal" href="../../4%20Electromagnetism/Problem_1/">Problem 1</a>
+<li class="toctree-l2"><a class="reference internal" href="../../4%20Electromagnetism/Problem_1/">Problem 1: Simulating the Effects of the Lorentz Force</a>
 </li>
 </ul>
 </li>
@@ -191,7 +277,7 @@
 <li><a aria-label="Docs" class="icon icon-home" href="../../.."></a></li>
 <li class="breadcrumb-item">1 Physics</li>
 <li class="breadcrumb-item">3 Waves</li>
-<li class="breadcrumb-item active">Interference Patterns on a Water Surface</li>
+<li class="breadcrumb-item active">Problem 1: Interference Patterns on a Water Surface</li>
 <li class="wy-breadcrumbs-aside">
 </li>
 </ul>
@@ -199,258 +285,255 @@
 </div>
 <div class="document" itemscope="itemscope" itemtype="http://schema.org/Article" role="main">
 <div class="section" itemprop="articleBody">
-<h1 id="interference-patterns-on-a-water-surface">Interference Patterns on a Water Surface</h1>
+<h1 id="problem-1-interference-patterns-on-a-water-surface">Problem 1: Interference Patterns on a Water Surface</h1>
 <h2 id="motivation">Motivation</h2>
-<p>Interference occurs when waves from different sources overlap, creating new
-patterns. On a water surface, this can be easily observed when ripples from
-different points meet, forming distinctive interference patterns. These patterns
-can show us how waves combine in different ways, either reinforcing each other
-or canceling out.</p>
-<p>Studying these patterns helps us understand wave behavior in a simple, visual
-way. It also allows us to explore important concepts, like the relationship
-between wave phase and the effects of multiple sources. This task offers a
-hands-on approach to learning about wave interactions and their real-world
-applications, making it an interesting and engaging way to dive into wave
-physics.</p>
-<h2 id="theoretical-background">Theoretical Background</h2>
-<p>A circular wave on the water surface, emanating from a point source located at
-<span class="arithmatex">\((x_0, y_0)\)</span>, can be described by the Single Disturbance equation:</p>
+<p>Interference occurs when waves from different sources overlap, creating new patterns. On a water surface, this can be easily observed when ripples from different points meet, forming distinctive interference patterns. These patterns can show us how waves combine in different ways, either reinforcing each other or canceling out.</p>
+<p>Studying these patterns helps us understand wave behavior in a simple, visual way. It also allows us to explore important concepts, like the relationship between wave phase and the effects of multiple sources. This task offers a hands-on approach to learning about wave interactions and their real-world applications, making it an interesting and engaging way to dive into wave physics.</p>
+<hr/>
+<h2 id="1-theoretical-foundation">1. Theoretical Foundation</h2>
+<h3 id="11-wave-equation-and-cylindrical-wave-solution">1.1 Wave Equation and Cylindrical Wave Solution</h3>
+<p>A circular wave on the water surface, emanating from a point source located at <span class="arithmatex">\((x_0, y_0)\)</span>, can be described by the cylindrical wave equation:</p>
 <div class="arithmatex">\[\eta(x, y, t) = \frac{A}{\sqrt{r}} \cdot \cos(kr - \omega t + \phi)\]</div>
-<p>where:</p>
+<p>where:
+- <span class="arithmatex">\(\eta(x, y, t)\)</span> is the displacement of the water surface at point <span class="arithmatex">\((x, y)\)</span> and time <span class="arithmatex">\(t\)</span>
+- <span class="arithmatex">\(A\)</span> is the amplitude of the wave at unit distance
+- <span class="arithmatex">\(k = \frac{2\pi}{\lambda}\)</span> is the wave number, related to the wavelength <span class="arithmatex">\(\lambda\)</span>
+- <span class="arithmatex">\(\omega = 2\pi f\)</span> is the angular frequency, related to the frequency <span class="arithmatex">\(f\)</span>
+- <span class="arithmatex">\(r = \sqrt{(x - x_0)^2 + (y - y_0)^2}\)</span> is the distance from the source to the point <span class="arithmatex">\((x, y)\)</span>
+- <span class="arithmatex">\(\phi\)</span> is the initial phase</p>
+<h3 id="12-physical-basis-of-the-cylindrical-wave">1.2 Physical Basis of the Cylindrical Wave</h3>
+<p>The <span class="arithmatex">\(\frac{1}{\sqrt{r}}\)</span> amplitude dependence arises from conservation of energy. For a cylindrical wave spreading in two dimensions, the wave energy is distributed over a circumference proportional to <span class="arithmatex">\(r\)</span>, leading to amplitude decay as <span class="arithmatex">\(\frac{1}{\sqrt{r}}\)</span>.</p>
+<h3 id="13-dispersion-relation-for-water-waves">1.3 Dispersion Relation for Water Waves</h3>
+<p>For deep water waves, the dispersion relation is:
+<span class="arithmatex">\(<span class="arithmatex">\(\omega^2 = gk\)</span>\)</span></p>
+<p>where <span class="arithmatex">\(g\)</span> is the gravitational acceleration. This gives the phase velocity:
+<span class="arithmatex">\(<span class="arithmatex">\(v_{phase} = \frac{\omega}{k} = \sqrt{\frac{g}{k}} = \sqrt{\frac{g\lambda}{2\pi}}\)</span>\)</span></p>
+<h3 id="14-principle-of-linear-superposition">1.4 Principle of Linear Superposition</h3>
+<p>When multiple waves overlap at a point, the resulting displacement is the linear sum of the individual displacements. For <span class="arithmatex">\(N\)</span> sources, the total displacement is:</p>
+<div class="arithmatex">\[\eta_{\text{total}}(x, y, t) = \sum_{i=1}^{N} \eta_i(x, y, t) = \sum_{i=1}^{N} \frac{A_i}{\sqrt{r_i}} \cos(kr_i - \omega t + \phi_i)\]</div>
+<p>where <span class="arithmatex">\(r_i = \sqrt{(x - x_{0i})^2 + (y - y_{0i})^2}\)</span> is the distance from the <span class="arithmatex">\(i\)</span>-th source.</p>
+<h3 id="15-interference-conditions">1.5 Interference Conditions</h3>
+<h4 id="constructive-interference">Constructive Interference</h4>
+<p>Constructive interference occurs when waves arrive in phase. The condition for constructive interference is:
+<span class="arithmatex">\(<span class="arithmatex">\(\Delta\phi = k(r_i - r_j) + (\phi_i - \phi_j) = 2\pi n\)</span>\)</span></p>
+<p>where <span class="arithmatex">\(n\)</span> is an integer and <span class="arithmatex">\(\Delta\phi\)</span> is the phase difference between waves from sources <span class="arithmatex">\(i\)</span> and <span class="arithmatex">\(j\)</span>.</p>
+<h4 id="destructive-interference">Destructive Interference</h4>
+<p>Destructive interference occurs when waves arrive out of phase:
+<span class="arithmatex">\(<span class="arithmatex">\(\Delta\phi = k(r_i - r_j) + (\phi_i - \phi_j) = (2n + 1)\pi\)</span>\)</span></p>
+<h3 id="16-path-difference-and-interference-patterns">1.6 Path Difference and Interference Patterns</h3>
+<p>For coherent sources with the same phase (<span class="arithmatex">\(\phi_i = \phi\)</span> for all <span class="arithmatex">\(i\)</span>), the interference condition depends only on the path difference:
+<span class="arithmatex">\(<span class="arithmatex">\(\Delta r = |r_i - r_j|\)</span>\)</span></p>
 <ul>
-<li><span class="arithmatex">\(\eta(x, y, t)\)</span> is the displacement of the water surface at point <span class="arithmatex">\((x, y)\)</span>
-    and time <span class="arithmatex">\(t\)</span>,</li>
-<li><span class="arithmatex">\(A\)</span> is the amplitude of the wave,</li>
-<li><span class="arithmatex">\(k = \frac{2\pi}{\lambda}\)</span> is the wave number, related to the wavelength
-    <span class="arithmatex">\(\lambda\)</span>,</li>
-<li><span class="arithmatex">\(\omega = 2\pi f\)</span> is the angular frequency, related to the frequency <span class="arithmatex">\(f\)</span>,</li>
-<li><span class="arithmatex">\(r = \sqrt{(x - x_0)^2 + (y - y_0)^2}\)</span> is the distance from the source to
-    the point <span class="arithmatex">\((x, y)\)</span>,</li>
-<li><span class="arithmatex">\(\phi\)</span> is the initial phase.</li>
+<li><strong>Constructive interference</strong>: <span class="arithmatex">\(\Delta r = n\lambda\)</span></li>
+<li><strong>Destructive interference</strong>: <span class="arithmatex">\(\Delta r = (n + \frac{1}{2})\lambda\)</span></li>
 </ul>
-<h3 id="principle-of-superposition">Principle of Superposition</h3>
-<p>When multiple waves overlap at a point, the resulting displacement is the sum of
-the individual displacements. For <span class="arithmatex">\(N\)</span> sources, the total displacement is given
-by:</p>
-<div class="arithmatex">\[\eta_{sum}(x, y, t) = \sum_{i=1}^{N} \eta_i(x, y, t)\]</div>
-<p>where <span class="arithmatex">\(N\)</span> is the number of sources (vertices of the polygon).</p>
-<h3 id="constructive-and-destructive-interference">Constructive and Destructive Interference</h3>
+<hr/>
+<h2 id="2-mathematical-analysis-for-regular-polygons">2. Mathematical Analysis for Regular Polygons</h2>
+<h3 id="21-geometric-configuration">2.1 Geometric Configuration</h3>
+<p>For a regular <span class="arithmatex">\(N\)</span>-sided polygon with sources at vertices, the source positions are:
+<span class="arithmatex">\(<span class="arithmatex">\(x_i = R\cos\left(\frac{2\pi i}{N}\right), \quad y_i = R\sin\left(\frac{2\pi i}{N}\right)\)</span>\)</span></p>
+<p>where <span class="arithmatex">\(R\)</span> is the circumradius and <span class="arithmatex">\(i = 0, 1, 2, ..., N-1\)</span>.</p>
+<h3 id="22-symmetry-analysis">2.2 Symmetry Analysis</h3>
+<p>The interference pattern exhibits <span class="arithmatex">\(N\)</span>-fold rotational symmetry. At the center of the polygon, all sources are equidistant, leading to constructive interference when:
+<span class="arithmatex">\(<span class="arithmatex">\(N \cdot \frac{A}{\sqrt{R}} \cos(kR - \omega t + \phi)\)</span>\)</span></p>
+<h3 id="23-far-field-approximation">2.3 Far-Field Approximation</h3>
+<p>For observation points far from the polygon (<span class="arithmatex">\(r \gg R\)</span>), we can use the far-field approximation:
+<span class="arithmatex">\(<span class="arithmatex">\(r_i \approx r - R\cos(\theta - \frac{2\pi i}{N})\)</span>\)</span></p>
+<p>where <span class="arithmatex">\(r\)</span> and <span class="arithmatex">\(\theta\)</span> are the polar coordinates of the observation point.</p>
+<h3 id="24-intensity-distribution">2.4 Intensity Distribution</h3>
+<p>The intensity (time-averaged energy flux) is proportional to the square of the amplitude:
+<span class="arithmatex">\(<span class="arithmatex">\(I(x, y) = \langle|\eta_{\text{total}}(x, y, t)|^2\rangle_t\)</span>\)</span></p>
+<p>For coherent sources, this includes both the individual intensities and interference terms.</p>
+<hr/>
+<h2 id="3-computational-implementation">3. Computational Implementation</h2>
+<p>The comprehensive Python simulation (<code>wave_interference.py</code>) implements:</p>
+<h3 id="31-core-functions">3.1 Core Functions</h3>
 <ul>
-<li><strong>Constructive interference</strong> occurs when waves combine to create a larger
-    amplitude. This happens when the waves are in phase.</li>
-<li><strong>Destructive interference</strong> occurs when waves combine to create a smaller
-    amplitude or cancel out completely. This happens when the waves are out of
-    phase.</li>
+<li><strong><code>calculate_displacement()</code></strong>: Computes displacement from a single source</li>
+<li><strong><code>calculate_total_displacement()</code></strong>: Implements superposition principle</li>
+<li><strong><code>generate_polygon_vertices()</code></strong>: Creates regular polygon configurations</li>
+<li><strong><code>plot_interference_pattern()</code></strong>: 2D visualization with color mapping</li>
+<li><strong><code>plot_3d_interference_pattern()</code></strong>: 3D surface visualization</li>
+<li><strong><code>create_interference_animation()</code></strong>: Time-evolution animations</li>
 </ul>
-<h2 id="analysis-of-interference-patterns-for-regular-polygons">Analysis of Interference Patterns for Regular Polygons</h2>
-<p>In this study, we analyze the interference patterns formed by waves emitted from
-sources placed at the vertices of regular polygons. We consider four different
-configurations: triangle, square, pentagon, and hexagon.</p>
-<h2 id="computational-model-and-visualization">Computational Model and Visualization</h2>
-<details>
-<summary>Click to expand Python code</summary>
-<pre><code class="language-python">import numpy as np
-import matplotlib.pyplot as plt
-from matplotlib.animation import FuncAnimation
-import os
-from mpl_toolkits.mplot3d import Axes3D
-from matplotlib import cm
-
-# Create directory for pics if it doesn't exist
-image_dir = os.path.join('docs', '1 Physics', '3 Waves', 'pics')
-os.makedirs(image_dir, exist_ok=True)
-
-# Constants and parameters
-A = 1.0  # Amplitude
-lamb = 0.5  # Wavelength (lambda)
-f = 1.0  # Frequency
-k = 2 * np.pi / lamb  # Wave number
-omega = 2 * np.pi * f  # Angular frequency
-phi = 0  # Initial phase
-
-# Function to calculate the displacement at a point due to a single source
-def calculate_displacement(x, y, t, source_pos):
-    """
-    Calculate the displacement of the water surface at point (x, y) and time t
-    due to a wave from a source at source_pos.
-
-    Args:
-        x, y: Coordinates of the point
-        t: Time
-        source_pos: Position of the source (x0, y0)
-
-    Returns:
-        Displacement at point (x, y) and time t
-    """
-    x0, y0 = source_pos
-    r = np.sqrt((x - x0)**2 + (y - y0)**2)
-    # Avoid division by zero at the source
-    if r &lt; 1e-10:
-        return 0
-    return A / np.sqrt(r) * np.cos(k * r - omega * t + phi)
-
-# Function to calculate the total displacement due to multiple sources
-def calculate_total_displacement(x, y, t, sources):
-    """
-    Calculate the total displacement at point (x, y) and time t due to all sources.
-
-    Args:
-        x, y: Coordinates of the point
-        t: Time
-        sources: List of source positions [(x1, y1), (x2, y2), ...]
-
-    Returns:
-        Total displacement at point (x, y) and time t
-    """
-    total = 0
-    for source_pos in sources:
-        total += calculate_displacement(x, y, t, source_pos)
-    return total
-
-# Function to generate the vertices of a regular polygon
-def generate_polygon_vertices(n, radius=1.0, center=(0, 0)):
-    """
-    Generate the vertices of a regular polygon.
-
-    Args:
-        n: Number of sides (vertices)
-        radius: Distance from center to vertices
-        center: Center position (x, y)
-
-    Returns:
-        List of vertex positions [(x1, y1), (x2, y2), ...]
-    """
-    vertices = []
-    for i in range(n):
-        angle = 2 * np.pi * i / n
-        x = center[0] + radius * np.cos(angle)
-        y = center[1] + radius * np.sin(angle)
-        vertices.append((x, y))
-    return vertices
-
-# Main function
-if __name__ == "__main__":
-    # Analyze interference patterns for different polygons
-    analyze_polygon_interference()
-
-    print("All simulations and visualizations completed.")
-    print(f"pics saved to {image_dir}")
-</code></pre>
-</details>
-<p>The computational model simulates the interference patterns formed by waves
-emitted from sources placed at the vertices of regular polygons. It calculates
-the displacement at each point on the water surface by summing the contributions
-from all sources, following the principle of superposition. The model visualizes
-the interference patterns using 2D color maps, 3D surface plots, and animations
-to show the time evolution of the patterns.</p>
-<p>By varying the number of vertices in the polygon, we can observe how the
-complexity and symmetry of the interference pattern change. This provides
-insights into how waves combine and interact in different geometric
-configurations, demonstrating fundamental principles of wave physics.</p>
-<h3 id="triangle-3-vertices">Triangle (3 Vertices)</h3>
-<p>For a triangle, three wave sources are placed at the vertices of an equilateral
-triangle. The interference pattern shows:</p>
+<h3 id="32-visualization-capabilities">3.2 Visualization Capabilities</h3>
+<p>The simulation generates:
+1. <strong>2D color maps</strong> showing interference patterns
+2. <strong>3D surface plots</strong> displaying wave amplitude
+3. <strong>Animations</strong> showing temporal evolution
+4. <strong>Comparative analysis</strong> for different polygon configurations</p>
+<h3 id="33-analysis-parameters">3.3 Analysis Parameters</h3>
 <ul>
-<li>A central region of constructive interference where waves from all three
-    sources arrive approximately in phase.</li>
-<li>Three primary axes of constructive interference extending outward from the
-    center along the angle bisectors of the triangle.</li>
-<li>Regions of destructive interference between these axes.</li>
+<li><strong>Wavelength</strong>: <span class="arithmatex">\(\lambda = 0.5\)</span> units</li>
+<li><strong>Frequency</strong>: <span class="arithmatex">\(f = 1.0\)</span> Hz</li>
+<li><strong>Amplitude</strong>: <span class="arithmatex">\(A = 1.0\)</span> unit</li>
+<li><strong>Polygon radius</strong>: <span class="arithmatex">\(R = 3.0\)</span> units</li>
+<li><strong>Grid resolution</strong>: 100-200 points per axis</li>
 </ul>
-<p><img alt="Triangle Interference Pattern" src="../pics/triangle_interference_2d.png"/></p>
-<p><img alt="Triangle 3D Interference Pattern" src="../pics/triangle_interference_3d.png"/></p>
-<h3 id="square-4-vertices">Square (4 Vertices)</h3>
-<p>For a square, four wave sources are placed at the vertices. The interference
-pattern shows:</p>
-<ul>
-<li>A central region of constructive interference.</li>
-<li>Four primary axes of constructive interference along the diagonals of the
-    square.</li>
-<li>A more complex pattern of secondary maxima compared to the triangle case.</li>
-<li>More pronounced regions of destructive interference due to the increased
-    number of sources.</li>
-</ul>
-<p><img alt="Square Interference Pattern" src="../pics/square_interference_2d.png"/></p>
-<p><img alt="Square 3D Interference Pattern" src="../pics/square_interference_3d.png"/></p>
-<h3 id="pentagon-5-vertices">Pentagon (5 Vertices)</h3>
-<p>For a pentagon, five wave sources are placed at the vertices. The interference
-pattern shows:</p>
-<ul>
-<li>A central region of constructive interference.</li>
-<li>Five primary axes of constructive interference.</li>
-<li>A more complex and symmetric pattern compared to the triangle and square
-    cases.</li>
-<li>More regions of destructive interference creating a more intricate pattern.</li>
-</ul>
-<p><img alt="Pentagon Interference Pattern" src="../pics/pentagon_interference_2d.png"/></p>
-<p><img alt="Pentagon 3D Interference Pattern" src="../pics/pentagon_interference_3d.png"/></p>
-<h3 id="hexagon-6-vertices">Hexagon (6 Vertices)</h3>
-<p>For a hexagon, six wave sources are placed at the vertices. The interference
-pattern shows:</p>
-<ul>
-<li>A central region of constructive interference.</li>
-<li>Six primary axes of constructive interference.</li>
-<li>A highly symmetric pattern with six-fold rotational symmetry.</li>
-<li>Multiple rings of constructive and destructive interference.</li>
-</ul>
-<p><img alt="Hexagon Interference Pattern" src="../pics/hexagon_interference_2d.png"/></p>
-<p><img alt="Hexagon 3D Interference Pattern" src="../pics/hexagon_interference_3d.png"/></p>
-<h2 id="observations-and-conclusions">Observations and Conclusions</h2>
+<hr/>
+<h2 id="4-results-and-analysis">4. Results and Analysis</h2>
+<h3 id="41-triangle-3-vertices-analysis">4.1 Triangle (3 Vertices) Analysis</h3>
+<p><img alt="Triangle Interference Pattern" src="../pics/triangle_interference_2d.png"/>
+<em>2D interference pattern for triangular source configuration</em></p>
+<p><img alt="Triangle 3D Interference Pattern" src="../pics/triangle_interference_3d.png"/>
+<em>3D visualization showing amplitude variations</em></p>
+<p><strong>Key Features:</strong>
+- <strong>Central maximum</strong>: All three sources contribute constructively at the center
+- <strong>Three primary lobes</strong>: Directed along the angle bisectors of the triangle
+- <strong>Amplitude</strong>: Maximum amplitude at center is approximately <span class="arithmatex">\(3A/\sqrt{R}\)</span>
+- <strong>Symmetry</strong>: Three-fold rotational symmetry</p>
+<h3 id="42-square-4-vertices-analysis">4.2 Square (4 Vertices) Analysis</h3>
+<p><img alt="Square Interference Pattern" src="../pics/square_interference_2d.png"/>
+<em>2D interference pattern for square source configuration</em></p>
+<p><img alt="Square 3D Interference Pattern" src="../pics/square_interference_3d.png"/>
+<em>3D visualization showing four-fold symmetry</em></p>
+<p><strong>Key Features:</strong>
+- <strong>Diagonal enhancement</strong>: Strong constructive interference along diagonals
+- <strong>Cross pattern</strong>: Four primary lobes at 45° intervals
+- <strong>Secondary maxima</strong>: Additional interference maxima between primary lobes
+- <strong>Symmetry</strong>: Four-fold rotational symmetry</p>
+<h3 id="43-pentagon-5-vertices-analysis">4.3 Pentagon (5 Vertices) Analysis</h3>
+<p><img alt="Pentagon Interference Pattern" src="../pics/pentagon_interference_2d.png"/>
+<em>2D interference pattern for pentagonal source configuration</em></p>
+<p><img alt="Pentagon 3D Interference Pattern" src="../pics/pentagon_interference_3d.png"/>
+<em>3D visualization showing five-fold symmetry</em></p>
+<p><strong>Key Features:</strong>
+- <strong>Five primary lobes</strong>: Equally spaced at 72° intervals
+- <strong>Complex structure</strong>: More intricate interference pattern
+- <strong>Golden ratio connections</strong>: Geometric relationships in the pattern
+- <strong>Symmetry</strong>: Five-fold rotational symmetry</p>
+<h3 id="44-hexagon-6-vertices-analysis">4.4 Hexagon (6 Vertices) Analysis</h3>
+<p><img alt="Hexagon Interference Pattern" src="../pics/hexagon_interference_2d.png"/>
+<em>2D interference pattern for hexagonal source configuration</em></p>
+<p><img alt="Hexagon 3D Interference Pattern" src="../pics/hexagon_interference_3d.png"/>
+<em>3D visualization showing six-fold symmetry</em></p>
+<p><strong>Key Features:</strong>
+- <strong>Six primary lobes</strong>: 60° angular spacing
+- <strong>High symmetry</strong>: Most symmetric configuration analyzed
+- <strong>Ring structures</strong>: Concentric rings of constructive/destructive interference
+- <strong>Symmetry</strong>: Six-fold rotational symmetry</p>
+<hr/>
+<h2 id="5-quantitative-analysis">5. Quantitative Analysis</h2>
+<h3 id="51-central-amplitude-enhancement">5.1 Central Amplitude Enhancement</h3>
+<p>For <span class="arithmatex">\(N\)</span> coherent sources at equal distances <span class="arithmatex">\(R\)</span> from the center:
+<span class="arithmatex">\(<span class="arithmatex">\(\eta_{\text{center}} = N \cdot \frac{A}{\sqrt{R}} \cos(kR - \omega t + \phi)\)</span>\)</span></p>
+<p>The amplitude enhancement factor is <span class="arithmatex">\(N\)</span>, demonstrating constructive interference.</p>
+<h3 id="52-angular-distribution-analysis">5.2 Angular Distribution Analysis</h3>
+<p>The far-field intensity pattern for regular <span class="arithmatex">\(N\)</span>-gon sources shows maxima at angles:
+<span class="arithmatex">\(<span class="arithmatex">\(\theta_{\text{max}} = \frac{2\pi m}{N}\)</span>\)</span></p>
+<p>where <span class="arithmatex">\(m = 0, 1, 2, ..., N-1\)</span>.</p>
+<h3 id="53-interference-visibility">5.3 Interference Visibility</h3>
+<p>The visibility (contrast) of the interference pattern is defined as:
+<span class="arithmatex">\(<span class="arithmatex">\(V = \frac{I_{\text{max}} - I_{\text{min}}}{I_{\text{max}} + I_{\text{min}}}\)</span>\)</span></p>
+<p>Higher visibility indicates clearer interference fringes.</p>
+<hr/>
+<h2 id="6-physical-insights-and-wave-phenomena">6. Physical Insights and Wave Phenomena</h2>
+<h3 id="61-coherence-requirements">6.1 Coherence Requirements</h3>
+<p>For stable interference patterns, the sources must be:
+- <strong>Spatially coherent</strong>: Maintain fixed phase relationships
+- <strong>Temporally coherent</strong>: Have the same frequency
+- <strong>Amplitude stable</strong>: Consistent amplitude over observation time</p>
+<h3 id="62-scaling-properties">6.2 Scaling Properties</h3>
+<p>The interference pattern scales with wavelength:
+- <strong>Pattern size</strong>: <span class="arithmatex">\(\propto \lambda\)</span>
+- <strong>Angular resolution</strong>: <span class="arithmatex">\(\propto \lambda/R\)</span>
+- <strong>Number of fringes</strong>: <span class="arithmatex">\(\propto R/\lambda\)</span></p>
+<h3 id="63-energy-conservation">6.3 Energy Conservation</h3>
+<p>Despite local amplitude enhancement through constructive interference, total energy is conserved. Energy is redistributed spatially, creating regions of enhanced and diminished wave amplitude.</p>
+<hr/>
+<h2 id="7-real-world-applications">7. Real-World Applications</h2>
+<h3 id="71-acoustic-applications">7.1 Acoustic Applications</h3>
+<p><strong>Array Acoustics</strong>:
+- <strong>Loudspeaker arrays</strong>: Creating directional sound beams
+- <strong>Microphone arrays</strong>: Improving signal reception from specific directions
+- <strong>Sonar systems</strong>: Underwater detection and ranging</p>
+<h3 id="72-electromagnetic-applications">7.2 Electromagnetic Applications</h3>
+<p><strong>Antenna Arrays</strong>:
+- <strong>Phased arrays</strong>: Steering electromagnetic beams electronically
+- <strong>Radio telescopes</strong>: Combining signals from multiple dishes
+- <strong>Radar systems</strong>: Target detection and tracking</p>
+<h3 id="73-optical-applications">7.3 Optical Applications</h3>
+<p><strong>Interferometry</strong>:
+- <strong>Laser interferometry</strong>: Precision distance measurements
+- <strong>Optical coherence tomography</strong>: Medical imaging
+- <strong>Gravitational wave detection</strong>: LIGO and similar experiments</p>
+<h3 id="74-water-wave-applications">7.4 Water Wave Applications</h3>
+<p><strong>Ocean Engineering</strong>:
+- <strong>Wave energy harvesting</strong>: Optimizing converter placement
+- <strong>Harbor design</strong>: Minimizing wave impacts
+- <strong>Tsunami modeling</strong>: Understanding wave propagation patterns</p>
+<hr/>
+<h2 id="8-advanced-considerations">8. Advanced Considerations</h2>
+<h3 id="81-nonlinear-effects">8.1 Nonlinear Effects</h3>
+<p>For large amplitude waves, nonlinear effects become important:
+- <strong>Wave steepening</strong>: High-amplitude waves become asymmetric
+- <strong>Harmonic generation</strong>: Creation of higher frequency components
+- <strong>Wave breaking</strong>: Energy dissipation through turbulence</p>
+<h3 id="82-dispersion-effects">8.2 Dispersion Effects</h3>
+<p>For finite depth water waves:
+<span class="arithmatex">\(<span class="arithmatex">\(\omega^2 = gk \tanh(kh)\)</span>\)</span></p>
+<p>where <span class="arithmatex">\(h\)</span> is the water depth, leading to wavelength-dependent propagation speeds.</p>
+<h3 id="83-damping-and-attenuation">8.3 Damping and Attenuation</h3>
+<p>Real water waves experience:
+- <strong>Viscous damping</strong>: Energy loss due to fluid viscosity
+- <strong>Wave breaking</strong>: Energy dissipation in shallow water
+- <strong>Surface tension effects</strong>: Important for short wavelengths</p>
+<hr/>
+<h2 id="9-experimental-verification">9. Experimental Verification</h2>
+<h3 id="91-laboratory-setup">9.1 Laboratory Setup</h3>
+<p><strong>Wave Tank Experiments</strong>:
+- Multiple mechanical wave generators
+- High-speed cameras for visualization
+- Laser profilometry for surface measurement
+- Controlled environmental conditions</p>
+<h3 id="92-measurement-techniques">9.2 Measurement Techniques</h3>
+<p><strong>Surface Height Measurement</strong>:
+- <strong>Capacitive probes</strong>: Direct height measurement
+- <strong>Laser doppler velocimetry</strong>: Velocity field mapping
+- <strong>PIV (Particle Image Velocimetry)</strong>: Flow visualization</p>
+<h3 id="93-data-analysis">9.3 Data Analysis</h3>
+<p><strong>Signal Processing</strong>:
+- <strong>Fourier analysis</strong>: Frequency domain analysis
+- <strong>Wavelet transforms</strong>: Time-frequency analysis
+- <strong>Phase analysis</strong>: Coherence measurements</p>
+<hr/>
+<h2 id="10-conclusion">10. Conclusion</h2>
+<p>This comprehensive analysis of wave interference patterns from regular polygon source configurations demonstrates fundamental principles of wave physics:</p>
 <ol>
-<li>
-<p><strong>Symmetry</strong>: The interference pattern reflects the symmetry of the polygon.
-   A regular polygon with <span class="arithmatex">\(n\)</span> sides produces an interference pattern with
-   <span class="arithmatex">\(n\)</span>-fold rotational symmetry.</p>
-</li>
-<li>
-<p><strong>Central Constructive Interference</strong>: All configurations show a region of
-   constructive interference at the center of the polygon, where waves from all
-   sources can arrive approximately in phase.</p>
-</li>
-<li>
-<p><strong>Radial Pattern</strong>: The interference patterns exhibit radial structures with
-   alternating bands of constructive and destructive interference.</p>
-</li>
-<li>
-<p><strong>Complexity with Increasing Vertices</strong>: As the number of vertices increases,
-   the interference pattern becomes more complex and intricate, with more
-   regions of constructive and destructive interference.</p>
-</li>
-<li>
-<p><strong>Distance Effect</strong>: The amplitude of the waves decreases with distance from
-   the sources (as <span class="arithmatex">\(1/\sqrt{r}\)</span>), leading to less pronounced interference
-   effects far from the sources.</p>
-</li>
+<li><strong>Superposition Principle</strong>: Linear addition of wave amplitudes creates complex patterns</li>
+<li><strong>Geometric Influence</strong>: Source arrangement directly affects interference pattern symmetry</li>
+<li><strong>Coherence Requirements</strong>: Stable patterns require coherent sources</li>
+<li><strong>Energy Redistribution</strong>: Interference redistributes rather than creates or destroys energy</li>
+<li><strong>Scaling Laws</strong>: Pattern characteristics scale predictably with wavelength and geometry</li>
 </ol>
-<h2 id="applications">Applications</h2>
-<p>Understanding interference patterns has numerous applications:</p>
+<p>The computational simulations provide quantitative verification of theoretical predictions and offer insights into the rich physics of wave interference. Understanding these principles is crucial for applications in acoustics, electromagnetics, optics, and ocean engineering.</p>
+<h3 id="101-key-findings">10.1 Key Findings</h3>
+<ul>
+<li><strong>Symmetry preservation</strong>: Interference patterns reflect source symmetry</li>
+<li><strong>Central enhancement</strong>: Constructive interference maximizes at the polygon center</li>
+<li><strong>Angular structure</strong>: Primary lobes align with polygon symmetry axes</li>
+<li><strong>Complexity scaling</strong>: More sources create more intricate patterns</li>
+</ul>
+<h3 id="102-educational-value">10.2 Educational Value</h3>
+<p>This problem provides an excellent introduction to:
+- Wave physics fundamentals
+- Mathematical modeling of physical phenomena
+- Computational physics techniques
+- Visualization of complex wave phenomena</p>
+<hr/>
+<h2 id="references-and-further-reading">References and Further Reading</h2>
 <ol>
-<li>
-<p><strong>Acoustic Design</strong>: Designing concert halls and auditoriums to optimize
-   sound distribution.</p>
-</li>
-<li>
-<p><strong>Antenna Arrays</strong>: Designing antenna arrays to focus electromagnetic waves
-   in specific directions.</p>
-</li>
-<li>
-<p><strong>Optical Instruments</strong>: Understanding and utilizing interference in
-   microscopes, telescopes, and other optical instruments.</p>
-</li>
-<li>
-<p><strong>Water Wave Energy Harvesting</strong>: Optimizing the placement of wave energy
-   converters to maximize energy extraction.</p>
-</li>
-<li>
-<p><strong>Educational Demonstrations</strong>: Providing visual demonstrations of wave
-   principles for educational purposes.</p>
-</li>
+<li>Crawford, F. S. (1968). <em>Waves (Berkeley Physics Course, Vol. 3)</em>. McGraw-Hill.</li>
+<li>French, A. P. (1971). <em>Vibrations and Waves</em>. MIT Press.</li>
+<li>Lighthill, J. (1978). <em>Waves in Fluids</em>. Cambridge University Press.</li>
+<li>Mei, C. C., Stiassnie, M., &amp; Yue, D. K. P. (2017). <em>Theory and Applications of Ocean Surface Waves</em>. World Scientific.</li>
+<li>Born, M., &amp; Wolf, E. (2013). <em>Principles of Optics</em>. Cambridge University Press.</li>
 </ol>
 </div>
 </div><footer>
 <div aria-label="Footer Navigation" class="rst-footer-buttons" role="navigation">
-<a class="btn btn-neutral float-left" href="../../2%20Gravity/Problem_3/" title="Problem 3"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-<a class="btn btn-neutral float-right" href="../../4%20Electromagnetism/Problem_1/" title="Problem 1">Next <span class="icon icon-circle-arrow-right"></span></a>
+<a class="btn btn-neutral float-left" href="../../2%20Gravity/Problem_3/" title="Problem 3: Trajectories of a Freely Released Payload Near Earth"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+<a class="btn btn-neutral float-right" href="../../4%20Electromagnetism/Problem_1/" title="Problem 1: Simulating the Effects of the Lorentz Force">Next <span class="icon icon-circle-arrow-right"></span></a>
 </div>
 <hr/>
 <div role="contentinfo">
